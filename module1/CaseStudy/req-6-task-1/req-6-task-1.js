@@ -212,7 +212,7 @@ function displaymenuFormEditCustomer(i){
     document.getElementById("menuFormAddCustomer").innerHTML = menuFormAddCustomer + '<button onclick="editCustomer('+i+')" >Save</button>';
     //display current info
     document.getElementById("fullName").value = arrListCustomers[i].getFullName();
-    document.getElementById("idNumber").value = arrListCustomers[i].getFullName();
+    document.getElementById("idNumber").value = arrListCustomers[i].getIdNumber();
     document.getElementById("dateOfBirth").value = arrListCustomers[i].getDateOfBirth();
     document.getElementById("email").value = arrListCustomers[i].getEmail();
     document.getElementById("address").value = arrListCustomers[i].getAddress();
