@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Req 6</title>
+    <style>
+        table, th, td { color:black; font-weight: bold;border: 1px solid orangered;border-collapse: collapse;}
+        fieldset { text-align: center; border-style: dashed; background-color: white; opacity: 0.8; margin: 30px; }
+        body {
+            background-color: bisque;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+<img src="http://www.dongkhoitravel.com.vn/upload/product/furamresort-3272.png" width="150px" />
+<fieldset >
+    <legend><h1 style="color:orangered">EMPLOYEE MANAGEMENT</h1></legend>
+    <button onclick="displayFormAddNew()"><b>Add New Employee</b><img src="https://icons.iconarchive.com/icons/aha-soft/people/256/user-group-icon.png" width="40"  /></button>
+    <button onclick="displayEmployee()"><b>Display Information Employee</b><img src="https://www.shareicon.net/data/256x256/2016/05/11/763157_list_512x512.png" width="40"  /></button>
+    <button onclick=""><b>Salary of Employees</b><img src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-11/72/Coin-us-dollar-icon.png" width="40"  /></button>
+    <button onclick="displayFormEdit()"><b>Edit</b><img src="https://www.shareicon.net/data/256x256/2016/04/18/751387_edit_512x512.png" width="40"  /></button>
+    <button onclick="deleteEmployee()"><b>Delete</b><img src="https://www.shareicon.net/data/256x256/2016/09/10/827820_delete_512x512.png" width="40"  /></button>
+    <button onclick="exitMenu()"><img src="https://cdn0.iconfinder.com/data/icons/material-design-11/64/69-128.png" width="40"  /></button><br/><br/>
+
+    <span id="formAddNew" ></span>
+    <center><span id="displaylist" ></span></center>
+</fieldset>
+</body>
+
+<script>
+    //***************************** REQ 6 / task 2.1, 2.2, 2.3 *****************************
+    let listEmployees = [];
+    let Employee = function() {
+        this.setFullName = function (fullName) {
+            this.fullName = fullName;
+        };
+        this.getFullName = function () {
+            return this.fullName;
+        };
+        this.setIdNumber = function (idNumber) {
+            this.idNumber = idNumber;
+        };
+        this.getIdNumber = function () {
+            return this.idNumber;
+        };
+        this.setBirthday = function (birthday) {
+            this.dateOfBirth = birthday;
+        };
+        this.getBirthday = function () {
+            return this.dateOfBirth;
+        };
+        this.setPhone = function (phone) {
+            this.phone = phone;
+        };
+        this.getPhone = function () {
+            return this.phone;
+        };
+        this.setEmail = function (email) {
+            this.email = email;
+        };
+        this.getEmail = function () {
+            return this.email;
+        };
+        this.setEduLevel = function (eduLevel) {
+            this.eduLevel = eduLevel;
+        };
+        this.getEduLevel = function () {
+            return this.eduLevel;
+        };
+        this.setPosition = function (position) {
+            this.position = position;
+        };
+        this.getPosition = function () {
+            return this.position;
+        };
+        this.getSalary = function () {
+            switch (this.position) {
+                case "Manager":
+                    this.salary = 500;
+                    break;
+                case "Sale":
+                    this.salary = 300;
+                    break;
+                case "Marketing":
+                    this.salary = 200;
+                    break;
+                default:
+                    this.salary = 180;
+            }
+            return this.salary;
+        };
+    }
+    //***************************** REQ 6 / task 2.4 *****************************
+    function addNewEmployee() {
+        let perEmployee = new Employee();
+        perEmployee.setFullName(document.getElementById("fullName").value);
+        perEmployee.setIdNumber(document.getElementById("idNumber").value);
+        perEmployee.setBirthday(document.getElementById("birthday").value);
+        perEmployee.setPhone(document.getElementById("phone").value);
+        perEmployee.setEmail(document.getElementById("email").value);
+        perEmployee.setEduLevel(document.getElementById("eduLevel").value);
+        perEmployee.setPosition(document.getElementById("position").value);
+        perEmployee.getSalary();
+
+        //if(checkValidFormat()){
+        listEmployees.push(perEmployee);
+        alert ("Just saved a new employee: " + perEmployee.getFullName());
+        displayFormAddNew();
+        displayEmployee();
+        //}
+    }
+    let formAddNew = 'Full Name <input type="text" id="fullName"/><br/>'
+        +'ID number <input type="text" id="idNumber"/><br/>'
+        +'Birthday <input type="text" id="birthday"/><br/>'
+        +'Phone <input type="text" id="phone"/><br/>'
+        +'Email <input type="email" id="email"/><br/>'
+        +'Education Level <select id="eduLevel"><option>Certification</option><option>Bachelor</option><option> Master of Degree</option><option>None</option></select><br/>'
+        +'Position<select id="position"><option>Marketing</option><option>Sale</option><option>Manager</option>'
+        +'<option>Administrative Dept.</option><option>Service Dept.</option></select><br/>';
+    function displayFormAddNew() {
+        document.getElementById("formAddNew").innerHTML = formAddNew + '<button onclick="addNewEmployee()" >Save</button>';
+    }
+    //***************************** REQ 6 / task 1.5 *****************************
+    function displayEmployee() {
+        document.getElementById("formAddNew").innerHTML = "";
+        let chart = "<table><tr>"
+            +"<td>No.</td>"
+            +"<td>Name</td>"
+            +"<td>ID number</td>"
+            +"<td>Birthday</td>"
+            +"<td>Phone</td>"
+            +"<td>Email</td>"
+            +"<td>Education Level</td>"
+            +"<td>Position</td>"
+            +"<td>Salary</td>"
+            +"<td></td></tr>";
+        for ( let i = 0; i < listEmployees.length; i++) {
+            chart += "<tr>" + "<td>" + (i+1) + "</td>"
+                +"<td>"+ listEmployees[i].getFullName() +"</td>"
+                +"<td>"+ listEmployees[i].getIdNumber() +"</td>"
+                +"<td>"+ listEmployees[i].getBirthday() +"</td>"
+                +"<td>"+ listEmployees[i].getPhone() +"</td>"
+                +"<td>"+ listEmployees[i].getEmail() +"</td>"
+                +"<td>"+ listEmployees[i].getEduLevel() +"</td>"
+                +"<td>"+ listEmployees[i].getPosition() +"</td>"
+                +"<td>"+ listEmployees[i].getSalary() +"$</td>";
+
+            chart += "<td><button onclick='displayFormEdit("+ i+ ")'>Edit</button>"
+                +"<button onclick='deleteEmployee("+ i+ ")'>Delete</button></tr>";
+        }
+        chart += "</table>";
+        document.getElementById("displaylist").innerHTML = chart;
+    }
+    function getSalary() {
+        displayEmployee();
+    }
+    function displayFormEdit(i){
+        displayEmployee();
+        document.getElementById("formAddNew").innerHTML = formAddNew + '<button onclick="editEmployee('+i+')" >Save</button>';
+        //display current info
+        document.getElementById("fullName").value = listEmployees[i].getFullName();
+        document.getElementById("idNumber").value = listEmployees[i].getIdNumber();
+        document.getElementById("birthday").value = listEmployees[i].getBirthday();
+        document.getElementById("phone").value = listEmployees[i].getPhone();
+        document.getElementById("email").value = listEmployees[i].getEmail();
+        document.getElementById("eduLevel").value = listEmployees[i].getEduLevel();
+        document.getElementById("position").value = listEmployees[i].getPosition();
+    }
+    function editEmployee(i) {
+        listEmployees[i].setFullName(document.getElementById("fullName").value);
+        listEmployees[i].setIdNumber(document.getElementById("idNumber").value);
+        listEmployees[i].setBirthday(document.getElementById("birthday").value);
+        listEmployees[i].setPhone(document.getElementById("phone").value);
+        listEmployees[i].setEmail(document.getElementById("email").value);
+        listEmployees[i].setEduLevel(document.getElementById("eduLevel").value);
+        listEmployees[i].setPosition(document.getElementById("position").value);
+        displayEmployee();
+    }
+    function deleteEmployee(i) {
+        displayEmployee();
+        if (confirm("Are you sure to delete this employee " + listEmployees[i].getFullName() + "?")){
+            listEmployees.splice(i,1);
+        }
+        displayEmployee();
+    }
+    function exitMenu() {
+        document.getElementById("displaylist").innerHTML = "";
+        document.getElementById("formAddNew").innerHTML = "";
+    }
+</script>
+</html>
