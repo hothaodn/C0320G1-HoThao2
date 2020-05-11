@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bfaa431c-d238-4540-ad2c-ca5be721876b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../../module1/10-GiaiThuat/BaiTap/debug" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module1/10-GiaiThuat/BaiTap/debug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module1/CaseStudy/req-6-task-2/req-6-task-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module1/CaseStudy/req-6-task-2/req-6-task-2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UngDungChuyenDoiTienTe/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UngDungChuyenDoiTienTe/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UngDungChuyenDoiTienTe/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UngDungChuyenDoiTienTe/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UngDungChuyenDoiTienTe/UngDungChuyenDoiTienTe.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UngDungChuyenDoiTienTe/out/production/UngDungChuyenDoiTienTe/UngDungChuyenDoiTienTe.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UngDungChuyenDoiTienTe/src/UngDungChuyenDoiTienTe.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="D:\_CODEGYM\C0320G1-HoThao\module2\1-Ngon-ngu-lap-trinh-Java\ThucHanh\TimGiaTriMinSuDungPhuongThuc\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1bkOqfOJ4B3L3q5kMpgmNFKmr3C" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="TimGiaTriMinSuDungPhuongThuc" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TimGiaTriMinSuDungPhuongThuc" />
+      <module name="TimGiaTriMinSuDungPhuongThuc" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.TimGiaTriMinSuDungPhuongThuc" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bfaa431c-d238-4540-ad2c-ca5be721876b" name="Default Changelist" comment="" />
+      <created>1589172816533</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1589172816533</updated>
+      <workItem from="1589172819812" duration="44000" />
+      <workItem from="1589179928076" duration="1719000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="493" y="124" key="FileChooserDialogImpl" timestamp="1589181661957">
+      <screen x="62" y="0" width="1304" height="768" />
+    </state>
+    <state x="493" y="124" key="FileChooserDialogImpl/62.0.1304.768@62.0.1304.768" timestamp="1589181661957" />
+    <state width="1260" height="332" key="GridCell.Tab.0.bottom" timestamp="1589181679690">
+      <screen x="62" y="0" width="1304" height="768" />
+    </state>
+    <state width="1260" height="332" key="GridCell.Tab.0.bottom/62.0.1304.768@62.0.1304.768" timestamp="1589181679690" />
+    <state width="1260" height="332" key="GridCell.Tab.0.center" timestamp="1589181679690">
+      <screen x="62" y="0" width="1304" height="768" />
+    </state>
+    <state width="1260" height="332" key="GridCell.Tab.0.center/62.0.1304.768@62.0.1304.768" timestamp="1589181679690" />
+    <state width="1260" height="332" key="GridCell.Tab.0.left" timestamp="1589181679689">
+      <screen x="62" y="0" width="1304" height="768" />
+    </state>
+    <state width="1260" height="332" key="GridCell.Tab.0.left/62.0.1304.768@62.0.1304.768" timestamp="1589181679689" />
+    <state width="1260" height="332" key="GridCell.Tab.0.right" timestamp="1589181679690">
+      <screen x="62" y="0" width="1304" height="768" />
+    </state>
+    <state width="1260" height="332" key="GridCell.Tab.0.right/62.0.1304.768@62.0.1304.768" timestamp="1589181679690" />
+    <state x="409" y="206" key="com.intellij.ide.util.TipDialog" timestamp="1589180041093">
+      <screen x="62" y="0" width="1304" height="768" />
+    </state>
+    <state x="409" y="206" key="com.intellij.ide.util.TipDialog/62.0.1304.768@62.0.1304.768" timestamp="1589180041093" />
+    <state x="96" y="3" key="new project wizard" timestamp="1589181677705">
+      <screen x="62" y="0" width="1304" height="768" />
+    </state>
+    <state x="96" y="3" key="new project wizard/62.0.1304.768@62.0.1304.768" timestamp="1589181677705" />
+  </component>
+</project>
