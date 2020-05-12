@@ -16,22 +16,24 @@ public class ThemPhanTuVaoMang {
         for( int i = 0; i < arr.length; i++){
             System.out.print( arr[i] + "["+i+"]\t");
         }
-        System.out.println("\nWhich position do you wanna insert? ");
-        index = input.nextInt();
-        int temp = 0;
-        if( index >= 1 && index < arr.length){
-            System.out.println("Input new value: ");
-            int newValue = input.nextInt();
-            for( int i = index; i < arr.length-1; i++){
-                //temp = arr[index];
-                arr[i+1] = arr [i];
+        do {
+            System.out.println("\nWhich position do you wanna insert? ");
+            index = input.nextInt();
+            int temp = 0;
+            if (index >= 1 && index < arr.length) {
+                System.out.println("Input new value: ");
+                int newValue = input.nextInt();
+                for (int i = arr.length - 1; i >= index; i--) {
+                    //temp = arr[i];
+                    arr[i] = arr[i - 1];
+                }
                 arr[index] = newValue;
+                for (int i = 0; i < arr.length; i++) {
+                    System.out.print(arr[i] + "[" + i + "]\t");
+                }
+            } else {
+                System.out.print("Exceed the size of array");
             }
-            for( int i = 0; i < arr.length; i++){
-                System.out.print( arr[i] + "["+i+"]\t");
-            }
-        }else{
-            System.out.print("Exceed the size of array");
-        }
+        }while (true);
     }
 }
