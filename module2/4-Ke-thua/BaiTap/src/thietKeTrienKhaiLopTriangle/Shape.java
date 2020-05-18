@@ -1,4 +1,4 @@
-package heCacDoiTuongHinhHoc;
+package thietKeTrienKhaiLopTriangle;
 
 public class Shape {
     private String color = "green";

@@ -3,7 +3,6 @@ package heCacDoiTuongHinhHoc;
 public class Rectangle extends Shape {
     double width = 1.0;
     double length = 1.0;
-    public Rectangle;
 
     public Rectangle() {
     }
@@ -13,8 +12,8 @@ public class Rectangle extends Shape {
         this.length = length;
     }
 
-    public Rectangle(double width, double length) {
-        super(String color, boolean filled);
+    public Rectangle(String color, boolean filled,double width, double length) {
+        super( color,filled);
         this.width = width;
         this.length = length;
     }
@@ -42,8 +41,8 @@ public class Rectangle extends Shape {
     public double getPerimeter(){
         return (this.width+this.length)*2;
     }
-
+    @Override
     public String toString(){
-        return "A Rectangle with width=xxx and length= " +this.length+ " which is a subclass of yyy";
+        return "A Rectangle with width= "+ this.width + " and length= " +this.length+ " which is a subclass of" + super.toString();
     }
 }
