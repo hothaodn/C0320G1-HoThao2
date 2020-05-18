@@ -1,8 +1,8 @@
 package heCacDoiTuongHinhHoc;
 
 public class Shape {
-    static String color = "red";
-    static boolean filled = true;
+    private String color = "green";
+    private boolean filled = true;
     public Shape(){
     }
     private Shape(String color, boolean filled){
@@ -25,7 +25,10 @@ public class Shape {
     public void setFilled(boolean filled) {
         this.filled = filled;
     }
+
+    //@Override
     public String toString(){
-        return "A Shape with color of " + color + " and filled/not filled";
+        return "A Shape with color of " + getColor()
+                + " and " + (isFilled()? "filled":"not filled");
     }
 }
