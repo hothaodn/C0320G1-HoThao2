@@ -9,5 +9,7 @@ public class TempTest {
         System.out.println(villa.showInfor());
         System.out.println(house.showInfor());
         System.out.println(room.showInfor());
+
+        System.out.println(villa);
     }
 }

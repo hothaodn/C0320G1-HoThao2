@@ -16,6 +16,7 @@ public class Room extends Services {
         this.complimentary = complimentary;
     }
 
+
     public String getComplimentary() {
         return complimentary;
     }
@@ -30,4 +31,5 @@ public class Room extends Services {
                 "complimentary='" + complimentary + '\'' +
                 '}';
     }
+
 }

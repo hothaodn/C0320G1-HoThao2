@@ -3,7 +3,6 @@ package controllers;
 import java.util.Scanner;
 
 public class MainController {
-
     public static void displayMainMenu(){
         System.out.println("MENU\n" +
                 "1.\tAdd New Services\n" +
@@ -22,6 +21,9 @@ public class MainController {
             case 2:
                 showServices();
                 break;
+            case 4:
+                //displayMainMenu();
+                break;
             case 7:
                 System.exit(0);
                 break;
@@ -29,6 +31,7 @@ public class MainController {
                 System.out.println("Please choose the number of menu");
         }
     }
+
     public static void addNewServies(){
         System.out.println("ADD NEW SERVICE:\n" +
                 "1.\tAdd New Villa\n" +
@@ -36,8 +39,26 @@ public class MainController {
                 "3.\tAdd New Room\n" +
                 "4.\tBack to menu\n" +
                 "5.\tExit\n");
+        Scanner input = new Scanner(System.in);
+        int number = input.nextInt();
+        switch (number){
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                displayMainMenu();
+                break;
+            case 5:
+                System.exit(0);
+                break;
+            default:
+                System.out.println("Please choose the number of menu");
+        }
     }
-3
+
     public static void showServices(){
         System.out.println("SHOW SERVICES:\n" +
                 "1.\tShow all Villa\n" +
