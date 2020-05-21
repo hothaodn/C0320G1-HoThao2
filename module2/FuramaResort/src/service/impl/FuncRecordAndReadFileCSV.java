@@ -42,7 +42,7 @@ public class FuncRecordAndReadFileCSV {
                 fileWriter.append(String.valueOf(element.getnumberOfFloor()));
                 fileWriter.append(NEW_LINE_SEPARATOR);
             }
-            System.out.println("New record successfully!");
+            System.out.println("Saved successfully!");
         }catch (Exception e){
             e.printStackTrace();
             System.out.println("Error in CSV File Record");

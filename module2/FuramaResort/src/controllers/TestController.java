@@ -3,10 +3,8 @@ package controllers;
 import service.impl.FuncRecordAndReadFileCSV;
 import controllers.MainController;
 
-public class Testttttttt {
+public class TestController {
     public static void main(String[] args) {
-        MainController mainController = new MainController();
-        mainController.displayMainMenu();
-
+        MainController.processMain();
     }
 }
