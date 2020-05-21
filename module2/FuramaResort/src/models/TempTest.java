@@ -1,5 +1,7 @@
 package models;
 
+import service.impl.VillaServiceImpl;
+
 public class TempTest {
     public static void main(String[] args) {
         Services villa = new Villa();
@@ -11,5 +13,8 @@ public class TempTest {
         System.out.println(room.showInfor());
 
         System.out.println(villa);
+
+        VillaServiceImpl villaService = new VillaServiceImpl();
+        System.out.println(villaService.addNewService());
     }
 }

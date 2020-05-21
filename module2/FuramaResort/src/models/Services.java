@@ -9,19 +9,19 @@ public abstract class Services {
     private String id;
     private String serviceName;
     private float areaUsing;
-    private double roomRates;
-    private int guestNumberMax;
+    private double rentalFee;
+    private int maxOccupancy;
     private String typeRental;
 
     public Services() {
     }
 
-    public Services(String id, String serviceName, float areaUsing, double roomRates, int guestNumberMax, String typeRental) {
+    public Services(String id, String serviceName, float areaUsing, double rentalFee, int maxOccupancy, String typeRental) {
         this.id = id;
         this.serviceName = serviceName;
         this.areaUsing = areaUsing;
-        this.roomRates = roomRates;
-        this.guestNumberMax = guestNumberMax;
+        this.rentalFee = rentalFee;
+        this.maxOccupancy = maxOccupancy;
         this.typeRental = typeRental;
     }
 
@@ -37,12 +37,12 @@ public abstract class Services {
         return areaUsing;
     }
 
-    public double getRoomRates() {
-        return roomRates;
+    public double getrentalFee() {
+        return rentalFee;
     }
 
-    public int getGuestNumberMax() {
-        return guestNumberMax;
+    public int getmaxOccupancy() {
+        return maxOccupancy;
     }
 
     public String getTypeRental() {
@@ -61,12 +61,12 @@ public abstract class Services {
         this.areaUsing = areaUsing;
     }
 
-    public void setRoomRates(double roomRates) {
-        this.roomRates = roomRates;
+    public void setrentalFee(double rentalFee) {
+        this.rentalFee = rentalFee;
     }
 
-    public void setGuestNumberMax(int guestNumberMax) {
-        this.guestNumberMax = guestNumberMax;
+    public void setmaxOccupancy(int maxOccupancy) {
+        this.maxOccupancy = maxOccupancy;
     }
 
     public void setTypeRental(String typeRental) {
@@ -80,8 +80,8 @@ public abstract class Services {
                 "id='" + id + '\'' +
                 ", serviceName='" + serviceName + '\'' +
                 ", areaUsing=" + areaUsing +
-                ", roomRates=" + roomRates +
-                ", guestNumberMax=" + guestNumberMax +
+                ", rentalFee=" + rentalFee +
+                ", maxOccupancy=" + maxOccupancy +
                 ", typeRental='" + typeRental + '\'' +
                 '}';
     }

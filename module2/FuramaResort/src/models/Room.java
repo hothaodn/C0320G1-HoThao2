@@ -11,8 +11,8 @@ public class Room extends Services {
         this.complimentary = complimentary;
     }
 
-    public Room(String id, String serviceName, float areaUsing, double roomRates, int guestNumberMax, String typeRental, String complimentary) {
-        super(id, serviceName, areaUsing, roomRates, guestNumberMax, typeRental);
+    public Room(String id, String serviceName, float areaUsing, double rentalFee, int maxOccupancy, String typeRental, String complimentary) {
+        super(id, serviceName, areaUsing, rentalFee, maxOccupancy, typeRental);
         this.complimentary = complimentary;
     }
 

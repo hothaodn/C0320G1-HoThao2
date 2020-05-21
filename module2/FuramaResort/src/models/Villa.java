@@ -5,24 +5,24 @@ public class Villa extends Services {
     private String roomStandard = "Luxury";
     private String facilites = "Deluxe";
     private String areaSwimmingPool = "20 m2";
-    private int floorNumber = 3;
+    private int numberOfFloor = 3;
 
     public Villa() {
     }
 
-    public Villa(String roomStandard, String facilites, String areaSwimmingPool, int floorNumber) {
+    public Villa(String roomStandard, String facilites, String areaSwimmingPool, int numberOfFloor) {
         this.roomStandard = roomStandard;
         this.facilites = facilites;
         this.areaSwimmingPool = areaSwimmingPool;
-        this.floorNumber = floorNumber;
+        this.numberOfFloor = numberOfFloor;
     }
 
-    public Villa(String id, String serviceName, float areaUsing, double roomRates, int guestNumberMax, String typeRental, String roomStandard, String facilites, String areaSwimmingPool, int floorNumber) {
-        super(id, serviceName, areaUsing, roomRates, guestNumberMax, typeRental);
+    public Villa(String id, String serviceName, float areaUsing, double rentalFee, int maxOccupancy, String typeRental, String roomStandard, String facilites, String areaSwimmingPool, int numberOfFloor) {
+        super(id, serviceName, areaUsing, rentalFee, maxOccupancy, typeRental);
         this.roomStandard = roomStandard;
         this.facilites = facilites;
         this.areaSwimmingPool = areaSwimmingPool;
-        this.floorNumber = floorNumber;
+        this.numberOfFloor = numberOfFloor;
     }
 
     public String getRoomStandard() {
@@ -37,8 +37,8 @@ public class Villa extends Services {
         return areaSwimmingPool;
     }
 
-    public int getFloorNumber() {
-        return floorNumber;
+    public int getnumberOfFloor() {
+        return numberOfFloor;
     }
 
     public void setRoomStandard(String roomStandard) {
@@ -53,8 +53,8 @@ public class Villa extends Services {
         this.areaSwimmingPool = areaSwimmingPool;
     }
 
-    public void setFloorNumber(int floorNumber) {
-        this.floorNumber = floorNumber;
+    public void setnumberOfFloor(int numberOfFloor) {
+        this.numberOfFloor = numberOfFloor;
     }
 
     @Override
@@ -63,7 +63,7 @@ public class Villa extends Services {
                 "roomStandard='" + roomStandard + '\'' +
                 ", facilites='" + facilites + '\'' +
                 ", areaSwimmingPool=" + areaSwimmingPool +
-                ", floorNumber=" + floorNumber +
+                ", numberOfFloor=" + numberOfFloor +
                 '}';
     }
 }
