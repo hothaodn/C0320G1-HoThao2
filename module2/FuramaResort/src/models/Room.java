@@ -27,9 +27,8 @@ public class Room extends Services {
 
     @Override
     public String showInfor() {
-        return "Room{" + super.toString() +
-                "complimentary='" + complimentary + '\'' +
-                '}';
+        return "***************** ROOM *****************" + super.toString() +
+                "\nComplimentary: " + complimentary;
     }
 
 }

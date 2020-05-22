@@ -1,11 +1,8 @@
 package controllers;
 
-import commons.Menu;
 import models.*;
 import service.ServiceInterface;
 import service.impl.*;
-import controllers.*;
-import sun.applet.Main;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -15,56 +12,31 @@ public class ServiceController {
     private static ServiceInterface houseService = new HouseServiceImpl();
     private static ServiceInterface roomService = new RoomServiceImpl();
 
-    public static void processMenuAddNewServices(){
-        Scanner input = new Scanner(System.in);
-        //String number = input.nextLine();
-        switch (input.nextLine()){
-            case "1":
-                addVillaService();
-                break;
-            case "2":
-                addHouseService();
-                break;
-            case "3":
-
-                break;
-            case "4":
-                MainController.processMain();
-                break;
-            case "5":
-                System.exit(0);
-                break;
-            default:
-                System.out.println("Fail. Please choose number of menu exactly. Enter to continue...");
-                MainController.processMain();
-                break;
-        }
-    }
-
+    //=============================== ADD NEW SERVICE ===============================
     public static void addVillaService(){
         Scanner input = new Scanner(System.in);
         System.out.println("How many villa services do you want to add? ");
         int length = Integer.parseInt(input.nextLine());
-        ArrayList<Villa> villaList = new ArrayList<Villa>(length);
-
+        ArrayList<Villa> villaList = FuncReadServicesFileCSV.getFileCSVVilla();
         for ( int i = 0; i < length; i++){
             Villa villa = (Villa) villaService.addNewService();
             villaList.add(villa);
         }
-        FuncRecordAndReadFileCSV.recordFileCSV(villaList);
+        FuncRecordServicesFileCSV.recordFileCSVVilla(villaList);
         MainController.processMain();
     }
 
     public static void addHouseService(){
         Scanner input = new Scanner(System.in);
-        System.out.println("How many house services do you want to add? ");
+        System.out.println("How many houses services do you want to add? ");
         int length = Integer.parseInt(input.nextLine());
-        ArrayList<House> houseList = new ArrayList<House>(length);
+        ArrayList<House> houseList = FuncReadServicesFileCSV.getFileCSVHouse();
 
         for ( int i = 0; i < length; i++){
             House house = (House) houseService.addNewService();
             houseList.add(house);
         }
+        FuncRecordServicesFileCSV.recordFileCSVHouse(houseList);
         MainController.processMain();
     }
 
@@ -72,12 +44,34 @@ public class ServiceController {
         Scanner input = new Scanner(System.in);
         System.out.println("How many rooms services do you want to add? ");
         int length = Integer.parseInt(input.nextLine());
-        ArrayList<Room> roomList = new ArrayList<Room>(length);
+        ArrayList<Room> roomList = FuncReadServicesFileCSV.getFileCSVRoom();
 
         for ( int i = 0; i < length; i++){
             Room room = (Room) roomService.addNewService();
             roomList.add(room);
         }
+        FuncRecordServicesFileCSV.recordFileCSVRoom(roomList);
         MainController.processMain();
+    }
+    //=============================== SHOW SERVICE ===============================
+    public static void showAllVillaServices(){
+        ArrayList<Villa> list = FuncReadServicesFileCSV.getFileCSVVilla();
+        for(Villa element : list){
+            System.out.println(element.showInfor());
+        }
+    }
+
+    public static void showAllHouseServices(){
+        ArrayList<House> list = FuncReadServicesFileCSV.getFileCSVHouse();
+        for(House element : list){
+            System.out.println(element.showInfor());
+        }
+    }
+
+    public static void showAllRoomServices(){
+        ArrayList<Room> list = FuncReadServicesFileCSV.getFileCSVRoom();
+        for(Room element : list){
+            System.out.println(element.showInfor());
+        }
     }
 }

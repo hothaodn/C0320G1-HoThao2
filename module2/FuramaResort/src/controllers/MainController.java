@@ -1,8 +1,8 @@
 package controllers;
 
-import service.*;
-import service.impl.*;
-import commons.*;
+import service.impl.CustomerImpl;
+import views.*;
+import service.impl.CustomerImpl;
 
 import java.util.Scanner;
 
@@ -18,26 +18,20 @@ public class MainController {
         }
     }
 
-    //static void getBackMainMenu() {
-        //Menu.displayMainMenu();
-        //processMain();
-    //}
-
     public static void processMainMenu(){
         Scanner input = new Scanner(System.in);
         switch (input.nextLine()){
             case "1":
                 Menu.menuAddNewServices();
-                ServiceController.processMenuAddNewServices();
                 break;
             case "2":
-
+                Menu.menuShowServices();
                 break;
             case "3":
-                CustomerController.addNewCustomers();
+                CustomerController.addNewCustomer();
                 break;
             case "4":
-                CustomerController.showCustomersInfo();
+                CustomerController.showInformationCustomers();
                 break;
             case "5":
                 BookingController.addnewBooking();

@@ -1,2 +1,6 @@
 id,service name,area use, rental fee, max occ, type of rent, room's standard, facilities, swimming pool, number of floor, 
-4,fg,34.0,34.0,34,hi,ho,df,56,2
+1,vila,120,100,4,long term,vip,full,23,2,
+2,villa,300,200,5,long term,vvip,max,45,5,
+3,vila,120,100,4,long term,vip,max,23,2,
+4,villa,200,200,5,long term,vvip,max,45,5,
+5,villa 2,150,200,6,business,deluxe,full,20,3,

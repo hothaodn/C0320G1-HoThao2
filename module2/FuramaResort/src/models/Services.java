@@ -76,13 +76,11 @@ public abstract class Services {
     public abstract String showInfor();
 
     public String toString() {
-        return "Services{" +
-                "id='" + id + '\'' +
-                ", serviceName='" + serviceName + '\'' +
-                ", areaUsing=" + areaUsing +
-                ", rentalFee=" + rentalFee +
-                ", maxOccupancy=" + maxOccupancy +
-                ", typeRental='" + typeRental + '\'' +
-                '}';
+        return "\nID: " + id
+                + "\nServiceName: " + serviceName
+                +"\nArea Using: " + areaUsing
+                + "\nRental Fee: " + rentalFee
+                +"\nMax Occupancy: " + maxOccupancy
+                +"\nType of Rental: " + typeRental;
     }
 }
