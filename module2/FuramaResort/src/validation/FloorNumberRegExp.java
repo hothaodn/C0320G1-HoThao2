@@ -1,4 +1,4 @@
-package regExp;
+package validation;
 
 public class FloorNumberRegExp {
 }

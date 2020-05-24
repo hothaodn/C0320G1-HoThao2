@@ -1,3 +1,2 @@
-
-id,service name,area use, rental fee, max occ, type of rent, complimentary 
-1,house,23.0,40.0,2,business,apple
+ID,Service Name,Area Use,Rental Fee,Max Occ,Type of Rent,Complimentary
+1,House 1,59.0,300.0,2,ro,banana

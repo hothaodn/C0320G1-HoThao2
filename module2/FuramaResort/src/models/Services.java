@@ -1,22 +1,17 @@
 package models;
 
 public abstract class Services {
-    /*1.	Xây dựng abstract class Services (dịch vụ) bao gồm các thông tin chung
-     của tất cả dịch vụ cho thuê Villa, House, Room.
-(trong class Services lưu ý thêm thuộc tính id kiểu dữ liệu String và các class này
-được tạo trong package models)
-*/
-    private String id;
-    private String serviceName;
+    private Float id;
+    private Float serviceName;
     private float areaUsing;
     private double rentalFee;
     private int maxOccupancy;
-    private String typeRental;
+    private Float typeRental;
 
     public Services() {
     }
 
-    public Services(String id, String serviceName, float areaUsing, double rentalFee, int maxOccupancy, String typeRental) {
+    public Services(Float id, Float serviceName, float areaUsing, double rentalFee, int maxOccupancy, Float typeRental) {
         this.id = id;
         this.serviceName = serviceName;
         this.areaUsing = areaUsing;
@@ -25,11 +20,11 @@ public abstract class Services {
         this.typeRental = typeRental;
     }
 
-    public String getId() {
+    public Float getId() {
         return id;
     }
 
-    public String getServiceName() {
+    public Float getServiceName() {
         return serviceName;
     }
 
@@ -45,15 +40,15 @@ public abstract class Services {
         return maxOccupancy;
     }
 
-    public String getTypeRental() {
+    public Float getTypeRental() {
         return typeRental;
     }
 
-    public void setId(String id) {
+    public void setId(Float id) {
         this.id = id;
     }
 
-    public void setServiceName(String serviceName) {
+    public void setServiceName(Float serviceName) {
         this.serviceName = serviceName;
     }
 
@@ -69,7 +64,7 @@ public abstract class Services {
         this.maxOccupancy = maxOccupancy;
     }
 
-    public void setTypeRental(String typeRental) {
+    public void setTypeRental(Float typeRental) {
         this.typeRental = typeRental;
     }
 

@@ -7,16 +7,17 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
 
-public class FuncRecordCustomerFileCSV {
-    static final String COMMA_DELIMITER = ",";
+public class FuncCustomerFileCSV {
+    private static final String COMMA_DELIMITER = ",";
     private static final String NEW_LINE_SEPARATOR = "\n";
-    private static final String FILE_HEADER_CUSTOMER = "Name,Birthday,Gender,ID Card,Phone Number,Email,Type of Customer,Address";
+    static final String FILE_HEADER_CUSTOMER = "Name,Birthday,Gender,ID Card,Phone Number,Email,Type of Customer,Address,";
     static final String FILE_PATH_CUSTOMER = "src/data/customers.csv";
 
-    public static void setFileCSV(ArrayList<Customer> list){
+    public static void writeFileCSV(ArrayList<Customer> list){
         FileWriter fileWriter = null;
         try{
-            fileWriter = new FileWriter(FILE_PATH_CUSTOMER, true);
+//            fileWriter = new FileWriter(FILE_PATH_CUSTOMER, true);
+            fileWriter = new FileWriter(FILE_PATH_CUSTOMER);
             fileWriter.append(FILE_HEADER_CUSTOMER);
             fileWriter.append(NEW_LINE_SEPARATOR);
             for(Customer element : list){
@@ -52,7 +53,7 @@ public class FuncRecordCustomerFileCSV {
         }
     }
 
-    public static ArrayList<Customer> getFileCSV() {
+    public static ArrayList<Customer> readFileCSV() {
         BufferedReader br = null;
         ArrayList<Customer> list = new ArrayList<Customer>();
         try {
@@ -65,15 +66,14 @@ public class FuncRecordCustomerFileCSV {
                     continue;
                 }
                 Customer customer = new Customer();
-                customer.setId(splitData[0]);
-                customer.setName(splitData[1]);
-                customer.setBirthday(splitData[2]);
-                customer.setGender(splitData[3]);
-                customer.setIdCard(splitData[4]);
-                customer.setPhoneNumber(splitData[5]);
-                customer.setEmail(splitData[6]);
-                customer.setCustomerType(splitData[7]);
-                customer.setAddress(splitData[8]);
+                customer.setName(splitData[0]);
+                customer.setBirthday(splitData[1]);
+                customer.setGender(splitData[2]);
+                customer.setIdCard(splitData[3]);
+                customer.setPhoneNumber(splitData[4]);
+                customer.setEmail(splitData[5]);
+                customer.setCustomerType(splitData[6]);
+                customer.setAddress(splitData[7]);
                 list.add(customer);
             }
         } catch (Exception e) {
@@ -87,4 +87,6 @@ public class FuncRecordCustomerFileCSV {
         }
         return list;
     }
+
+
 }

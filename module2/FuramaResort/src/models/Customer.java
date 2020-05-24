@@ -1,13 +1,6 @@
 package models;
 
-public class Customer extends Services {
-    /*1.	Tạo class có tên là Customer với các thuộc tính như sau:
-    Họ tên Customer, Ngày sinh, Giới tính, Số CMND, Số ĐT, Email, Loại khách,
-    Địa chỉ và thuộc tính sử dụng dịch vụ có kiểu đối tượng là Services, và phương thức showInfor().
-    2.	Xây dựng phương thức addNewCustomer() cho phép người dùng nhập thông tin cho Customer sau đó lưu vào file Customer.CSV.
-    3.	Xây dựng phương thức showInformationCustomers() cho phép người dùng sau khi chọn sẽ hiển thị ra toàn bộ thông tin
-    của các Customer có trong file Customer.CSV.
-*/
+public class Customer{
     private String name;
     private String birthday;
     private String gender;
@@ -16,8 +9,21 @@ public class Customer extends Services {
     private String email;
     private String customerType;
     private String address;
+    private Services service;
 
     public Customer() {
+    }
+
+    public Customer(String name, String birthday, String gender, String idCard, String phoneNumber, String email, String customerType, String address, Services service) {
+        this.name = name;
+        this.birthday = birthday;
+        this.gender = gender;
+        this.idCard = idCard;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.customerType = customerType;
+        this.address = address;
+        this.service = service;
     }
 
     public Customer(String name, String birthday, String gender, String idCard, String phoneNumber, String email, String customerType, String address) {
@@ -29,6 +35,9 @@ public class Customer extends Services {
         this.email = email;
         this.customerType = customerType;
         this.address = address;
+    }
+
+    public Customer(String splitDatum, String splitDatum1, String splitDatum2, String splitDatum3, String splitDatum4, String splitDatum5, String splitDatum6, String splitDatum7, String splitDatum8, String splitDatum9, String splitDatum10, String splitDatum11, String splitDatum12, String splitDatum13) {
     }
 
     public String getName() {
@@ -95,7 +104,14 @@ public class Customer extends Services {
         this.address = address;
     }
 
-    @Override
+    public Services getService() {
+        return service;
+    }
+
+    public void setService(Services service) {
+        this.service = service;
+    }
+
     public String showInfor() {
         return "***************** CUSTOMER *****************"
                 +"\nName: " + name

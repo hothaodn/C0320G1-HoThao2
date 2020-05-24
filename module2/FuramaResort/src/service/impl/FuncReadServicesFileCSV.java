@@ -8,16 +8,16 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class FuncReadServicesFileCSV {
-    public static ArrayList<Villa> getFileCSVVilla() {
+    public static ArrayList<Villa> readFileCSVVilla() {
         BufferedReader br = null;
         ArrayList<Villa> list = new ArrayList<Villa>();
         try {
-            br = new BufferedReader(new FileReader(FuncRecordServicesFileCSV.FILE_PATH_VILLA));
+            br = new BufferedReader(new FileReader(FuncWriteServicesFileCSV.FILE_PATH_VILLA));
             String line = "";
             while (line != null) {
                 line = br.readLine();
-                String[] splitData = line.split(FuncRecordServicesFileCSV.COMMA_DELIMITER);
-                if (splitData[0].equals("id")) {
+                Float[] splitData = line.split(FuncWriteServicesFileCSV.COMMA_DELIMITER);
+                if (splitData[0].equals("ID")) {
                     continue;
                 }
                 Villa svc = new Villa();
@@ -45,16 +45,16 @@ public class FuncReadServicesFileCSV {
         return list;
     }
 
-    public static ArrayList<House> getFileCSVHouse() {
+    public static ArrayList<House> readFileCSVHouse() {
         BufferedReader br = null;
         ArrayList<House> list = new ArrayList<House>();
         try {
-            br = new BufferedReader(new FileReader(FuncRecordServicesFileCSV.FILE_PATH_HOUSE));
+            br = new BufferedReader(new FileReader(FuncWriteServicesFileCSV.FILE_PATH_HOUSE));
             String line = "";
             while (line != null) {
                 line = br.readLine();
-                String[] splitData = line.split(FuncRecordServicesFileCSV.COMMA_DELIMITER);
-                if (splitData[0].equals("id")) {
+                Float[] splitData = line.split(FuncWriteServicesFileCSV.COMMA_DELIMITER);
+                if (splitData[0].equals("ID")) {
                     continue;
                 }
                 House svc = new House();
@@ -81,16 +81,16 @@ public class FuncReadServicesFileCSV {
         return list;
     }
 
-    public static ArrayList<Room> getFileCSVRoom() {
+    public static ArrayList<Room> readFileCSVRoom() {
         BufferedReader br = null;
         ArrayList<Room> list = new ArrayList<Room>();
         try {
-            br = new BufferedReader(new FileReader(FuncRecordServicesFileCSV.FILE_PATH_ROOM));
+            br = new BufferedReader(new FileReader(FuncWriteServicesFileCSV.FILE_PATH_ROOM));
             String line = "";
             while (line != null) {
                 line = br.readLine();
-                String[] splitData = line.split(FuncRecordServicesFileCSV.COMMA_DELIMITER);
-                if (splitData[0].equals("id")) {
+                Float[] splitData = line.split(FuncWriteServicesFileCSV.COMMA_DELIMITER);
+                if (splitData[0].equals("ID")) {
                     continue;
                 }
                 Room svc = new Room();

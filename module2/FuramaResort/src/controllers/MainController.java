@@ -1,8 +1,6 @@
 package controllers;
 
-import service.impl.CustomerImpl;
 import views.*;
-import service.impl.CustomerImpl;
 
 import java.util.Scanner;
 
