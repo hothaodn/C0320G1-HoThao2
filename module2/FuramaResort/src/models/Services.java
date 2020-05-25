@@ -1,17 +1,17 @@
 package models;
 
 public abstract class Services {
-    private Float id;
-    private Float serviceName;
+    private String id;
+    private String serviceName;
     private float areaUsing;
     private double rentalFee;
     private int maxOccupancy;
-    private Float typeRental;
+    private String typeRental;
 
     public Services() {
     }
 
-    public Services(Float id, Float serviceName, float areaUsing, double rentalFee, int maxOccupancy, Float typeRental) {
+    public Services(String id, String serviceName, float areaUsing, double rentalFee, int maxOccupancy, String typeRental) {
         this.id = id;
         this.serviceName = serviceName;
         this.areaUsing = areaUsing;
@@ -20,11 +20,11 @@ public abstract class Services {
         this.typeRental = typeRental;
     }
 
-    public Float getId() {
+    public String getId() {
         return id;
     }
 
-    public Float getServiceName() {
+    public String getServiceName() {
         return serviceName;
     }
 
@@ -40,15 +40,15 @@ public abstract class Services {
         return maxOccupancy;
     }
 
-    public Float getTypeRental() {
+    public String getTypeRental() {
         return typeRental;
     }
 
-    public void setId(Float id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public void setServiceName(Float serviceName) {
+    public void setServiceName(String serviceName) {
         this.serviceName = serviceName;
     }
 
@@ -64,7 +64,7 @@ public abstract class Services {
         this.maxOccupancy = maxOccupancy;
     }
 
-    public void setTypeRental(Float typeRental) {
+    public void setTypeRental(String typeRental) {
         this.typeRental = typeRental;
     }
 

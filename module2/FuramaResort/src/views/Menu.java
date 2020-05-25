@@ -74,10 +74,13 @@ public class Menu {
                 ServiceController.showAllRoomServices();
                 break;
             case 4:
+                ServiceController.showAllServicesNotDuplicate("src/data/villas.csv");
                 break;
             case 5:
+                ServiceController.showAllServicesNotDuplicate("src/data/houses.csv");
                 break;
             case 6:
+                ServiceController.showAllServicesNotDuplicate("src/data/rooms.csv");
                 break;
             case 7:
                 MainController.processMain();

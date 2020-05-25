@@ -2,22 +2,22 @@ package models;
 
 public class Villa extends Services {
     //-	Riêng Villa sẽ có thêm thông tin: Tiêu chuẩn phòng, Mô tả tiện nghi khác, Diện tích hồ bơi, Số tầng
-    private Float roomStandard;
-    private Float facilites;
-    private Float areaSwimmingPool;
+    private String roomStandard;
+    private String facilites;
+    private float areaSwimmingPool;
     private int numberOfFloor;
 
     public Villa() {
     }
 
-    public Villa(Float roomStandard, Float facilites, Float areaSwimmingPool, int numberOfFloor) {
+    public Villa(String roomStandard, String facilites, Float areaSwimmingPool, int numberOfFloor) {
         this.roomStandard = roomStandard;
         this.facilites = facilites;
         this.areaSwimmingPool = areaSwimmingPool;
         this.numberOfFloor = numberOfFloor;
     }
 
-    public Villa(Float id, Float serviceName, float areaUsing, double rentalFee, int maxOccupancy, Float typeRental, Float roomStandard, Float facilites, Float areaSwimmingPool, int numberOfFloor) {
+    public Villa(String id, String serviceName, float areaUsing, double rentalFee, int maxOccupancy, String typeRental, String roomStandard, String facilites, Float areaSwimmingPool, int numberOfFloor) {
         super(id, serviceName, areaUsing, rentalFee, maxOccupancy, typeRental);
         this.roomStandard = roomStandard;
         this.facilites = facilites;
@@ -25,11 +25,11 @@ public class Villa extends Services {
         this.numberOfFloor = numberOfFloor;
     }
 
-    public Float getRoomStandard() {
+    public String getRoomStandard() {
         return roomStandard;
     }
 
-    public Float getFacilites() {
+    public String getFacilites() {
         return facilites;
     }
 
@@ -41,15 +41,15 @@ public class Villa extends Services {
         return numberOfFloor;
     }
 
-    public void setRoomStandard(Float roomStandard) {
+    public void setRoomStandard(String roomStandard) {
         this.roomStandard = roomStandard;
     }
 
-    public void setFacilites(Float facilites) {
+    public void setFacilites(String facilites) {
         this.facilites = facilites;
     }
 
-    public void setAreaSwimmingPool(Float areaSwimmingPool) {
+    public void setAreaSwimmingPool(float areaSwimmingPool) {
         this.areaSwimmingPool = areaSwimmingPool;
     }
 

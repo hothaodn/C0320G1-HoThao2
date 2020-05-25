@@ -5,19 +5,20 @@ import models.*;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class FuncWriteServicesFileCSV {
     static final String COMMA_DELIMITER = ",";
     private static final String NEW_LINE_SEPARATOR = "\n";
     static final String FILE_HEADER_SERVICE = "ID,Service Name,Area Use,Rental Fee,Max Occ,Type of Rent,";
-    private static final String FILE_HEADER_VILLA = FILE_HEADER_SERVICE + "Room Standard,Facilities,Swimming Pool,Number of Floor";
-    private static final String FILE_HEADER_HOUSE = FILE_HEADER_SERVICE + "Room Standard,Facilities,Number of Floor";
-    private static final String FILE_HEADER_ROOM = FILE_HEADER_SERVICE + "Complimentary";
+    static final String FILE_HEADER_VILLA = FILE_HEADER_SERVICE + "Room Standard,Facilities,Swimming Pool,Number of Floor,";
+    static final String FILE_HEADER_HOUSE = FILE_HEADER_SERVICE + "Room Standard,Facilities,Number of Floor,";
+    static final String FILE_HEADER_ROOM = FILE_HEADER_SERVICE + "Complimentary,";
     static final String FILE_PATH_VILLA = "src/data/villas.csv";
     static final String FILE_PATH_HOUSE = "src/data/houses.csv";
     static final String FILE_PATH_ROOM = "src/data/rooms.csv";
 
-    public static void writeFileCSVVilla(ArrayList<Villa> villaList){
+    public static void writeFileCSVVilla(List<Villa> villaList){
         FileWriter fileWriter = null;
         try{
             fileWriter = new FileWriter(FILE_PATH_VILLA);
@@ -40,7 +41,7 @@ public class FuncWriteServicesFileCSV {
                 fileWriter.append(COMMA_DELIMITER);
                 fileWriter.append(element.getFacilites());
                 fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(element.getAreaSwimmingPool());
+                fileWriter.append(String.valueOf(element.getAreaSwimmingPool()));
                 fileWriter.append(COMMA_DELIMITER);
                 fileWriter.append(String.valueOf(element.getnumberOfFloor()));
                 fileWriter.append(NEW_LINE_SEPARATOR);
@@ -60,7 +61,7 @@ public class FuncWriteServicesFileCSV {
         }
     }
 
-    public static void writeFileCSVHouse(ArrayList<House> houseList){
+    public static void writeFileCSVHouse(List<House> houseList){
         FileWriter fileWriter = null;
         try{
 //            fileWriter = new FileWriter(FILE_PATH_HOUSE,true);
@@ -102,7 +103,7 @@ public class FuncWriteServicesFileCSV {
         }
     }
 
-    public static void writeFileCSVRoom(ArrayList<Room> roomList){
+    public static void writeFileCSVRoom(List<Room> roomList){
         FileWriter fileWriter = null;
         try{
             fileWriter = new FileWriter(FILE_PATH_ROOM);

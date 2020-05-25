@@ -4,8 +4,7 @@ import models.*;
 import service.ServiceInterface;
 import service.impl.*;
 
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 public class ServiceController {
     private static ServiceInterface villaService = new VillaServiceImpl();
@@ -17,7 +16,7 @@ public class ServiceController {
         Scanner input = new Scanner(System.in);
         System.out.println(">>>>>>>>>>>>>>>> How many villa services do you want to add? ");
         int length = Integer.parseInt(input.nextLine());
-        ArrayList<Villa> villaList = FuncReadServicesFileCSV.readFileCSVVilla();
+        List<Villa> villaList = FuncReadServicesFileCSV.readFileCSVVilla();
         for ( int i = 0; i < length; i++){
             Villa villa = (Villa) villaService.addNewService();
             villaList.add(villa);
@@ -30,7 +29,7 @@ public class ServiceController {
         Scanner input = new Scanner(System.in);
         System.out.println(">>>>>>>>>>>>>>>> How many houses services do you want to add? ");
         int length = Integer.parseInt(input.nextLine());
-        ArrayList<House> houseList = FuncReadServicesFileCSV.readFileCSVHouse();
+        List<House> houseList = FuncReadServicesFileCSV.readFileCSVHouse();
 
         for ( int i = 0; i < length; i++){
             House house = (House) houseService.addNewService();
@@ -44,7 +43,7 @@ public class ServiceController {
         Scanner input = new Scanner(System.in);
         System.out.println(">>>>>>>>>>>>>>>> How many rooms services do you want to add? ");
         int length = Integer.parseInt(input.nextLine());
-        ArrayList<Room> roomList = FuncReadServicesFileCSV.readFileCSVRoom();
+        List<Room> roomList = FuncReadServicesFileCSV.readFileCSVRoom();
 
         for ( int i = 0; i < length; i++){
             Room room = (Room) roomService.addNewService();
@@ -55,23 +54,31 @@ public class ServiceController {
     }
     //=============================== SHOW SERVICE ===============================
     public static void showAllVillaServices(){
-        ArrayList<Villa> list = FuncReadServicesFileCSV.readFileCSVVilla();
-        for(Villa element : list){
+        List<Villa> villaList = FuncReadServicesFileCSV.readFileCSVVilla();
+        for(Villa element : villaList){
             System.out.println(element.showInfor());
         }
     }
 
     public static void showAllHouseServices(){
-        ArrayList<House> list = FuncReadServicesFileCSV.readFileCSVHouse();
+        List<House> list = FuncReadServicesFileCSV.readFileCSVHouse();
         for(House element : list){
             System.out.println(element.showInfor());
         }
     }
 
     public static void showAllRoomServices(){
-        ArrayList<Room> list = FuncReadServicesFileCSV.readFileCSVRoom();
+        List<Room> list = FuncReadServicesFileCSV.readFileCSVRoom();
         for(Room element : list){
             System.out.println(element.showInfor());
+        }
+    }
+
+    public static void showAllServicesNotDuplicate(String path){
+        TreeSet<String> nameList = FuncReadServicesFileCSV.getAllNameServiceFromFileCSV(path);
+        for(String element: nameList){
+            System.out.println(element);
+            System.out.println("====================");
         }
     }
 }

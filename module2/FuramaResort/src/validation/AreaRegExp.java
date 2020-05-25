@@ -9,20 +9,20 @@ public class AreaRegExp extends Exception {
         super(message, cause);
     }
 
-    public Float areaLivingRegExp(Float area) throws AreaRegExp{
-        String patternArea =
-        if(){
-            return area;
-        }else{
-            throw new AreaRegExp("Must be larger than 30m2");
-        }
-    }
+//    public Float areaLivingRegExp(Float area) throws AreaRegExp{
+//        String patternArea =
+//        if(){
+//            return area;
+//        }else{
+//            throw new AreaRegExp("Must be larger than 30m2");
+//        }
+//    }
 
-    public Float areaPoolRegExp(Float area) throws AreaRegExp{
-        if(){
-            return area;
-        }else{
-            throw new AreaRegExp("Must be larger than 30m2");
-        }
-    }
+//    public Float areaPoolRegExp(Float area) throws AreaRegExp{
+//        if(){
+//            return area;
+//        }else{
+//            throw new AreaRegExp("Must be larger than 30m2");
+//        }
+//    }
 }

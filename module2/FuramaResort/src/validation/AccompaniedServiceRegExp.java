@@ -8,7 +8,7 @@ public class AccompaniedServiceRegExp extends Exception {
     }
 
     public String accompaniedServiceRegExp(String accompaniedServiceName) throws AccompaniedServiceRegExp {
-        if(accompaniedServiceName == "Massage" || accompaniedServiceName == "Karaoke" || accompaniedServiceName == "Food"
+        if(accompaniedServiceName == "Massage" || accompaniedServiceName == "Karaoke" || accompaniedServiceName == "Food" ||
             accompaniedServiceName == "Drink" || accompaniedServiceName == "Car"){
             return accompaniedServiceName;
         }else{

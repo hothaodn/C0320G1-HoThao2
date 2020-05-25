@@ -35,7 +35,7 @@ public class MainController {
                 BookingController.addnewBooking();
                 break;
             case "6":
-                EmployeesController.showEmployeesInfo();
+                EmployeeController.showEmployeesInfo();
                 break;
             case "7":
                 System.exit(0);

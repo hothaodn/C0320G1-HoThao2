@@ -19,7 +19,7 @@ public class VillaServiceImpl extends CommonServiceImpl implements ServiceInterf
         ((Villa) villa).setFacilites(input.nextLine());
 
         System.out.println("Area of SwimmingPool: ");
-        ((Villa) villa).setAreaSwimmingPool(input.nextLine());
+        ((Villa) villa).setAreaSwimmingPool(Float.parseFloat(input.nextLine()));
 
         System.out.println("Number Of Floor: ");
         ((Villa) villa).setnumberOfFloor(Integer.parseInt(input.nextLine()));
