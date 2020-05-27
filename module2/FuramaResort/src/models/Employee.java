@@ -4,6 +4,7 @@ public class Employee {
 //    Họ tên Employee , Ngày sinh, Số CMND, Số ĐT, Email, Trình độ, Vị trí, lương
 //    Trình độ sẽ lưu trữ các thông tin: Trung cấp, Cao đẳng, Đại học và sau đại học
 //    Vị trí sẽ lưu trữ các thông tin: Lễ tân, phục vụ, chuyên viên, giám sát, quản lý, giá đốc.
+    private String id;
     private String name;
     private String birthday;
     private String idCard;
@@ -16,7 +17,8 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(String name, String birthday, String idCard, String phoneNumber, String email, String educationLevel, String position, double salary) {
+    public Employee(String id, String name, String birthday, String idCard, String phoneNumber, String email, String educationLevel, String position, double salary) {
+        this.id = id;
         this.name = name;
         this.birthday = birthday;
         this.idCard = idCard;
@@ -25,6 +27,10 @@ public class Employee {
         this.educationLevel = educationLevel;
         this.position = position;
         this.salary = salary;
+    }
+
+    public String getId() {
+        return id;
     }
 
     public String getName() {
@@ -57,6 +63,10 @@ public class Employee {
 
     public double getSalary() {
         return salary;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public void setName(String name) {
