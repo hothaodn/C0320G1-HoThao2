@@ -310,21 +310,19 @@ select HopDong.IDHopDong, NhanVien.HoTen as TenNhanVien, KhachHang.HoTen as TenK
     
 /*13.Hiển thị thông tin các Dịch vụ đi kèm được sử dụng nhiều nhất bởi các Khách hàng đã đặt phòng. 
 (Lưu ý là có thể có nhiều dịch vụ có số lần sử dụng nhiều như nhau).*/
-select DichVuDiKem.TenDichVuDiKem as DichVuSuDungNhieuNhat,count(HopDongChiTiet.IDDichVuDiKem) as SoLanSuDung from DichVuDiKem
+create temporary table temp1
+	select DichVuDiKem.TenDichVuDiKem as DichVuDiKem,count(HopDongChiTiet.IDDichVuDiKem) as SoLanSuDung from DichVuDiKem
 	inner join HopDongChiTiet on DichVuDiKem.IdDichVuDiKem = HopDongChiTiet.IdDichVuDiKem
     group by DichVuDiKem.TenDichVuDiKem
     order by count(HopDongChiTiet.IDDichVuDiKem) desc;
+select * from temp1;
+
+create temporary table findMax
+	select temp1.DichVuDiKem,max(temp1.SoLanSuDung) as SoLanSuDungDichVuNhieuNhat from temp1;
+select * from findMax;
     
-select temp.dichvu, DichVuDiKem.TenDichVuDiKem as LoaiDV, count(HopDongChiTiet.IDDichVuDiKem) as SoLanSuDung
-	from (select 1 as dichvu
-	union select 2 as dichvu
-	union select 3 as dichvu
-	union select 4 as dichvu
-	union select 5 as dichvu
-	union select 6 as dichvu) as temp
-		join DichVuDiKem on temp.dichvu = DichVuDiKem.IdDichVuDiKem
-	where exists(select temp.dichvu from temp where max(SoLanSuDung))
-		group by temp.dichvu;
+drop temporary table temp1;
+drop temporary table findMax;
         
 /*14.Hiển thị thông tin tất cả các Dịch vụ đi kèm chỉ mới được sử dụng một lần duy nhất. 
 Thông tin hiển thị bao gồm IDHopDong, TenLoaiDichVu, TenDichVuDiKem, SoLanSuDung.*/
@@ -351,9 +349,22 @@ delete from NhanVien
 		and exists(select HopDong.IDNhanVien from HopDong having count(HopDong.IDNhanVien) = 0);
         
 /*17.Cập nhật thông tin những khách hàng có TenLoaiKhachHang từ  Platinium lên Diamond, 
-chỉ cập nhật những khách hàng đã từng đặt phòng với tổng Tiền thanh toán trong năm 2019 là lớn hơn 10.000.000 VNĐ.*/
+chỉ cập nhật những khách hàng đã từng đặt phòng với tổng Tiền thanh toán trong năm 2019 là lớn hơn 10.000.000 VNĐ.(fix: 150.000.000)*/
+create temporary table TongTienThanhToan_temp
+	select KhachHang.IDKhachHang,KhachHang.HoTen,KhachHang.IDLoaiKhach,sum(DichVu.ChiPhiThue + HopDongChiTiet.SoLuong*DichVuDiKem.Gia) as 'tong_tien_thanh_toan' from KhachHang
+		inner join HopDong on HopDong.IDKhachHang = KhachHang.IDKhachHang
+		inner join DichVu on HopDong.IDDichVu = DichVu.IDDichVu
+		inner join LoaiKhach on KhachHang.IDLoaiKhach = LoaiKhach.IDLoaiKhach
+		inner join HopDongChiTiet on HopDong.IDHopDong = HopDongChiTiet.IDHopDong
+		inner join DichVuDiKem on HopDongChiTiet.IDDichVuDiKem = DichVuDiKem.IDDichVuDiKem
+			group by KhachHang.IDKhachHang;
+select * from TongTienThanhToan_temp;
+	
+update KhachHang set KhachHang.IDLoaiKhach = 1
+	where exists(select TongTienThanhToan_temp.IDKhachHang from TongTienThanhToan_temp where TongTienThanhToan_temp.tong_tien_thanh_toan > 400000000
+    and KhachHang.IDLoaiKhach = 2);
 
-
+drop temporary table TongTienThanhToan_temp;
 
 
 
