@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a492d2d7-b45f-4a4a-889c-41461f0e8670" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../module1/10-GiaiThuat/BaiTap/debug" beforeDir="false" afterPath="$PROJECT_DIR$/../../module1/10-GiaiThuat/BaiTap/debug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module1/CaseStudy/req-6-task-2/req-6-task-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../module1/CaseStudy/req-6-task-2/req-6-task-2.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="spring-beans.schema" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="D:\_CODEGYM\C0320G1-HoThao\module2_java_web\SpringMVC\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1d4HOiaJmpAQX5tVHnaBxgaqdTd" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\_CODEGYM\C0320G1-HoThao\module2_java_web\SpringMVC\web\views" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a492d2d7-b45f-4a4a-889c-41461f0e8670" name="Default Changelist" comment="" />
+      <created>1591677414961</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1591677414961</updated>
+      <workItem from="1591677546950" duration="578000" />
+      <workItem from="1591683640449" duration="2912000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="409" y="206" key="com.intellij.ide.util.TipDialog" timestamp="1591683693975">
+      <screen x="62" y="0" width="1304" height="768" />
+    </state>
+    <state x="409" y="206" key="com.intellij.ide.util.TipDialog/62.0.1304.768@62.0.1304.768" timestamp="1591683693975" />
+    <state x="96" y="0" key="new project wizard" timestamp="1591686456664">
+      <screen x="62" y="0" width="1304" height="768" />
+    </state>
+    <state x="96" y="0" key="new project wizard/62.0.1304.768@62.0.1304.768" timestamp="1591686456664" />
+  </component>
+</project>
