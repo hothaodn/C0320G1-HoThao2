@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body style="text-align: center">
+    <div th:replace="layout :: header_homepage"></div>
+
+    <img src="https://afamilycdn.com/150157425591193600/2020/3/8/8-2106-15836480129771188674513.jpg" th:width="200"/>
+    <form method="post" th:action="@{/login}">
+            <center>
+                <h4>Login</h4>
+                <table style="align-content: center">
+                    <tr>
+                        <td>Username</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Password</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td style="text-align: right"><button type="submit">Go</button></td>
+                    </tr>
+                </table>
+            </center>
+    </form>
+
+    <div th:replace="layout :: footer"></div>
+</body>
+</html>

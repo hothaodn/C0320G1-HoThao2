@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+    <div th:replace="layout :: header"></div>
+
+    <form th:action="@{/user/posts/save}" th:method="post" th:object="${post}">
+
+        <table>
+            <tr>
+                <td>Title</td>
+                <td>
+                    <textarea th:field="*{title}" th:rows="1" th:cols="110"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>Url of photo</td>
+                <td>
+                    <textarea th:field="*{avatar_src}" th:rows="1" th:cols="110"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>Blog Content</td>
+                <td>
+                    <textarea th:field="*{content}" th:rows="20" th:cols="110"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td style="text-align: center"><button type="submit">Save</button></td>
+            </tr>
+            <tr>
+                <input type="hidden" th:field="*{id}" readonly>
+                <input type="hidden" th:field="*{userName}" readonly>
+                <input type="hidden" th:field="*{dateWriting}" readonly>
+            </tr>
+        </table>
+
+    </form>
+
+
+    <div th:replace="layout :: footer"></div>
+</body>
+</html>

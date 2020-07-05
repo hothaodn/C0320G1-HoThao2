@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+    <div th:replace="layout :: header_homepage"></div>
+
+    <div th:object="${onePost}">
+        <h3 th:text="*{title}"></h3>
+        <h6><i th:text="|Date: *{dateWriting}|"></i>
+            <i th:text="| - Writer: *{userName}|"></i><br/>
+        </h6>
+            <img th:src="${onePost.avatar_src}" th:width="200"/>
+            <pre th:text="*{content}"></pre>
+<!--        <iframe width="560" height="315" th:src ="*{content}" frameborder="0"-->
+<!--                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>-->
+<!--        </iframe>-->
+    </div>
+
+    <div th:replace="layout :: footer"></div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+
+<body style="text-align: center">
+    <div th:replace="layout :: header_homepage"></div>
+
+    <img src="https://afamilycdn.com/150157425591193600/2020/3/8/8-2106-15836480129771188674513.jpg" th:width="100"/>
+    <pre>Hello you guys ! Welcome to my blog. Hope you find something fun on site ^^</pre>
+    <form method="POST" th:action="@{/register}" th:object="${user}">
+        <center>
+            <h4>Register Form</h4>
+            <div th:if="${message} != null">
+                <span th:text="${message}"></span>
+            </div>
+
+            <table style="align-content: center">
+                <tr>
+                    <td>First Name* </td>
+                    <td><input type="text" th:field="*{firstName}"></td>
+                </tr>
+                <tr>
+                    <td>Last Name* </td>
+                    <td><input type="text" th:field="*{lastName}"></td>
+                </tr>
+                <tr>
+                    <td>Age* </td>
+                    <td><input type="number" th:field="*{age}"></td>
+                </tr>
+                <tr>
+                    <td>Username* </td>
+                    <td><input type="text" th:field="*{userName}"></td>
+                </tr>
+                <tr>
+                    <td>Password* </td>
+                    <td><input type="password" th:field="*{password}"></td>
+                </tr>
+                <tr>
+                    <td>Re-password* </td>
+                    <td><input type="password" th:field="*{rePassword}"></td>
+                </tr>
+                <tr>
+                    <td>Email* </td>
+                    <td><input type="text" th:field="*{email}"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td style="text-align: right"><button type="submit">Go</button></td>
+                </tr>
+            </table>
+        </center>
+    </form>
+
+    <div th:replace="layout :: footer"></div>
+</body>
+</html>

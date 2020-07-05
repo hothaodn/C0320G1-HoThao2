@@ -1,0 +1,11 @@
+SELECT * FROM javaweb_casestudy_furama_resort.accompanied_service;
+INSERT INTO `javaweb_casestudy_furama_resort`.`accompanied_service` (`id_accompanied_service`, `is_delete`, `name_accompanied_service`, `price`, `unit`) VALUES ('1', b'0', 'Swimming Pool', '19', 'person');
+INSERT INTO `javaweb_casestudy_furama_resort`.`accompanied_service` (`id_accompanied_service`, `is_delete`, `name_accompanied_service`, `price`, `unit`) VALUES ('2', b'0', 'Resort Trip by Car', '19', 'person');
+INSERT INTO `javaweb_casestudy_furama_resort`.`accompanied_service` (`id_accompanied_service`, `is_delete`, `name_accompanied_service`, `price`, `unit`) VALUES ('3', b'0', 'Laundry', '2', 'item');
+INSERT INTO `javaweb_casestudy_furama_resort`.`accompanied_service` (`id_accompanied_service`, `is_delete`, `name_accompanied_service`, `price`, `unit`) VALUES ('4', b'0', 'Therapy Massage Package', '50', 'person');
+INSERT INTO `javaweb_casestudy_furama_resort`.`accompanied_service` (`id_accompanied_service`, `is_delete`, `name_accompanied_service`, `price`, `unit`) VALUES ('5', b'0', 'BBQ Night Party', '45', 'person');
+INSERT INTO `javaweb_casestudy_furama_resort`.`accompanied_service` (`id_accompanied_service`, `is_delete`, `name_accompanied_service`, `price`, `unit`) VALUES ('6', b'0', 'Car Rental', '100', 'day');
+INSERT INTO `javaweb_casestudy_furama_resort`.`accompanied_service` (`id_accompanied_service`, `is_delete`, `name_accompanied_service`, `price`, `unit`) VALUES ('7', b'0', 'Bike Rental', b'0', 'hour');
+INSERT INTO `javaweb_casestudy_furama_resort`.`accompanied_service` (`id_accompanied_service`, `is_delete`, `name_accompanied_service`, `price`, `unit`) VALUES ('8', b'0', 'Honeymoon Decoration', '150', 'package');
+INSERT INTO `javaweb_casestudy_furama_resort`.`accompanied_service` (`id_accompanied_service`, `is_delete`, `name_accompanied_service`, `price`, `unit`) VALUES ('9', b'0', 'Birthday Decoration', '150', 'package');
+INSERT INTO `javaweb_casestudy_furama_resort`.`accompanied_service` (`id_accompanied_service`, `is_delete`, `name_accompanied_service`, `price`, `unit`) VALUES ('10', b'0', 'Beach Game', '30', 'game');

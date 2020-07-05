@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+<div th:replace="layout :: header"></div>
+
+    <h3>Are you sure to remove this post?</h3>
+    <form th:action="@{/user/posts/delete/{id}(id=${post.id})}" th:object="${post}" method="post">
+        <div th:text="|Title: *{title}|"></div>
+        <div th:text="|Date posted: *{dateWriting}|"></div>
+        <div th:text="|Writer: *{userName}|"></div>
+
+        <button type="submit">Delete</button>
+    </form>
+<div th:replace="layout :: footer"></div>
+</body>
+</html>

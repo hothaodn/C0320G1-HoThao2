@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+<div th:replace="layout :: header"></div>
+
+
+    <table border="1">
+        <thead>
+        <tr>
+            <th>No.</th>
+            <th>Title</th>
+            <th>Last Updated</th>
+            <th>Writer</th>
+            <th>Options</th>
+        </tr>
+        </thead>
+        <tbody th:each="list,iterStat : ${listPosts.pageList}">
+        <tr>
+            <td th:text="${iterStat.count}" ></td>
+            <td><a th:href="@{/posts/{id}(id=${list.id})}" th:text="${list.title}" ></a></td>
+            <td th:text="${list.dateWriting}"></td>
+            <td th:text="${list.userName}"></td>
+            <td>
+                <a th:href="@{/user/posts/edit/{id}(id=${list.id})}">Edit | </a>
+                <a th:href="@{/user/posts/delete/{id}(id=${list.id})}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <!--		PAGE BREAKING-->
+    <div>
+        <!--			show page #1-->
+        <span
+                th:class="${currentIndex == 1}? 'page-item disabled' : 'page-item'">
+                    <a class="page-link" th:href="@{/user/posts/page/1}">First</a>
+                </span>
+        <!--			previous page-->
+        <span
+                th:class="${currentIndex == 1}? 'page-item disabled': 'page-item' ">
+                    <a class="page-link" aria-label="Previous"
+                       th:href="@{|${baseUrl}${currentIndex - 1}|}"
+                       title='Go to previous page'><span aria-hidden="true">«</span>
+                        <span class="sr-only">Previous</span></a>
+        </span>
+        <!--			current page-->
+        <span th:each="item : ${#numbers.sequence(beginIndex,endIndex)}"
+              th:class="${item == currentIndex ? 'page-item active' :'page-item' }">
+                    <a class="page-link" th:href="@{|${baseUrl}${item}|}"> <span
+                            th:text='${item}'>1</span></a>
+        </span>
+        <!--		next page-->
+        <span
+                th:class="${currentIndex == totalPageCount}? 'page-item disabled': 'page-item'">
+                    <a class="page-link" aria-label="Next"
+                       th:href="@{|${baseUrl}${currentIndex + 1}|}" title='Go to next page'><span
+                            aria-hidden="true"></span> <span class="sr-only">Next »</span></a>
+                </span>
+        <!--			show last page-->
+        <span
+                th:class="${currentIndex == totalPageCount}? 'page-item disabled':'page-item'">
+                    <a class="page-link" th:href="@{|${baseUrl}${totalPageCount}|}">Last</a>
+        </span>
+    </div>
+
+
+<div th:replace="layout :: footer"></div>
+</body>
+</html>

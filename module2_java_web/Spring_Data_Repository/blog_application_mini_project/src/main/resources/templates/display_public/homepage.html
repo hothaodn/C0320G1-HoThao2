@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+    <div th:replace="layout :: header_homepage"></div>
+    <iframe src="https://www.nhaccuatui.com/mh/background/Bo5TdtVznLQW" width="1" height="1" frameborder="0" allowfullscreen allow="autoplay"></iframe><!--    <iframe src="https://www.nhaccuatui.com/mh/auto/aNfMqOPx31km" width="620" height="382" frameborder="0" allowfullscreen allow="autoplay"></iframe>-->
+    <table>
+        <tbody th:each="list : ${listPosts}">
+            <tr>
+                <td>
+                    <a th:href="@{/posts/{id}(id=${list.id})}" target="_blank">
+                        <img th:src="${list.avatar_src}" th:width="100"/>
+                    </a>
+                </td>
+                <td>
+                    <a th:href="@{/posts/{id}(id=${list.id})}" th:text="${list.title}" target="_blank" style="text-decoration: none;"></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div th:replace="layout :: footer"></div>
+</body>
+</html>

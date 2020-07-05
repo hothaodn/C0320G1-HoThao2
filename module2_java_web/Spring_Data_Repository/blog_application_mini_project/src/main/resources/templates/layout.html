@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Meow Meow Blog</title>
+
+</head>
+<body>
+    <div th:fragment="header_homepage" style="text-align: center">
+        <h4>MEOW MEOW BLOG</h4>
+        <button>
+            <a th:href="@{/}">Home Page</a>
+        </button>
+        <button>
+            <a th:href="@{/register}">Register</a>
+        </button>
+        <button>
+            <a th:href="@{/login}">Log in</a>
+        </button>
+    </div>
+
+    <div th:fragment="header">
+        <h3>Meow Meow Blog - Posts Management Program</h3>
+        <button>
+            <a th:href="@{/user/posts/page/1}">List of Posts</a>
+        </button>
+        <button>
+            <a th:href="@{/user/posts/create}">Write a new post</a>
+        </button>
+        <button>
+            <a th:href="@{/}">Logout</a>
+        </button>
+        <p>*******************************************************</p>
+    </div>
+
+    <div th:fragment="footer" style="text-align: right">
+        <h6><br/><i>Copyright &copy; 2020 - hothaodn@gmail.com</i></h6>
+    </div>
+</body>
+</html>
