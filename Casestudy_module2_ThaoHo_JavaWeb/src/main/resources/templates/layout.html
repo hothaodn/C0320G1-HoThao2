@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head_admin_site">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/CSS/admin.css">
+    <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <title th:fragment="title_admin_site">Admin Site - Furama Resort</title>
+
+    <script src="javascript/add-new-service.js"></script>
+</head>
+<body>
+<!--HEADER-->
+    <div th:fragment="header_admin_site" style="text-align: center">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!--      <a class="navbar-brand" href="https://furamavietnam.com/wp-content/uploads/2018/10/logo.png">Logo</a>-->
+                    <img class="navbar-brand" src="https://furamavietnam.com/wp-content/uploads/2018/08/logo.png" width="50" height="100"/>
+
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/admin/home-page" target="_blank">Home</a></li>
+                        <li><a href="/admin/action-contract/view/page/1" target="_blank">Contract</a></li>
+                        <li><a href="/admin/action-customer/view/page/1" target="_blank">Customer</a></li>
+                        <li><a href="/admin/action-service/view/page/1" target="_blank">Hotel Service</a></li>
+<!--                        <li class="active"><a href="/admin/action-customer/add-new">Customer</a></li>-->
+                        <li><a href="#">Employee</a></li>
+                        <li><a href="#">User</a></li>
+
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="https://furamavietnam.com/" target="_blank"><span class="glyphicon glyphicon-log-in"></span> Go to Hotel Website</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+<!--BODY-->
+    <div th:fragment="body_admin_bar_right_customer" class="container-fluid text-center">
+                <p><a href="/admin/action-customer/view/page/1">View All Customers</a></p>
+                <p><a href="/admin/action-customer/add-new">Add New Customer</a></p>
+                <p><a href="/admin/action-customer/search/1">Search</a></p>
+    </div>
+
+    <div th:fragment="body_admin_bar_right_service" class="container-fluid text-center">
+        <p><a href="/admin/action-service/view/page/1">View All Services</a></p>
+        <p><a href="/admin/action-service/add-new">Add New Service</a></p>
+        <p><a href="/admin/action-service/search">Search</a></p>
+    </div>
+
+    <div th:fragment="body_admin_bar_right_contract" class="container-fluid text-center">
+        <p><a href="/admin/action-contract/view/page/1">View All Contracts</a></p>
+        <p><a href="/admin/action-contract/add-new-contract">Add New Contract</a></p>
+        <p><a href="/admin/action-contract/add-new-contract-detail">Add Contract Details</a></p>
+        <p><a href="/admin/action-contract/use-service-today">Using Service Today</a></p>
+        <p><a href="/admin/action-contract/search">Search</a></p>
+    </div>
+
+    <div th:fragment="body_admin_bar_left" class="container-fluid text-center">
+        <div class="col-sm-2 sidenav">
+            <div class="well">
+                <p>ADS</p>
+            </div>
+            <div class="well">
+                <p>ADS</p>
+            </div>
+        </div>
+    </div>
+
+<!--Notification on site-->
+    <div th:fragment="notify" class="container-fluid text-center">
+        <div style="color: darkred" th:if="${notify} != null">
+            <h4 th:text="${notify}"></h4>
+        </div>
+    </div>
+
+<!--		PAGE SHOW ALL CUSTOMER BREAKING-->
+<div th:fragment="chart_show_all_customer">
+    <span th:if="${listCustomers} != null">
+                <table class="table table-striped custab">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <!--                        <th>Number of Contract</th>-->
+                        <th>Birthday</th>
+                        <th>ID Card/Passport Number</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Customer Type</th>
+                        <th class="text-center">Choose</th>
+                    </tr>
+                    </thead>
+                    <tr th:each="customer,itat : ${listCustomers.pageList}">
+                        <td th:text="${customer.idCustomer}"></td>
+                        <td th:text="${customer.nameCustomer}"></td>
+                        <!--                        <td th:text="${customer.contract.size()}"></td>-->
+                        <td th:text="${customer.birthday}"></td>
+                        <td th:text="${customer.idCardNumber}"></td>
+                        <td th:text="${customer.phoneNumber}"></td>
+                        <td th:text="${customer.email}"></td>
+                        <td th:text="${customer.address}"></td>
+                        <td th:text="${customer.customerType}"></td>
+                        <td class="text-center" style="text-align: center">
+                            <a class='btn btn-info btn-xs' th:href="@{/admin/action-customer/edit/{id}(id=${customer.idCustomer})}"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+                            <a th:href="@{/admin/action-customer/delete/{id}(id=${customer.idCustomer})}" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a>
+                        </td>
+                    </tr>
+                </table>
+    </span>
+</div>
+
+<div th:fragment="chart_show_all_customer_page_breaking">
+    <!--			show page #1-->
+    <span th:class="${currentIndex == 1}? 'page-item disabled' : 'page-item'">
+                        <a class="page-link" th:href="@{/admin/action-customer/view/page/1}">First</a>
+                        </span>
+    <!--			previous page-->
+    <span th:class="${currentIndex == 1}? 'page-item disabled': 'page-item' ">
+                        <a class="page-link" aria-label="Previous"
+                           th:href="@{|${baseUrl}${currentIndex - 1}|}"
+                           title='Go to previous page'><span aria-hidden="true"> « Previous</span></a>
+                        </span>
+    <!--			current page-->
+    <span th:each="item : ${#numbers.sequence(beginIndex,endIndex)}"
+          th:class="${item == currentIndex ? 'page-item active' :'page-item' }">
+                        <a class="page-link" th:href="@{|${baseUrl}${item}|}"> <span
+                                th:text='${item}'>1</span></a>
+                        </span>
+    <!--		next page-->
+    <span th:class="${currentIndex == totalPageCount}? 'page-item disabled': 'page-item'">
+                        <a class="page-link" aria-label="Next"
+                           th:href="@{|${baseUrl}${currentIndex + 1}|}" title='Go to next page'><span
+                                aria-hidden="true">Next » </span></a>
+                        </span>
+    <!--			show last page-->
+    <span th:class="${currentIndex == totalPageCount}? 'page-item disabled':'page-item'">
+                        <a class="page-link" th:href="@{|${baseUrl}${totalPageCount}|}">Last</a>
+                        </span>
+</div>
+
+<!--search box-->
+    <div th:fragment="search">
+        <div class="input-group" id="adv-search">
+            <input type="text" class="form-control" placeholder="Search for customers" />
+            <div class="input-group-btn">
+                <div class="btn-group" role="group">
+                    <div class="dropdown dropdown-lg">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
+                        <div class="dropdown-menu dropdown-menu-right" role="menu">
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group">
+                                    <label for="filter">Filter by</label>
+                                    <select class="form-control">
+                                        <option value="0" selected>All Snippets</option>
+                                        <option value="1">Featured</option>
+                                        <option value="2">Most popular</option>
+                                        <option value="3">Top rated</option>
+                                        <option value="4">Most commented</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contain">Author</label>
+                                    <input class="form-control" type="text" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="contain">Contains the words</label>
+                                    <input class="form-control" type="text" />
+                                </div>
+                                <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                            </form>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--FOOTER-->
+    <footer th:fragment="footer_admin_site" class="container-fluid text-center">
+        <p><i>Copyright &copy; 2020 - MeowMeow Production - Support: hothaodn@gmail.com</i></p>
+    </footer>
+</body>
+</html>

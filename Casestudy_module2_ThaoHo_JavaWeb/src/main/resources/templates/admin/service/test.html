@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <label>Rental Type</label>
+    <div   class="btn btn-secondary dropdown-toggle">
+        <input type="radio" th:value="Day" th:field="${service.rentalType}" name="rentalType"/>
+            <label for="rentalType">Type of Rental</label>
+        <input type="radio" th:value="Month" th:field="${service.rentalType}" name="rentalType"/>
+            <label for="rentalType">Type of Rental</label>
+        <input type="radio" th:value="Year" th:field="${service.rentalType}" name="rentalType"/>
+            <label for="rentalType">Type of Rental</label>
+    </div>
+
+
+<p>\n' +
+    '                        <label for="rentalType">Type of Rental</label>\n' +
+    '                        <select th:field="${service.rentalType}" id="rentalType" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">\n' +
+        '                            <option value="Day" name="rentalType">Day</option>\n' +
+        '                            <option value="Month" name="rentalType">Month</option>\n' +
+        '                            <option value="Year" name="rentalType">Year</option>\n' +
+        '                        </select>\n' +
+    '                    </p>';
+</body>
+</html>

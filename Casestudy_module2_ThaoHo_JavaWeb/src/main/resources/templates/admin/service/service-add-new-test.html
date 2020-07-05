@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head_admin_site">
+<!--    <script src="javascript/add-new-service.js"></script>-->
+</head>
+<body>
+<div th:replace="layout :: header_admin_site"></div>
+
+<!--    Body-->
+<div class="container-fluid text-center">
+    <div class="row content">
+        <div class="col-sm-2 sidenav">
+            <div th:replace="layout :: body_admin_bar_right_service"></div>
+        </div>
+
+        <div class="col-sm-8 text-left">
+            <h3>HOTEL SERVICES</h3>
+            <hr>
+            <div th:replace="layout :: notify"></div>
+
+            <div class="row col-md-6 col-md-offset-2 custyle">
+            <form th:method="POST" th:object="${service}" th:action="@{/admin/action-service/add-new}">
+                <h2 class="form-signin-heading">Add New Service</h2>
+                <p>
+                    <label>Name of Service</label>
+                    <span   class="btn btn-secondary dropdown-toggle">
+                        <input th:field="*{nameOfAccommodation}" type="radio" th:value="Villa" name="name" id="nameOfAccommodation1">
+                        <label for="nameOfAccommodation1">Villa</label>
+
+                        <input th:field="*{nameOfAccommodation}" type="radio" th:value="House" name="name" id="nameOfAccommodation2"/>
+                        <label for="nameOfAccommodation2">House</label>
+
+                        <input th:field="*{nameOfAccommodation}" type="radio" th:value="Room" name="name" id="nameOfAccommodation3"/>
+                        <label for="nameOfAccommodation3">Room</label>
+                    </span>
+                </p>
+
+
+
+<!--//===============-->
+                <!--villa form-->
+                <div id="displayVilla" style="display: none"></div>
+                <div id="displayHouse" style="display: none"></div>
+                <div id="displayRoom" style="display: none"></div>
+
+            </form>
+            </div>
+        </div>
+
+        <div class="col-sm-2 sidenav"></div>
+    </div>
+</div>
+
+<div th:replace="layout :: footer_admin_site"></div>
+
+<script th:inline="javascript">
+    let getNameService1 = document.getElementById("nameOfAccommodation1");
+    let getNameService2 = document.getElementById("nameOfAccommodation2");
+    let getNameService3 = document.getElementById("nameOfAccommodation3");
+
+    let displayVilla = document.getElementById("displayVilla");
+    let displayHouse = document.getElementById("displayHouse");
+    let displayRoom = document.getElementById("displayRoom");
+
+    let commonDisplay = '<p>\n' +
+        '                <label for="codeService">Code</label>\n' +
+        '                <input type="text" name="codeService" th:field="${service.codeService}" placeholder="DV-XXXX" id="codeService" class="form-control" required autofocus>\n' +
+        '            </p>\n' +
+        '            <p>\n' +
+        '                <label for="usingArea">Area of Using (m2)</label>\n' +
+        '                <input type="text" name="usingArea" th:field="*{usingArea}" id="usingArea" class="form-control" required autofocus>\n' +
+        '            </p>\n' +
+        '            <p>\n' +
+        '                <label for="rentalFee">Rental Fee (USD)</label>\n' +
+        '                <input type="text" name="rentalFee" th:field="*{rentalFee}" id="rentalFee" class="form-control" required autofocus>\n' +
+        '            </p>\n' +
+        '            <p>\n' +
+        '                <label for="maxOccupancies">Max Occupancies</label>\n' +
+        '                <input type="number" name="maxOccupancies" th:field="*{maxOccupancies}" id="maxOccupancies" class="form-control" required autofocus>\n' +
+        '            </p>\n' +
+        '            <label>Rental Type</label>\n' +
+        '            <div   class="btn btn-secondary dropdown-toggle">\n' +
+        '                <input type="radio" th:value="Day" th:field="${service.rentalType}" name="rentalType"/>Day\n' +
+        '                <input type="radio" th:value="Month" th:field="${service.rentalType}" name="rentalType"/>Month\n' +
+        '                <input type="radio" th:value="Year" th:field="${service.rentalType}" name="rentalType"/>Year\n' +
+        '            </div>';
+
+    let villaAndHouseDisplay = '<p>\n' +
+        '            <label for="roomStandard">Standard of Room</label>\n' +
+        '            <input type="radio" th:field="${service.roomStandard}" value="Deluxe" name="roomStandard">Deluxe\n' +
+        '            <input type="radio" th:field="${service.roomStandard}" value="Luxury" name="roomStandard">Luxury\n' +
+        '        </p>\n' +
+        '        <p>\n' +
+        '            <label for="facilities">Facilities</label>\n' +
+        '                <input type="radio" th:field="${service.facilities}" value="Custom" name="facilities">Custom\n' +
+        '                <input type="radio" th:field="${service.facilities}" value="Full options" name="facilities">Full options\n' +
+        '        </p>\n' +
+        '        <p>\n' +
+        '            <label for="numberOfFloor">Number of Floor</label>\n' +
+        '            <input th:field="${service.numberOfFloor}" id="numberOfFloor" class="form-control" required autofocus>\n' +
+        '        </p>';
+
+    let poolDisplay = '<p>\n' +
+        '                        <label for="poolArea">Area of Swimming Pool</label>\n' +
+        '                        <input type="text" name="poolArea" th:field="${service.poolArea}" id="poolArea" class="form-control" required autofocus>\n' +
+        '                    </p>';
+
+    let extraServiceDisplay = '<p><label for="freeExtraService">Free Extra Service</label>\n' +
+        '                        <input type="radio" th:field="${service.freeExtraService}" value="Pool" name="freeExtraService">Pool\n' +
+        '                        <input type="radio" th:field="${service.freeExtraService}" value="Laundry" name="freeExtraService">Laundry\n' +
+        '                        <input type="radio" th:field="${service.freeExtraService}" value="Car Trip" name="freeExtraService">Car Trip\n' +
+        '</p>';
+
+    let button = '<p>\n' +
+        '                    <button type="submit" class="btn btn-primary">Save</button>\n' +
+        '                    <button class="btn btn-primary"><a th:href="@{/admin/action-service/view-all}" style="color: white; text-decoration: none;">No</a></button>\n' +
+        '                </p>';
+
+        getNameService1.addEventListener("click", function() {
+            displayVilla.style.display = "block";
+            displayVilla.innerHTML = commonDisplay + villaAndHouseDisplay + poolDisplay + button;
+            displayHouse.style.display = "none";
+            displayRoom.style.display = "none";
+        });
+
+        getNameService2.addEventListener("click", function() {
+            displayVilla.style.display = "none";
+            displayHouse.style.display = "block";
+            displayHouse.innerHTML = commonDisplay + villaAndHouseDisplay + button;
+            displayRoom.style.display = "none";
+        });
+
+        getNameService3.addEventListener("click", function() {
+            displayVilla.style.display = "none";
+            displayHouse.style.display = "none";
+            displayRoom.style.display = "block";
+            displayRoom.innerHTML = commonDisplay + extraServiceDisplay + button;
+        });
+</script>
+</body>
+</html>

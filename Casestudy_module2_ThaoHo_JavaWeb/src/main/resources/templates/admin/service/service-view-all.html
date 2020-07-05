@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head_admin_site"></head>
+<body style="padding-top: 0px">
+    <div th:replace="layout :: header_admin_site"></div>
+
+<!--    Body-->
+    <div class="container-fluid text-center">
+        <div class="row content">
+            <div class="col-sm-2 sidenav">
+                <div th:replace="layout :: body_admin_bar_right_service"></div>
+            </div>
+
+            <div class="col-sm-8 text-left">
+                <h3>SERVICES</h3>
+                <hr>
+                <div th:replace="layout :: notify"></div>
+                <h2 class="form-signin-heading">List of Services</h2>
+
+                <div class="input-group" id="adv-search">
+                                <input type="text" class="form-control" placeholder="Search for services" />
+                                <div class="input-group-btn">
+                                    <div class="btn-group" role="group">
+                                        <div class="dropdown dropdown-lg">
+                                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
+                                            <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                                <form class="form-horizontal" role="form">
+                                                    <div class="form-group">
+                                                        <label for="filter">Filter by</label>
+                                                        <select class="form-control">
+                                                            <option value="0" selected>All Snippets</option>
+                                                            <option value="1">Featured</option>
+                                                            <option value="2">Most popular</option>
+                                                            <option value="3">Top rated</option>
+                                                            <option value="4">Most commented</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="contain">Author</label>
+                                                        <input class="form-control" type="text" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="contain">Contains the words</label>
+                                                        <input class="form-control" type="text" />
+                                                    </div>
+                                                    <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                                    </div>
+                                </div>
+                            </div>
+
+<!--		PAGE BREAKING-->
+                <div>
+                    <!--			show page #1-->
+                    <span
+                            th:class="${currentIndex == 1}? 'page-item disabled' : 'page-item'">
+                        <a class="page-link" th:href="@{/admin/action-service/view/page/1}">First</a>
+                        </span>
+                    <!--			previous page-->
+                    <span
+                            th:class="${currentIndex == 1}? 'page-item disabled': 'page-item' ">
+                        <a class="page-link" aria-label="Previous"
+                           th:href="@{|${baseUrl}${currentIndex - 1}|}"
+                           title='Go to previous page'><span aria-hidden="true">«</span>
+                            <span class="sr-only">Previous</span></a>
+                        </span>
+                    <!--			current page-->
+                    <span th:each="item : ${#numbers.sequence(beginIndex,endIndex)}"
+                          th:class="${item == currentIndex ? 'page-item active' :'page-item' }">
+                        <a class="page-link" th:href="@{|${baseUrl}${item}|}"> <span
+                                th:text='${item}'>1</span></a>
+                        </span>
+                    <!--		next page-->
+                    <span
+                            th:class="${currentIndex == totalPageCount}? 'page-item disabled': 'page-item'">
+                        <a class="page-link" aria-label="Next"
+                           th:href="@{|${baseUrl}${currentIndex + 1}|}" title='Go to next page'><span
+                                aria-hidden="true"></span> <span class="sr-only">Next »</span></a>
+                        </span>
+                    <!--			show last page-->
+                    <span
+                            th:class="${currentIndex == totalPageCount}? 'page-item disabled':'page-item'">
+                        <a class="page-link" th:href="@{|${baseUrl}${totalPageCount}|}">Last</a>
+                        </span>
+                </div>
+<!--                <div class="row col-md-6 col-md-offset-2 custyle">-->
+                <table class="table table-striped custab">
+                    <thead>
+                    <a href="/admin/action-service/add-new" class="btn btn-primary btn-xs pull-right"><b>+</b> Add new service</a>
+                    <tr>
+                        <th>ID</th>
+                        <th>Code</th>
+                        <th>Service Name</th>
+                        <th>Using Area</th>
+                        <th>Rental Fee</th>
+                        <th>Max Occupancies</th>
+                        <th>Rental Type</th>
+                        <th>Room Standard</th>
+                        <th>Facilities</th>
+                        <th>Number Floor</th>
+                        <th>Pool</th>
+                        <th>Free Service</th>
+                        <th class="text-center">Choose</th>
+                    </tr>
+                    </thead>
+                    <tr th:each="service,itat : ${listServices.pageList}">
+                        <td th:text="${service.idService}"></td>
+                        <td th:text="${service.codeService}"></td>
+                        <td th:text="${service.nameOfAccommodation}"></td>
+                        <td th:text="${service.usingArea}"></td>
+                        <td th:text="${service.rentalFee}"></td>
+                        <td th:text="${service.maxOccupancies}"></td>
+                        <td th:text="${service.rentalType}"></td>
+                        <td th:text="${service.roomStandard}"></td>
+                        <td th:text="${service.facilities}"></td>
+                        <td th:text="${service.numberOfFloor}"></td>
+                        <td th:text="${service.poolArea}"></td>
+                        <td th:text="${service.freeExtraService}"></td>
+                        <td class="text-center" style="text-align: center">
+                            <a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+                            <a th:href="@{/action-service/delete/{id}(id=${service.idService})}" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+<!--            <div class="col-sm-2 sidenav"></div>-->
+        </div>
+    </div>
+
+    <div th:replace="layout :: footer_admin_site"></div>
+</body>
+</html>

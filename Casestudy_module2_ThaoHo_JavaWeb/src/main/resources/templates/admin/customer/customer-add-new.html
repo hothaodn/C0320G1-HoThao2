@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head_admin_site"></head>
+<body style="padding-top: 0px">
+<div th:replace="layout :: header_admin_site"></div>
+
+<!--    Body-->
+<div class="container-fluid text-center">
+    <div class="row content">
+        <div class="col-sm-2 sidenav">
+            <div th:replace="layout :: body_admin_bar_right_customer"></div>
+        </div>
+
+        <div class="col-sm-8 text-left">
+            <h3>CUSTOMERS</h3>
+            <hr>
+            <div th:replace="layout :: notify"></div>
+
+            <div class="row col-md-6 col-md-offset-2 custyle">
+                <form th:method="POST" th:object="${customer}" th:action="@{/admin/action-customer/save}">
+                    <h2 class="form-signin-heading" th:text="${nameAction}"></h2>
+                    <table>
+                        <tr>
+                            <td>
+                                <label for="codeCustomer">Customer Code</label>
+                            </td>
+                            <td>
+                                <input type="text" th:field="*{codeCustomer}" id="codeCustomer" placeholder="KH-XXXX" class="form-control" required autofocus>
+                                <p th:if="${#fields.hasErrors('codeCustomer')}" th:errors="*{codeCustomer}"></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="name">Full Name</label>
+                            </td>
+                            <td>
+                                <input type="text" th:field="*{nameCustomer}" id="name" class="form-control" required autofocus>
+<!--                                <p th:if="${#fields.hasErrors('nameCustomer')}" th:errors="*{nameCustomer}"></p>-->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="birthday">Birthday</label>
+                            </td>
+                            <td>
+                                <input type="date" th:field="*{birthday}" id="birthday" class="form-control" required autofocus>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="idCardNumber">ID Card/Passport Number</label>
+                            </td>
+                            <td>
+                                <input type="text" th:field="*{idCardNumber}" id="idCardNumber" class="form-control" required autofocus>
+                            <p th:if="${#fields.hasErrors('idCardNumber')}" th:errors="*{idCardNumber}"></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="phoneNumber">Phone Number</label>
+                            </td>
+                            <td>
+                                <input type="text" th:field="*{phoneNumber}" id="phoneNumber" class="form-control" required autofocus>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="email">Email</label>
+                            </td>
+                            <td>
+                                <input type="text" th:field="*{email}" id="email" class="form-control" required autofocus>
+                                <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="address">Address</label>
+                            </td>
+                            <td>
+                                <input type="text" th:field="*{address}" id="address" class="form-control" required autofocus>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="customerType">Type of Customer</label>
+                            </td>
+                            <td>
+                                <select th:field="*{customerType}" id="customerType"
+                                        class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                    <option value="Diamond">Diamond</option>
+                                    <option value="Platinum">Platinum</option>
+                                    <option value="Gold">Gold</option>
+                                    <option value="Silver">Silver</option>
+                                    <option value="Member">Member</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+
+                            </td>
+                            <td>
+                                <button type="submit" class="btn btn-primary">Save</button>
+                                <button class="btn btn-primary"><a th:href="@{/admin/action-customer/view-all}"
+                                                                   style="color: white; text-decoration: none;">No</a>
+                                </button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-sm-2 sidenav"></div>
+    </div>
+</div>
+
+<div th:replace="layout :: footer_admin_site"></div>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head_admin_site"></head>
+<body style="padding-top: 0px">
+    <div th:replace="layout :: header_admin_site"></div>
+
+<!--    Body-->
+    <div class="container-fluid text-center">
+        <div class="row content">
+            <div class="col-sm-2 sidenav">
+                <div th:replace="layout :: body_admin_bar_right_contract"></div>
+            </div>
+
+            <div class="col-sm-8 text-left">
+                <h3>CONTRACTS</h3>
+                <hr>
+                <div th:replace="layout :: notify"></div>
+
+                <form th:method="POST" th:object="${contract}" th:action="@{/admin/action-contract/add-new-contract}">
+                    <h2 class="form-signin-heading">Add New Contract</h2>
+
+                    <label for="checkInDate">Choose service:</label>
+
+<!--                    <div class="input-group" id="adv-search">-->
+<!--                        <input type="text" class="form-control" placeholder="Search for services" />-->
+<!--                        <div class="input-group-btn">-->
+<!--                            <div class="btn-group" role="group">-->
+<!--                                <div class="dropdown dropdown-lg">-->
+<!--                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>-->
+<!--                                    <div class="dropdown-menu dropdown-menu-right" role="menu">-->
+<!--                                        <form class="form-horizontal" role="form">-->
+<!--                                            <div class="form-group">-->
+<!--                                                <label for="filter">Filter by</label>-->
+<!--                                                <select class="form-control">-->
+<!--                                                    <option value="0" selected>All Snippets</option>-->
+<!--                                                    <option value="1">Featured</option>-->
+<!--                                                    <option value="2">Most popular</option>-->
+<!--                                                    <option value="3">Top rated</option>-->
+<!--                                                    <option value="4">Most commented</option>-->
+<!--                                                </select>-->
+<!--                                            </div>-->
+<!--                                            <div class="form-group">-->
+<!--                                                <label for="contain">Author</label>-->
+<!--                                                <input class="form-control" type="text" />-->
+<!--                                            </div>-->
+<!--                                            <div class="form-group">-->
+<!--                                                <label for="contain">Contains the words</label>-->
+<!--                                                <input class="form-control" type="text" />-->
+<!--                                            </div>-->
+<!--                                            <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>-->
+<!--                                        </form>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+                    <table class="table table-striped custab">
+                        <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Service Name</th>
+                            <th>Rental Type</th>
+                            <th>Rental Fee</th>
+                            <th class="text-center">Choose</th>
+                        </tr>
+                        </thead>
+                        <tr th:each="service,itat : ${listServices}">
+                            <td th:text="${itat.count}"></td>
+                            <td th:text="${service.nameOfAccommodation}"></td>
+                            <td th:text="${service.rentalType}"></td>
+                            <td th:text="${service.rentalFee}"></td>
+                            <td style="text-align: center">
+                                <input type="radio" id="ratio"
+                                       th:field="${contract.service.idService}"
+                                       th:value="${service.idService}" checked="checked" />
+                            </td>
+                        </tr>
+                    </table>
+
+                    <label for="checkInDate">Choose customer:</label>
+
+<!--                    <div class="input-group" id="adv-search">-->
+<!--                        <input type="text" class="form-control" placeholder="Search for customers" />-->
+<!--                        <div class="input-group-btn">-->
+<!--                            <div class="btn-group" role="group">-->
+<!--                                <div class="dropdown dropdown-lg">-->
+<!--                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>-->
+<!--                                    <div class="dropdown-menu dropdown-menu-right" role="menu">-->
+<!--                                        <form class="form-horizontal" role="form">-->
+<!--                                            <div class="form-group">-->
+<!--                                                <label for="filter">Filter by</label>-->
+<!--                                                <select class="form-control">-->
+<!--                                                    <option value="0" selected>All Snippets</option>-->
+<!--                                                    <option value="1">Featured</option>-->
+<!--                                                    <option value="2">Most popular</option>-->
+<!--                                                    <option value="3">Top rated</option>-->
+<!--                                                    <option value="4">Most commented</option>-->
+<!--                                                </select>-->
+<!--                                            </div>-->
+<!--                                            <div class="form-group">-->
+<!--                                                <label for="contain">Author</label>-->
+<!--                                                <input class="form-control" type="text" />-->
+<!--                                            </div>-->
+<!--                                            <div class="form-group">-->
+<!--                                                <label for="contain">Contains the words</label>-->
+<!--                                                <input class="form-control" type="text" />-->
+<!--                                            </div>-->
+<!--                                            <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>-->
+<!--                                        </form>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+                    <table class="table table-striped custab">
+                        <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Name</th>
+                            <th>Address</th>
+                            <th>Phone Number</th>
+                            <th>Customer Type</th>
+                            <th class="text-center">Choose</th>
+                        </tr>
+                        </thead>
+                        <tr th:each="customer,itat : ${listCustomers}">
+                            <td th:text="${itat.count}"></td>
+                            <td th:text="${customer.nameCustomer}"></td>
+                            <td th:text="${customer.address}"></td>
+                            <td th:text="${customer.phoneNumber}"></td>
+                            <td th:text="${customer.customerType}"></td>
+                            <td style="text-align: center">
+                                <input type="radio" id="ratio2"
+                                       th:field="${contract.customer.idCustomer}"
+                                       th:value="${customer.idCustomer}" />
+                            </td>
+                        </tr>
+                    </table>
+
+                    <p>
+                        <label for="employee">Choose sales person:</label>
+                        <select th:field="${contract.employee.idEmployee}" id="employee" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div th:each="employee : ${listEmployees}" >
+                                <option th:value="${employee.idEmployee}"
+                                        th:text="${employee.nameEmployee}"></option>
+                            </div>
+                        </select>
+                    </p>
+
+                    <div class="row col-md-6 col-md-offset-2 custyle">
+                        <p>
+                            <label for="checkInDate">Check in date</label>
+                            <input type="date" th:field="*{checkInDate}" id="checkInDate" class="form-control" required autofocus>
+                        </p>
+                        <p>
+                            <label for="checkOutDate">Check out date</label>
+                            <input type="date" th:field="*{checkOutDate}" id="checkOutDate" class="form-control" required autofocus>
+                        </p>
+                        <p>
+                            <label for="deposit">Deposit</label>
+                            <input type="text" th:field="*{deposit}" id="deposit" class="form-control" required autofocus>
+                        </p>
+                        <p>
+                            <label for="totalPayment">Total of Payment</label>
+                            <input type="text" th:field="*{totalPayment}" id="totalPayment" class="form-control" required autofocus>
+                        </p>
+                        <p>
+                            <button type="submit" class="btn btn-primary">Save</button>
+                            <button class="btn btn-primary"><a th:href="@{/admin/action-contract/view-all}" style="color: white; text-decoration: none;">No</a></button>
+                        </p>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-sm-2 sidenav"></div>
+        </div>
+    </div>
+
+    <div th:replace="layout :: footer_admin_site"></div>
+</body>
+</html>

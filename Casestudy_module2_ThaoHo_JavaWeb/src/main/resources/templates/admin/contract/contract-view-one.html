@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head_admin_site"></head>
+<body style="padding-top: 0px">
+<div th:replace="layout :: header_admin_site"></div>
+
+<!--    Body-->
+<div class="container-fluid text-center">
+    <div class="row content">
+        <div class="col-sm-2 sidenav">
+            <div th:replace="layout :: body_admin_bar_right_customer"></div>
+        </div>
+
+        <div class="col-sm-8 text-left">
+            <h3>CUSTOMERS</h3>
+            <hr>
+<!--            <div th:replace="layout :: notify"></div>-->
+
+            <!--                CONFIRM DELETE CUSTOMER-->
+            <div class="row col-md-6 col-md-offset-2 custyle">
+
+                <h2 th:if="${notifyDelete} != null">
+                    <h4 th:text="${notifyDelete}"></h4>
+                </h2>
+
+                <form th:method="POST" th:object="${contract}" th:action="@{/admin/action-contract/delete/{id}(id=${contract.idContract})}" >
+                    <table class="table table-striped custab">
+                        <tr>
+                            <td>ID</td>
+                            <td th:text="*{idContract}"></td>
+                        </tr>
+                        <tr>
+                            <td>Check in Date</td>
+                            <td th:text="*{checkInDate}"></td>
+                        </tr>
+                        <tr>
+                            <td>Check out Date</td>
+                            <td th:text="*{checkOutDate}"></td>
+                        </tr>
+                        <tr>
+                            <td>ID Customer</td>
+                            <td th:text="*{customer.idCustomer}"></td>
+                        </tr>
+                        <tr>
+                            <td>Name Customer</td>
+                            <td th:text="*{customer.nameCustomer}"></td>
+                        </tr>
+                        <tr>
+                            <td>Name Service</td>
+                            <td th:text="*{service.nameOfAccommodation}"></td>
+                        </tr>
+
+                        <div th:if="${notifyDelete} != null">
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <button type="submit" class="btn btn-primary">Yes</button>
+                                    <button class="btn btn-primary"><a th:href="@{/admin/action-customer/view-all}" style="color: white; text-decoration: none;">No</a></button>
+                                </td>
+                            </tr>
+                        </div>
+                    </table>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-2 sidenav"></div>
+</div>
+<div th:replace="layout :: footer_admin_site"></div>
+</body>
+</html>

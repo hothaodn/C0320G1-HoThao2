@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head_admin_site">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/CSS/admin.css">
+    <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <title th:fragment="title_admin_site">Admin Site - Furama Resort</title>
+
+    <script src="javascript/add-new-service.js"></script>
+</head>
+<body>
+    <div th:fragment="form_common" style="text-align: left">
+            <p>
+                <label for="codeService">Code</label>
+                <input type="text" name="codeService" th:field="${service.codeService}" placeholder="DV-XXXX" id="codeService" class="form-control" required autofocus>
+            </p>
+            <p>
+                <label for="usingArea">Area of Using (m2)</label>
+                <input type="text" name="usingArea" th:field="*{usingArea}" id="usingArea" class="form-control" required autofocus>
+            </p>
+            <p>
+                <label for="rentalFee">Rental Fee (USD)</label>
+                <input type="text" name="rentalFee" th:field="*{rentalFee}" id="rentalFee" class="form-control" required autofocus>
+            </p>
+            <p>
+                <label for="maxOccupancies">Max Occupancies</label>
+                <input type="number" name="maxOccupancies" th:field="*{maxOccupancies}" id="maxOccupancies" class="form-control" required autofocus>
+            </p>
+            <label>Rental Type</label>
+            <div   class="btn btn-secondary dropdown-toggle">
+                <input type="radio" th:value="Day" th:field="${service.rentalType}" name="rentalType"/>Day
+                <input type="radio" th:value="Month" th:field="${service.rentalType}" name="rentalType"/>Month
+                <input type="radio" th:value="Year" th:field="${service.rentalType}" name="rentalType"/>Year
+            </div>
+            <p>
+                <label for="rentalType">Type of Rental</label>
+                <select th:field="*{rentalType}" id="rentalType" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <option value="#"></option>
+                    <option value="Room only">Room only</option>
+                    <option value="Half Board Package">Half Board Package</option>
+                    <option value="Full Board Package">Full Board Package</option>
+                </select>
+            </p>
+    </div>
+
+    <div th:fragment="form_villa_house" style="text-align: left">
+        <p>
+            <label for="roomStandard">Standard of Room</label>
+            <input type="radio" th:field="${service.roomStandard}" value="Deluxe" name="roomStandard">Deluxe
+            <input type="radio" th:field="${service.roomStandard}" value="Full options" name="roomStandard">Full options
+        </p>
+        <p>
+            <label for="facilities">Facilities</label>
+                <input type="radio" th:field="${service.facilities}" value="Custom" name="facilities">Custom
+                <input type="radio" th:field="${service.facilities}" value="Full options" name="facilities">Full options
+        </p>
+        <p>
+            <label for="numberOfFloor">Number of Floor</label>
+            <input th:field="${service.numberOfFloor}" id="numberOfFloor" class="form-control" required autofocus>
+        </p>
+    </div>
+
+</body>
+</html>

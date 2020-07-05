@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head_admin_site"></head>
+<body>
+    <div th:replace="layout :: header_admin_site"></div>
+
+    <!--    Body-->
+    <div class="container-fluid text-center">
+        <div class="row content">
+            <div class="col-sm-2 sidenav">
+    <!--            <div th:replace="layout :: body_admin_bar_right_customer"></div>-->
+            </div>
+
+            <div class="col-sm-8 text-left">
+                <h3>WELCOME TO ADMIN SITE</h3>
+                <hr>
+            </div>
+
+            <div class="col-sm-2 sidenav"></div>
+        </div>
+    </div>
+
+    <div th:replace="layout :: footer_admin_site"></div>
+</body>
+</html>

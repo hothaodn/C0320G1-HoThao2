@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head_official_site">
+    <title>Furama Resort Danang</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/CSS/official-website.css">
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><img src="images/logo.png" alt="Image" width="25"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#" >WHO WE ARE</a></li>
+                <li><a href="#">ROOMS & SUITES</a></li>
+                <li><a href="#">SERVICES</a></li>
+                <li><a href="#">SPECIAL OFFERS</a></li>
+                <li><a href="#">GALLERY</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#" style="color: white;">BOOK NOW</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <!--            <img src="https://placehold.it/1200x400?text=IMAGE" alt="Image">-->
+            <img src="images/cover_3.jpg" alt="Image">
+            <div class="carousel-caption">
+                <h3>THIS WORLD CLASS RESORT, FURAMA DANANG</h3>
+                <p>REPUTABLE FOR BEING A CULINARY RESORT IN VIETNAM</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="images/cover_2.jpg" alt="Image">
+            <div class="carousel-caption">
+                <h3>THIS WORLD CLASS RESORT, FURAMA DANANG</h3>
+                <p>REPUTABLE FOR BEING A CULINARY RESORT IN VIETNAM</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="images/cover_1.jpg" alt="Image">
+            <div class="carousel-caption">
+                <h3>THIS WORLD CLASS RESORT, FURAMA DANANG</h3>
+                <p>REPUTABLE FOR BEING A CULINARY RESORT IN VIETNAM</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="images/cover_4.jpg" alt="Image">
+            <div class="carousel-caption">
+                <h3>THIS WORLD CLASS RESORT, FURAMA DANANG</h3>
+                <p>REPUTABLE FOR BEING A CULINARY RESORT IN VIETNAM</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="images/cover_5.jpg" alt="Image">
+            <div class="carousel-caption">
+                <h3>THIS WORLD CLASS RESORT, FURAMA DANANG</h3>
+                <p>REPUTABLE FOR BEING A CULINARY RESORT IN VIETNAM</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<div class="container text-center">
+    <h3>WHY CHOOSE US ?</h3><br>
+    <p></p>
+
+    <!--about us-->
+    <section class="section_gioi_thieu" id="about-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="gioi_thieu_home_left">
+                        <p style="text-align: justify;">Overlooking the long stretch of wide white sand on Danang Beach,
+                            &Agrave; Furama Resort Danang is a gateway to three World Heritage Sites of Hoi An (20 minutes),
+                            &agrave; My Son (90 minutes) and Hue (2 hours).</p>
+                        <p style="text-align: justify;"> The 198 rooms and suites plus 70 two to four bedroom pool villas feature tasteful décor,
+                            &agrave;designed with traditional Vietnamese style and a touch of French colonial architecture
+                            &agrave; and guarantee the Vietnam’s the most prestigious resort -counting royalty, presidents,
+                            &agrave; movie stars and international business leaders among its celebrity guests...<a href="/en/about-us/">view more</a></p>
+
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="gioi_thieu_home_right" style="width:90%; margin:0 auto"><div class="btgrid">
+                        <div class="row row-1">
+                            <div class="col col-md-6 col-sm-6 col-xs-6">
+                                <div class="content">
+                                    <p style="text-align: center;"><img alt="" src="images/gt_1.png" style="width: 57px; height: 57px;" /><br />
+                                        Wonderful Location</p>
+                                </div>
+                            </div>
+
+                            <div class="col col-md-6 col-sm-6 col-xs-6">
+                                <div class="content">
+                                    <p style="text-align: center;"><img alt="" src="images/gt_2.png" style="width: 57px; height: 57px;" /><br />
+                                        Our Foodies</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row row-2">
+                            <div class="col col-md-6 col-sm-6 col-xs-6">
+                                <div class="content">
+                                    <p style="text-align: center;"><img alt="" src="images/gt_3.png" style="width: 57px; height: 57px;" /><br />
+                                        A good night sleep</p>
+                                </div>
+                            </div>
+
+                            <div class="col col-md-6 col-sm-6 col-xs-6">
+                                <div class="content">
+                                    <p style="text-align: center;"><img alt="" src="images/gt_4.png" style="width: 57px; height: 57px;" /><br />
+                                        Amazing EVENT</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row row-3">
+                            <div class="col col-md-6 col-sm-6 col-xs-6">
+                                <div class="content">
+                                    <p style="text-align: center;"><img alt="" src="images/gt_5.png" style="width: 57px; height: 57px;" /><br />
+                                        Secret of Relaxation</p>
+                                </div>
+                            </div>
+
+                            <div class="col col-md-6 col-sm-6 col-xs-6">
+                                <div class="content">
+                                    <p style="text-align: center;"><img alt="" src="images/gt_6.png" style="width: 57px; height: 57px;" /><br />
+                                        For your Kids&nbsp;</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--    ==== photo-->
+    <section class="section_tin_tuc">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3>News & Events</h3>
+                </div>
+                <div class="khung_cms col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="img_cms"><a href="#"><img src="https://r-cf.bstatic.com/images/hotel/max1024x768/207/207283834.jpg" class="img-responsive" /></a></div>
+                    <div class="khung_bot_cms_home">
+                        <div class="ten_cms_home"><a href="#">TOP 5 Best Beachfront Resorts in Danang</a></div>
+                        <div class="chuthich_cms_home"><p>Furama Resort in TOP 5 Best Beachfront Resorts in Danang, Vietnam</p></div>
+                    </div>
+                </div>
+                <div class="khung_cms col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="img_cms"><a href="#"><img src="https://q-cf.bstatic.com/images/hotel/max1024x768/207/207283826.jpg" class="img-responsive" /></a></div>
+                    <div class="khung_bot_cms_home">
+                        <div class="ten_cms_home"><a href="#">TOP 5 Best Beachfront Resorts in Danang</a></div>
+                        <div class="chuthich_cms_home"><p>Furama Resort in TOP 5 Best Beachfront Resorts in Danang, Vietnam</p></div>
+                    </div>
+                </div>
+                <div class="khung_cms col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="img_cms"><a href="#"><img src="https://q-cf.bstatic.com/images/hotel/max1024x768/207/207283843.jpg" class="img-responsive" /></a></div>
+                    <div class="khung_bot_cms_home">
+                        <div class="ten_cms_home"><a href="#">TOP 5 Best Beachfront Resorts in Danang</a></div>
+                        <div class="chuthich_cms_home"><p>Furama Resort in TOP 5 Best Beachfront Resorts in Danang, Vietnam</p></div>
+                    </div>
+                </div>
+                <div class="khung_cms col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="img_cms"><a href="#"><img src="https://r-cf.bstatic.com/images/hotel/max1024x768/207/207283824.jpg" class="img-responsive" /></a></div>
+                    <div class="khung_bot_cms_home">
+                        <div class="ten_cms_home"><a href="#">TOP 5 Best Beachfront Resorts in Danang</a></div>
+                        <div class="chuthich_cms_home"><p>Furama Resort in TOP 5 Best Beachfront Resorts in Danang, Vietnam</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--=============-->
+</div><br>
+
+<footer th:fragment="footer_official_site" class="container-fluid text-center">
+    <p>Copyright © 2019 Furama Resort All rights reserved. | Designed by MeowMeow Production</p>
+</footer>
+
+</body>
+</html>
