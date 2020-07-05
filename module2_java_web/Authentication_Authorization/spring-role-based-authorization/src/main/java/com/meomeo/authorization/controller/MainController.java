@@ -1,5 +1,4 @@
-package com.yuen.controller;
-
+package com.meomeo.authorization.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,7 +11,7 @@ public class MainController {
 		return "index";
 	}
 	
-	@GetMapping("/admin") 
+	@GetMapping("/admin")
 	public String admin() {
 		return "admin";
 	}
@@ -22,7 +21,7 @@ public class MainController {
 		return "403";
 	}
 	
-	@GetMapping("/login") 
+	@GetMapping("/login")
 	public String getLogin() {
 		return "login";
 	}

@@ -1,4 +1,4 @@
-package com.yuen.config;
+package com.meomeo.authorization.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -11,14 +11,14 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-@Configuration
-@EnableWebSecurity
+@Configuration //xác định lớp WebSecurityConfig của ta là một lớp dùng để cấu hình.
+@EnableWebSecurity //sẽ kích hoạt việc tích hợp Spring Security với Spring MVC.
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Autowired
 	private UserDetailsService userDetailsService;
 	
-	@Bean
+	@Bean //việc mã hóa mật khẩu sẽ do interface PasswordEncoder đảm nhận
 	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
@@ -27,15 +27,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
     }
-	
+
+    //cấu hình các chi tiết về bảo mật:
 	@Override
     protected void configure(HttpSecurity http) throws Exception {
         http
+                //Phân quyền request
             .authorizeRequests()
                 .antMatchers("/register").permitAll()
                 .antMatchers("/").hasRole("MEMBER")
                 .antMatchers("/admin").hasRole("ADMIN")
                 .and()
+                //Đăng nhập
             .formLogin()
             	.loginPage("/login")
             	.usernameParameter("email")

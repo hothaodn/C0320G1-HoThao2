@@ -7,8 +7,13 @@
 <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
 </head>
 <body>
-	Logged user: <span sec:authentication="name"></span> <br/> 
+	Logged user: <span sec:authentication="name"></span> <br/>
 	Roles: <span sec:authentication="principal.authorities"></span>
+
+	<p>
+		<button><a href="/admin" style="text-decoration: none">Admin Site</a></button>
+	</p>
+
 	<form action="#" th:action="@{/logout}" method="POST">
 		<button type="submit">Logout</button>
 	</form>

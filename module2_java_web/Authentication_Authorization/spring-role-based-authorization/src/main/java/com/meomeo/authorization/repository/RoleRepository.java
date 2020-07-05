@@ -1,8 +1,7 @@
-package com.yuen.repository;
+package com.meomeo.authorization.repository;
 
+import com.meomeo.authorization.domain.Role;
 import org.springframework.data.repository.CrudRepository;
-
-import com.yuen.domain.Role;
 
 public interface RoleRepository extends CrudRepository<Role, Integer> {
 

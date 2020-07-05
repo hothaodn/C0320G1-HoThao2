@@ -1,17 +1,16 @@
-package com.yuen.config;
+package com.meomeo.authorization.config;
 
-import java.util.HashSet;
-
+import com.meomeo.authorization.domain.Role;
+import com.meomeo.authorization.domain.User;
+import com.meomeo.authorization.repository.RoleRepository;
+import com.meomeo.authorization.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
-import com.yuen.domain.Role;
-import com.yuen.domain.User;
-import com.yuen.repository.RoleRepository;
-import com.yuen.repository.UserRepository;
+import java.util.HashSet;
 
 @Component
 public class DataSeedingListener implements ApplicationListener<ContextRefreshedEvent> {
@@ -22,7 +21,7 @@ public class DataSeedingListener implements ApplicationListener<ContextRefreshed
 	@Autowired
 	private RoleRepository roleRepository;
 	
-	@Autowired 
+	@Autowired
 	private PasswordEncoder passwordEncoder;
 	
 	@Override
@@ -59,5 +58,4 @@ public class DataSeedingListener implements ApplicationListener<ContextRefreshed
 			userRepository.save(user);
 		}
 	}
-
 }
