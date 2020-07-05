@@ -1,3 +1,4 @@
+create database furama_resort;
 -- KHACH HANG
 create table furama_resort.LoaiKhach(
 	IDLoaiKhach int,
@@ -74,16 +75,16 @@ create table furama_resort.DichVuDiKem(
 	IdDichVuDiKem int,
     TenDichVuDiKem varchar(45) unique,
     Gia int not null,
-    DonVi int,
+    DonVi varchar(45) not null,
     TrangThaiKhaDung varchar(45),
     primary key(IdDichVuDiKem)
 );
-alter table furama_resort.DichVuDiKem
-	add SoLuong int default 0
-		after Gia,
-	modify DonVi varchar(45) not null;
-alter table furama_resort.DichVuDiKem
-	drop column SoLuong;
+-- alter table furama_resort.DichVuDiKem
+-- 	add SoLuong int default 0
+-- 		after Gia,
+-- 	modify DonVi varchar(45) not null;
+-- alter table furama_resort.DichVuDiKem
+-- 	drop column SoLuong;
     
 -- NHAN VIEN
 create table furama_resort.ViTri(
@@ -345,26 +346,72 @@ select NhanVien.IDNhanVien,NhanVien.HoTen,NhanVien.IDTrinhDo,NhanVien.IDBoPhan,N
     
 -- 16.Xóa những Nhân viên chưa từng lập được hợp đồng nào từ năm 2017 đến năm 2019.
 delete from NhanVien
-	where NhanVien.IDBoPhan = 1 
-		and exists(select HopDong.IDNhanVien from HopDong having count(HopDong.IDNhanVien) = 0);
+	where not exists(select NhanVien.IDNhanVien from HopDong
+		where HopDong.NgayLamHopDong between '2017-01-01' and '2019-12-31' and NhanVien.IDNhanVien = HopDong.IDNhanVien);
         
 /*17.Cập nhật thông tin những khách hàng có TenLoaiKhachHang từ  Platinium lên Diamond, 
 chỉ cập nhật những khách hàng đã từng đặt phòng với tổng Tiền thanh toán trong năm 2019 là lớn hơn 10.000.000 VNĐ.(fix: 150.000.000)*/
 create temporary table TongTienThanhToan_temp
-	select KhachHang.IDKhachHang,KhachHang.HoTen,KhachHang.IDLoaiKhach,sum(DichVu.ChiPhiThue + HopDongChiTiet.SoLuong*DichVuDiKem.Gia) as 'tong_tien_thanh_toan' from KhachHang
-		inner join HopDong on HopDong.IDKhachHang = KhachHang.IDKhachHang
-		inner join DichVu on HopDong.IDDichVu = DichVu.IDDichVu
-		inner join LoaiKhach on KhachHang.IDLoaiKhach = LoaiKhach.IDLoaiKhach
-		inner join HopDongChiTiet on HopDong.IDHopDong = HopDongChiTiet.IDHopDong
-		inner join DichVuDiKem on HopDongChiTiet.IDDichVuDiKem = DichVuDiKem.IDDichVuDiKem
+	select KhachHang.IDKhachHang,KhachHang.HoTen,KhachHang.IDLoaiKhach,sum(HopDong.TongTien) as 'tong_tien_thanh_toan' from KhachHang
+		join HopDong on HopDong.IDKhachHang = KhachHang.IDKhachHang
 			group by KhachHang.IDKhachHang;
-select * from TongTienThanhToan_temp;
+select * from TongTienThanhToan_temp
+	where TongTienThanhToan_temp.IDLoaiKhach = 2;
 	
 update KhachHang set KhachHang.IDLoaiKhach = 1
-	where exists(select TongTienThanhToan_temp.IDKhachHang from TongTienThanhToan_temp where TongTienThanhToan_temp.tong_tien_thanh_toan > 400000000
-    and KhachHang.IDLoaiKhach = 2);
+	where exists(select TongTienThanhToan_temp.IDKhachHang from TongTienThanhToan_temp 
+		where TongTienThanhToan_temp.tong_tien_thanh_toan > 100000000)
+			and KhachHang.IDLoaiKhach = 2 and HopDong.NgayLamHopDong between '2019-01-01' and '2019-12-31');
 
 drop temporary table TongTienThanhToan_temp;
+
+-- C2:
+update KhachHang,(select HopDong.IDKhachHang as ID, sum(HopDong.TongTien) as tong_tien from HopDong 
+	where year(HopDong.NgayLamHopDong) = 2019
+	group by HopDong.IDKhachHang
+	having tong_tien > 60000000) as temp17 set KhachHang.IDLoaiKhach = (select LoaiKhach.IDLoaiKhach 
+		loaikhach from LoaiKhach where LoaiKhach.TenLoaiKhach = "Diamond")
+	where KhachHang.IDLoaiKhach = (select LoaiKhach.IDLoaiKhach from LoaiKhach where LoaiKhach.TenLoaiKhach = "Platinum")
+		and temp17.id = KhachHang.IDKhachHang;
+
+/*task 18: Hiển thị thông tin của tất cả các Nhân viên và Khách hàng có trong hệ thống, thông tin hiển thị bao gồm ID 
+(IDNhanVien, IDKhachHang), HoTen, Email, SoDienThoai, NgaySinh, DiaChi.*/
+
+/*19.Cập nhật giá cho các Dịch vụ đi kèm được sử dụng trên 10 lần trong năm 2019 lên gấp đôi.*/  
+update DichVuDiKem
+	inner join(select DichVuDiKem.TenDichVuDiKem as ten_dich_vu_di_kem from HopDongChiTiet
+		inner join DichVuDiKem on DichVuDiKem.IDDichVuDiKem = HopDongChiTiet.IDDichVuDiKem
+        group by DichVuDiKem.IDDichVuDiKem
+        having count(HopDongChiTiet.IDDichVuDiKem > 10))as temp19
+set DichVuDiKem.Gia = DichVuDiKem.Gia * 2 where DichVuDiKem.TenDichVuDiKem = temp19.ten_dich_vu_di_kem;
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

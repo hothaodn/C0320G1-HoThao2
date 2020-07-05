@@ -1,15 +1,15 @@
 /*
 -- Query: SELECT * FROM furama_resort.nhanvien
-LIMIT 0, 1000
+LIMIT 0, 400
 
--- Date: 2020-06-01 01:57
+-- Date: 2020-06-02 21:09
 */
 INSERT INTO `` (`IDNhanVien`,`HoTen`,`IDViTri`,`IDTrinhDo`,`IDBoPhan`,`NgaySinh`,`SoCMND`,`Luong`,`SoDienThoai`,`Email`,`DiaChi`) VALUES (1,'Avril Lavigne',6,4,4,'1970-09-02','4962685532','120000000.95','713 307 7675','avril@hotmail.com','Da Nang');
-INSERT INTO `` (`IDNhanVien`,`HoTen`,`IDViTri`,`IDTrinhDo`,`IDBoPhan`,`NgaySinh`,`SoCMND`,`Luong`,`SoDienThoai`,`Email`,`DiaChi`) VALUES (2,'Tran Lien Hoa',3,1,2,'1991-02-12','4512411253','7539314.33','707 882 6916','tpitcaithly1@sina.com.cn','Da Nang');
+INSERT INTO `` (`IDNhanVien`,`HoTen`,`IDViTri`,`IDTrinhDo`,`IDBoPhan`,`NgaySinh`,`SoCMND`,`Luong`,`SoDienThoai`,`Email`,`DiaChi`) VALUES (2,'Tran Lien Hoa',3,1,1,'1991-02-12','4512411253','7539314.33','707 882 6916','tpitcaithly1@sina.com.cn','Da Nang');
 INSERT INTO `` (`IDNhanVien`,`HoTen`,`IDViTri`,`IDTrinhDo`,`IDBoPhan`,`NgaySinh`,`SoCMND`,`Luong`,`SoDienThoai`,`Email`,`DiaChi`) VALUES (3,'Vu Khanh Thuy',2,1,3,'2000-09-09','8796969461','6210399.53','319 854 1902','slovatt2@dailymotion.com','Da Nang');
-INSERT INTO `` (`IDNhanVien`,`HoTen`,`IDViTri`,`IDTrinhDo`,`IDBoPhan`,`NgaySinh`,`SoCMND`,`Luong`,`SoDienThoai`,`Email`,`DiaChi`) VALUES (4,'Tran Binh Thanh',2,1,2,'1986-11-13','6691784694','6396536.67','277 868 4284','whebson3@devhub.com','Da Nang');
+INSERT INTO `` (`IDNhanVien`,`HoTen`,`IDViTri`,`IDTrinhDo`,`IDBoPhan`,`NgaySinh`,`SoCMND`,`Luong`,`SoDienThoai`,`Email`,`DiaChi`) VALUES (4,'Tran Binh Thanh',3,1,3,'1986-11-13','6691784694','6396536.67','277 868 4284','whebson3@devhub.com','Da Nang');
 INSERT INTO `` (`IDNhanVien`,`HoTen`,`IDViTri`,`IDTrinhDo`,`IDBoPhan`,`NgaySinh`,`SoCMND`,`Luong`,`SoDienThoai`,`Email`,`DiaChi`) VALUES (5,'Huynh Hoa Ly',1,1,3,'1989-12-22','3532327947','7256111.95','125 558 8288','worknay4@about.me','Da Nang');
-INSERT INTO `` (`IDNhanVien`,`HoTen`,`IDViTri`,`IDTrinhDo`,`IDBoPhan`,`NgaySinh`,`SoCMND`,`Luong`,`SoDienThoai`,`Email`,`DiaChi`) VALUES (6,'Nguyen Nguyen Thanh',1,1,2,'1996-09-13','8665052045','6299100.62','378 401 8394','chay5@harvard.edu','Da Nang');
+INSERT INTO `` (`IDNhanVien`,`HoTen`,`IDViTri`,`IDTrinhDo`,`IDBoPhan`,`NgaySinh`,`SoCMND`,`Luong`,`SoDienThoai`,`Email`,`DiaChi`) VALUES (6,'Nguyen Nguyen Thanh',1,1,1,'1996-09-13','8665052045','6299100.62','378 401 8394','chay5@harvard.edu','Da Nang');
 INSERT INTO `` (`IDNhanVien`,`HoTen`,`IDViTri`,`IDTrinhDo`,`IDBoPhan`,`NgaySinh`,`SoCMND`,`Luong`,`SoDienThoai`,`Email`,`DiaChi`) VALUES (7,'Tran Bao Thy',3,2,2,'1992-01-07','2081470384','6138833.66','939 186 3905','hmacknish6@imdb.com','Da Nang');
 INSERT INTO `` (`IDNhanVien`,`HoTen`,`IDViTri`,`IDTrinhDo`,`IDBoPhan`,`NgaySinh`,`SoCMND`,`Luong`,`SoDienThoai`,`Email`,`DiaChi`) VALUES (9,'Hoang Mai Anh',3,2,2,'1983-03-13','5488845455','6817863.37','549 130 2058','zblemen8@yolasite.com','Da Nang');
 INSERT INTO `` (`IDNhanVien`,`HoTen`,`IDViTri`,`IDTrinhDo`,`IDBoPhan`,`NgaySinh`,`SoCMND`,`Luong`,`SoDienThoai`,`Email`,`DiaChi`) VALUES (10,'Ly Cong Vy',2,2,3,'2001-05-05','2404751738','7981266.99','649 610 3967','acockett9@fema.gov','Da Nang');
@@ -38,10 +38,10 @@ INSERT INTO `` (`IDNhanVien`,`HoTen`,`IDViTri`,`IDTrinhDo`,`IDBoPhan`,`NgaySinh`
 INSERT INTO `` (`IDNhanVien`,`HoTen`,`IDViTri`,`IDTrinhDo`,`IDBoPhan`,`NgaySinh`,`SoCMND`,`Luong`,`SoDienThoai`,`Email`,`DiaChi`) VALUES (33,'Tran Khanh Binh',5,2,1,'1986-04-18','8477943302','25000000.36','602 143 9487','amaniew@altervista.org','Quang Nam');
 INSERT INTO `` (`IDNhanVien`,`HoTen`,`IDViTri`,`IDTrinhDo`,`IDBoPhan`,`NgaySinh`,`SoCMND`,`Luong`,`SoDienThoai`,`Email`,`DiaChi`) VALUES (34,'Vu Cat Tuong',5,3,1,'1996-04-27','4319404573','17000000.28','173 188 0184','adeverillx@wikimedia.org','Da Nang');
 INSERT INTO `` (`IDNhanVien`,`HoTen`,`IDViTri`,`IDTrinhDo`,`IDBoPhan`,`NgaySinh`,`SoCMND`,`Luong`,`SoDienThoai`,`Email`,`DiaChi`) VALUES (35,'Trong Ly',3,3,1,'1982-03-24','5221633786','8000000.04','165 210 7506','mvarndally@360.cn','Da Nang');
-INSERT INTO `` (`IDNhanVien`,`HoTen`,`IDViTri`,`IDTrinhDo`,`IDBoPhan`,`NgaySinh`,`SoCMND`,`Luong`,`SoDienThoai`,`Email`,`DiaChi`) VALUES (36,'Ho Quy',3,3,1,'1999-12-04','7571752906','9000000.91','853 434 1396','cvassmanz@wikipedia.org','Da Nang');
+INSERT INTO `` (`IDNhanVien`,`HoTen`,`IDViTri`,`IDTrinhDo`,`IDBoPhan`,`NgaySinh`,`SoCMND`,`Luong`,`SoDienThoai`,`Email`,`DiaChi`) VALUES (36,'Tong My Anh',3,3,1,'1999-12-04','7571752906','9000000.91','853 434 1396','cvassmanz@wikipedia.org','Da Nang');
 INSERT INTO `` (`IDNhanVien`,`HoTen`,`IDViTri`,`IDTrinhDo`,`IDBoPhan`,`NgaySinh`,`SoCMND`,`Luong`,`SoDienThoai`,`Email`,`DiaChi`) VALUES (37,'Nguyen Gia Hieu',3,3,1,'1984-03-13','1284741603','8000000.59','885 939 4968','ilydiard10@cocolog-nifty.com','Da Nang');
 INSERT INTO `` (`IDNhanVien`,`HoTen`,`IDViTri`,`IDTrinhDo`,`IDBoPhan`,`NgaySinh`,`SoCMND`,`Luong`,`SoDienThoai`,`Email`,`DiaChi`) VALUES (38,'Tran Van Dinh',3,3,1,'1988-11-24','4826706829','8000000.45','997 972 5086','kgowan11@ucoz.ru','Da Nang');
-INSERT INTO `` (`IDNhanVien`,`HoTen`,`IDViTri`,`IDTrinhDo`,`IDBoPhan`,`NgaySinh`,`SoCMND`,`Luong`,`SoDienThoai`,`Email`,`DiaChi`) VALUES (39,'Tong My Anh',3,3,1,'1996-09-05','3062225622','7395475.59','340 820 1506','caxten12@themeforest.net','Da Nang');
+INSERT INTO `` (`IDNhanVien`,`HoTen`,`IDViTri`,`IDTrinhDo`,`IDBoPhan`,`NgaySinh`,`SoCMND`,`Luong`,`SoDienThoai`,`Email`,`DiaChi`) VALUES (39,'Tran Anh',3,3,1,'1996-09-05','3062225622','7395475.59','340 820 1506','caxten12@themeforest.net','Da Nang');
 INSERT INTO `` (`IDNhanVien`,`HoTen`,`IDViTri`,`IDTrinhDo`,`IDBoPhan`,`NgaySinh`,`SoCMND`,`Luong`,`SoDienThoai`,`Email`,`DiaChi`) VALUES (40,'Tran Khanh Bien',3,3,3,'1988-10-23','1006094145','7722869.83','187 597 3757','ccawte13@marketwatch.com','Da Nang');
 INSERT INTO `` (`IDNhanVien`,`HoTen`,`IDViTri`,`IDTrinhDo`,`IDBoPhan`,`NgaySinh`,`SoCMND`,`Luong`,`SoDienThoai`,`Email`,`DiaChi`) VALUES (41,'Nguyen Van Dung',3,3,3,'1989-11-03','1968896234','7684463.78','827 570 2556','pblanch14@reference.com','Quang Nam');
 INSERT INTO `` (`IDNhanVien`,`HoTen`,`IDViTri`,`IDTrinhDo`,`IDBoPhan`,`NgaySinh`,`SoCMND`,`Luong`,`SoDienThoai`,`Email`,`DiaChi`) VALUES (42,'Tran Van Kim',3,3,3,'1987-02-18','9664366353','7537363.80','693 947 9043','smayberry15@cafepress.com','Quang Nam');
