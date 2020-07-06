@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul.a {
+            list-style-type: circle;
+            list-style-position: inside;
+        }
+
+        ul.b {
+            list-style-type: square;
+            list-style-position: outside;
+        }
+
+        ol.c {
+            list-style-type: upper-roman;
+            list-style-position: inside;
+        }
+
+        ol.d {
+            list-style-type: lower-alpha;
+        }
+
+        ul.e{
+            list-style: none;
+        }
+
+        ul.e li:before {
+            content: '';
+            display: inline-block;
+            height: 10px;
+            width: 10px;
+            background-size: 10px;
+            background-image: url("https://i.pinimg.com/originals/0b/f2/d9/0bf2d933f2f1115e56c55a0b753e3e53.png");
+            background-repeat: no-repeat;
+            margin-right: 5px;
+        }
+
+        /*ul.f{*/
+        /*    list-style: square inside url("https://i.pinimg.com/originals/0b/f2/d9/0bf2d933f2f1115e56c55a0b753e3e53.png");*/
+        /*}*/
+
+        ol {
+            background: #ff9999;
+            padding: 20px;
+        }
+
+        ul {
+            background: #3399ff;
+            padding: 20px;
+        }
+
+        ol li {
+            background: #ffe5e5;
+            padding: 5px;
+            margin-left: 35px;
+        }
+
+        ul li {
+            background: #cce5ff;
+            /*margin: 5px;*/
+            margin-left: 35px;
+        }
+    </style>
+</head>
+<body>
+    <p>VD về danh sách không có thứ tự:</p>
+    <ul class="a">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+    </ul>
+
+    <ul class="b">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+    </ul>
+
+    <p>VD về danh sách có thứ tự:</p>
+    <ol class="c">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+    </ol>
+
+    <ol class="d">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+    </ol>
+
+    <ul class="e">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+    </ul>
+
+    <ul class="f">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+    </ul>
+</body>
+</html>
