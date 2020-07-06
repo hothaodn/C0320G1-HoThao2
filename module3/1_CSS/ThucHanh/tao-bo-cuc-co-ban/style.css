@@ -29,7 +29,7 @@
     width: 50px;
 }
 
-.head-link{
+#head-link{
     background-color: #496184;
     display: block;
     color: black;
@@ -40,7 +40,7 @@
     height: 50px;
 }
 
-.head-link a{
+#head-link a{
     float: left;
     display: block;
     color: #f2f2f2;
@@ -50,27 +50,27 @@
     font-size: 17px;
 }
 
-.head-link #search{
+#head-link #search{
     text-align: center;
     float: right;
     right: 0;
     padding: 10px;
 }
 
-.footer{
+#footer{
     background-color: #496184;
     color: white;
     padding: 10px;
-    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
     text-align: center;
     display: block;
     font-size: x-small;
+    clear: both;
 }
 
-.footer a{
+#footer a{
     float: right;
     text-decoration: none;
     color: white;
