@@ -23,12 +23,12 @@
     color: white;
     position: absolute;
     float: left;
-    top: 40px;
+    top: 36px;
     left: 150px;
 }
 
 #search{
-    background-color: palegoldenrod;
+    background-color: darkseagreen;
     position: absolute;
     right: 0;
     float: right;
@@ -68,7 +68,7 @@
     /*position: relative;*/
     left: 0;
     width: 15%;
-    height: 500px;
+    height: 1000px;
     clear: left;
 }
 
@@ -103,31 +103,43 @@
     position: relative;
     bottom: 0;
     width: 85%;
-    height: 500px;
+    height: 1000px;
 }
 
 .content{
-    margin-left: 30px;
+    /*margin-left: 30px;*/
+    /*position: relative;*/
     display: grid;
     grid: 150px / auto auto auto auto;
     grid-gap: 25px;
     padding: 10px;
+    margin-bottom: 200px;
 }
 
 .content > div {
-    background-color: white;
+    /*background-color: white;*/
+    position: relative;
     text-align: left;
-    padding: 20px 0;
+    /*padding: 20px 0;*/
     font-size: 20px;
-    height: 200px;
+    height: 350px;
     margin-top: 10px;
+    display: block;
+    text-align: center;
+    clear: bottom;
 }
 
 .content > div > img {
-    z-index: 1;
     position: absolute;
-    float: left;
     top: 0;
-    left: 20px;
-    width: 100px;
+    left: 0;
+    width: 200px;
 }
+
+.content > div > p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+}
+
