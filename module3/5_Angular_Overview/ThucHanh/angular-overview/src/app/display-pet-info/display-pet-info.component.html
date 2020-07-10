@@ -1,0 +1,21 @@
+<h2>Thực hành 2: Pet profile</h2>
+<label>
+  Pet name:
+  <input type="text" (change)="updateName($event.target.value)">
+</label>
+<br>
+<label>
+  Pet image:
+<!--  <input type="url" (change)="updateImage($event.target.value)">-->
+  <div>
+    <input type="radio" (change)="updateImage($event.target.value)" value="https://img01.vietnhat.tv/usr/nhatban/10341493_319258378199345_9114432466486138575_n.jpg" name="photo" checked/>Photo 1
+    <input type="radio" (change)="updateImage($event.target.value)" value="https://sites.google.com/site/eobanhmi93/_/rsrc/1472776153336/home/shironeko/a.baa-Shiro-Neko-3.jpg" name="photo"/>Photo 2
+    <input type="radio" (change)="updateImage($event.target.value)" value="https://www.petcity.vn/media/news/728_shironeko14_1413790409_680x0.jpg" name="photo"/>Photo 3
+  </div>
+</label>
+
+<br >
+<h1 style="color: hotpink;font-size: large">Pet name: {{petName}}</h1>
+<img [src]="petImage" width="300px">
+<hr>
+

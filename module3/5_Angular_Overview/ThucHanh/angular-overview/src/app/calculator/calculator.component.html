@@ -1,0 +1,17 @@
+<h2>Thực hành 3: CALCULATOR</h2>
+
+<input type="number" placeholder="enter a number" #firstNum>
+
+<select #action>
+  <option value="+" > + </option>
+  <option value="-" > - </option>
+  <option value="*" > x </option>
+  <option value="/" > / </option>
+</select>
+
+<input type="number" placeholder="enter a number" #secondNum>
+<button type="submit" (click)="calculate(firstNum.value,secondNum.value,action.value)">Go</button>
+
+<p style="color: red">Result: {{result}} </p>
+
+<hr>

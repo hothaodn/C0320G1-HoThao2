@@ -1,0 +1,9 @@
+  <p>Thực hành 4: Change color</p>
+  <label>Choose a color </label>
+  <input type="color" (change)="onChange($event.target.value)" [value]="colorIndex">
+
+
+  <p>Output</p>
+  <div class="output" [style.background-color]="colorIndex" style="width:300px; height:200px "></div>
+
+  <hr>

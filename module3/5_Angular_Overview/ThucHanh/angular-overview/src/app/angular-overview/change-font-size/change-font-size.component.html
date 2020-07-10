@@ -1,0 +1,24 @@
+<!--<script src="https://code.jquery.com/jquery-3.5.0.js"></script>-->
+
+<h2>Thực hành 1: Font size editor</h2>
+
+<!--<div>-->
+<!--  <label>Enter font size (px):</label>-->
+<!--  <input type="number" [value]="fontSize" (change)="onChange($event.target.value)">-->
+<!--</div>-->
+
+<!--<p class="output" [style.fontSize.px]="fontSize">-->
+<!--  Hello Kitty :3-->
+<!--</p>-->
+
+<img src="https://www.petcity.vn/media/news/728_shironeko14_1413790409_680x0.jpg"
+     class="output" [style.width.px]="width">
+<!--<input type="number" [value]="width" (change)="onClick($event.target.value)"/>-->
+
+<input type="number" [value]="width" #a #b />
+<button type="submit" (click)="onClick(a.value)">Zoom</button>
+
+<button type="submit" (click)="onClick(b.value)">Zoom</button>
+
+
+
