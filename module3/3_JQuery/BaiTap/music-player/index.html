@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!--    <div>-->
+<!--        &lt;!&ndash; Full Page Intro &ndash;&gt;-->
+<!--        <div class="view">-->
+<!--            &lt;!&ndash; Mask & flexbox options&ndash;&gt;-->
+<!--            <div class="mask gradient-card align-items-center">-->
+<!--                &lt;!&ndash; Content &ndash;&gt;-->
+<!--                <div class="container d-flex justify-content-center my-4">-->
+
+<!--                    <div id="mobile-box">-->
+
+<!--                        <h4 class="my-5 h5 text-center" style="color:rgb(235, 232, 234)">Just click<i class="fas fa-play ml-2"></i></h4>-->
+
+<!--                        &lt;!&ndash; Card &ndash;&gt;-->
+<!--                        <div class="card">-->
+
+<!--                            &lt;!&ndash; Card image &ndash;&gt;-->
+<!--                            <div class="view">-->
+<!--                                <img class="card-img-top" src="https://mdbootstrap.com/wp-content/uploads/2019/02/flam.jpg"-->
+<!--                                     alt="Card image cap">-->
+<!--                                <a href="https://bachataurban.com/" target="_blank">-->
+<!--                                    <div class="mask gradient-card"></div>-->
+<!--                                </a>-->
+<!--                            </div>-->
+
+<!--                            &lt;!&ndash; Card content &ndash;&gt;-->
+<!--                            <div class="card-body text-center">-->
+
+<!--                                <h5 class="h5 font-weight-bold"><a href="https://bachataurban.com/" target="_blank">Dj Flam</a></h5>-->
+<!--                                <p class="mb-0">Urban Bachata remix</p>-->
+
+<!--                                <audio id="music" preload="true">-->
+<!--                                    <source src="https://bachataurban.com/download/2/Stefflon%20Don%20-%2016%20Shots%20(%20DJ%20Flam%20-%20Urban%20Bachata%20remix%20).mp3">-->
+<!--                                </audio>-->
+<!--                                <div id="audioplayer">-->
+<!--                                    <i id="pButton" class="fas fa-play"></i>-->
+<!--                                    <div id="timeline">-->
+<!--                                        <div id="playhead"></div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+
+<!--                            </div>-->
+
+<!--                        </div>-->
+<!--                        &lt;!&ndash; Card &ndash;&gt;-->
+
+
+<!--                    </div>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; Content &ndash;&gt;-->
+<!--            </div>-->
+<!--            &lt;!&ndash; Mask & flexbox options&ndash;&gt;-->
+<!--        </div>-->
+<!--        &lt;!&ndash; Full Page Intro &ndash;&gt;-->
+<!--    </div>-->
+
+
+<!--    ===============-->
+    <div id="title"></div>
+    <div id="song-1">
+        <audio id="song_1" controls></audio>
+    </div>
+
+<!--    <p id="display"></p>-->
+<!--        -->
+<!--    <p id="display1"></p>-->
+    <p id="playlist"></p>
+    <hr>
+    <p class="current-song"></p>
+    <script>
+        $.ajax({
+            type: "GET",
+            url: "list-songs.xml",
+            dataType: "xml",
+            success: function (xml) {
+                $(xml).find("track").each(function () {
+                    let title = $(this).find("title").text();
+                    let creator = $(this).find("creator").text();
+                    let location = $(this).find("location").text();
+                    let data = "<li>" + "<a href=" + location + "> Title: " + title + "</a>" +
+                        "<p> Creator: " + creator + "</p>" + "</li>";
+
+                    $("#playlist").append(data)
+                    $("#playlist li:eq(" + 0 + ")").addClass("current-song");
+                });
+            }
+        })
+    </script>
+</body>
+</html>

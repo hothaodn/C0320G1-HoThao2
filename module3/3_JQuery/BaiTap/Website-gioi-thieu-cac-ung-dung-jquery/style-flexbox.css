@@ -71,7 +71,7 @@ body {
 .footer {
     padding: 20px;
     text-align: center;
-    background: #1abc9c;
+    background: #0D3349;
 }
 
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
@@ -80,3 +80,19 @@ body {
         flex-direction: column;
     }
 }
+
+#draggable {
+    width: 150px;
+    height: 50px;
+    padding: 0.5em;
+    background-color: #00ccff;
+}
+
+#draggable2 { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; background-color: yellow}
+#droppable { width: 300px; height: 300px; padding: 0.5em; float: left; margin: 10px; background-color: #00cc00; }
+
+#feedback { font-size: 1.4em; }
+#selectable .ui-selecting { background: #FECA40; }
+#selectable .ui-selected { background: #F39814; color: blue; }
+#selectable, div h1 { list-style-type: none; padding: 0; width: 20%; margin-left: 50px; }
+#selectable li { margin: 3px; font-size: 1.4em; height: 25px; }

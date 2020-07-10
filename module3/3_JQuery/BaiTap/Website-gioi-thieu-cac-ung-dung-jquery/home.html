@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="style-flexbox.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!--    <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous"/>-->
+<!--    <link rel="stylesheet" href="../../../bootstrap-4.0.0/dist/css/bootstrap.min.css">-->
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+        $( function() {
+            $( "#draggable" ).draggable();
+        } );
+
+        $( function() {
+            $( "#draggable2" ).draggable();
+            $( "#droppable" ).droppable({
+                drop: function( event, ui ) {
+                    $( this )
+                        // .addClass( "ui-state-highlight" )
+                        .find( "p" )
+                        .html( "Dropped!" )
+                        .animate({fontSize: '66px'}, "slow");
+                }
+            });
+        } );
+
+        $( function() {
+            $( "#selectable" ).selectable();
+        } );
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h1>DETEST JQUERY EFFECTS</h1>
+    </div>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+    </div>
+
+    <!-- The flexible grid (content) -->
+    <div class="row">
+        <div class="side">
+            <div>
+                <h1>Selectable</h1>
+                <ol id="selectable">
+                    <li class="ui-widget-content">Item 1</li>
+                    <li class="ui-widget-content">Item 2</li>
+                    <li class="ui-widget-content">Item 3</li>
+                    <li class="ui-widget-content">Item 4</li>
+                    <li class="ui-widget-content">Item 5</li>
+                    <li class="ui-widget-content">Item 6</li>
+                    <li class="ui-widget-content">Item 7</li>
+                </ol>
+            </div>
+        </div>
+        <div class="main">
+            <div>
+                <h2>Draggable</h2>
+                <div id="draggable" class="ui-widget-content">
+                    <p>Drag me around</p>
+                </div>
+            </div>
+
+            <hr>
+
+            <div id="draggable2" class="ui-widget-content">
+                <p>Drag me to my target</p>
+            </div>
+
+            <div id="droppable" class="ui-widget-header">
+                <p>Drop here</p>
+            </div>
+
+<!--            hiệu ứng select-->
+            <br>
+
+
+
+
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <h2>Footer</h2>
+    </div>
+
+</body>
+</html>
