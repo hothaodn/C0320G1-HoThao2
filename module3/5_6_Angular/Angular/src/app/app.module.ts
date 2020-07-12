@@ -10,7 +10,9 @@ import { ChangeColorComponent } from './angular-overview/change-color/change-col
 import { NameCardComponent } from './bai-6-component-and-template/name-card/name-card.component';
 import { ProgressBarComponent } from './bai-6-component-and-template/progress-bar/progress-bar.component';
 import { UngDungBinhChonComponent } from './bai-6-component-and-template/ung-dung-binh-chon/ung-dung-binh-chon.component';
-import { TimerCountdownComponent } from './bai-6-component-and-template/timer-countdown/timer-countdown.component';
+import { TimerCountdownGetSetComponent } from './bai-6-component-and-template/timer-countdown-get-set/timer-countdown-get-set.component';
+import {TimerCountdownComponent} from "./bai-6-component-and-template/timer-countdown/timer-countdown.component";
+import {TimerCountdownOnchangesComponent} from "./bai-6-component-and-template/timer-countdown-onchanges/timer-countdown-onchanges.component";
 
 
 @NgModule({
@@ -23,7 +25,11 @@ import { TimerCountdownComponent } from './bai-6-component-and-template/timer-co
     NameCardComponent,
     ProgressBarComponent,
     UngDungBinhChonComponent,
-    TimerCountdownComponent
+    TimerCountdownComponent,
+    TimerCountdownGetSetComponent,
+    TimerCountdownComponent,
+    TimerCountdownOnchangesComponent,
+    TimerCountdownOnchangesComponent
   ],
   imports: [
     BrowserModule,
