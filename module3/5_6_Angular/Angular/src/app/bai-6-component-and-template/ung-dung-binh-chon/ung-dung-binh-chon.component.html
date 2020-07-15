@@ -1,7 +1,9 @@
 <h3>Bài tập 1: Rating Bar</h3>
+
 <div class="display-result" *ngIf="showRatingValue">
   {{ ratingValue }}
 </div>
+
 <div class="rating-bar" (mouseleave)="reset()">
   <div class="rating-unit"
        [class.active]="item.active"

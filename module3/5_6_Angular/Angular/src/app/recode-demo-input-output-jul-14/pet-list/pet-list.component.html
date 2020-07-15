@@ -1,0 +1,26 @@
+<h1>PET STORE</h1>
+
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th>No.</th>
+    <th>Name</th>
+    <th>Species</th>
+    <th>Status</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let pet of petList">
+    <td>{{pet.id}}</td>
+    <td>{{pet.name}}</td>
+    <td>{{pet.species}}</td>
+    <td>{{pet.healthStatus}}</td>
+    <td>
+      <button (click)="showPetDetail(pet)" type="button" class="btn btn-info">See detail</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<app-pet-details [petDetail] = petDetail></app-pet-details>

@@ -7,6 +7,7 @@
     <mapping directory="$PROJECT_DIR$/4_Typescript/ThucHanh/typescript-condition-loop" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/4_Typescript/ThucHanh/typescript-object" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/4_Typescript/ThucHanh/typescript-promise" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/5_6_Angular/learn-angular" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/MusicPlayer" vcs="Git" />
   </component>
 </project>

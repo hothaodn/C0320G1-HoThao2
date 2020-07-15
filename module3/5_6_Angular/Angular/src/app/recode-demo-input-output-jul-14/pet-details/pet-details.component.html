@@ -1,0 +1,42 @@
+
+<div *ngIf="petDetail" class="pet-details">
+  <h2>DETAILS OF PET</h2>
+
+  <div (change)="setHealthStatus($event.target.value)" class="pet-details-health-update">
+    <h3>Set status of health today</h3>
+    <input type="radio" value="OK" name="status"> OK
+    <input type="radio" value="NOT ok" name="status"> not ok
+  </div>
+
+  <table class="table table-bordered">
+    <tr>
+      <td width="150px"><b>No.</b></td>
+      <td width="300px">{{petDetail.id}}</td>
+    </tr>
+    <tr>
+      <td><b>Name</b></td>
+      <td>{{petDetail.name}}</td>
+    </tr>
+    <tr>
+      <td><b>Species</b></td>
+      <td>{{petDetail.species}}</td>
+    </tr>
+    <tr>
+      <td><b>Gender</b></td>
+      <td>{{petDetail.gender}}</td>
+    </tr>
+    <tr>
+      <td><b>Age</b></td>
+      <td>{{petDetail.age}}</td>
+    </tr>
+    <tr>
+      <td><b>Place of Birth</b></td>
+      <td>{{petDetail.placeOfBirth}}</td>
+    </tr>
+    <tr>
+      <td><b>Health Status</b></td>
+      <td>{{petDetail.healthStatus}}</td>
+    </tr>
+  </table>
+
+</div>
