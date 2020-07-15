@@ -19,8 +19,12 @@
     <td>
       <button (click)="showPetDetail(pet)" type="button" class="btn btn-info">See detail</button>
     </td>
+    <td>
+      <button (click)="pet.name = 'saaaa'" type="button" class="btn btn-info">change</button>
+    </td>
   </tr>
   </tbody>
 </table>
 
-<app-pet-details [petDetail] = petDetail></app-pet-details>
+
+<app-pet-details [pet]="petDetail"></app-pet-details>

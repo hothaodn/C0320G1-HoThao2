@@ -7,11 +7,12 @@ import {IPet} from '../IPet';
   styleUrls: ['./pet-details.component.scss']
 })
 export class PetDetailsComponent implements OnInit {
-  @Input()
+  @Input('pet')
   petDetail: IPet;
 
-  setHealthStatus(value: string){
-    this.petDetail.healthStatus = value;
+  setHealthStatus(event: any)  {
+    console.log(event.target.value);
+    this.petDetail.healthStatus = event.target.value;
   }
 
   constructor() { }

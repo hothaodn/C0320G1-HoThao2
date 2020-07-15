@@ -16,7 +16,8 @@ export class PetListComponent implements OnInit {
   ngOnInit() {
   }
 
-  showPetDetail(pet: IPet){
+  showPetDetail(pet: IPet) {
     this.petDetail = pet;
+    console.log(pet);
   }
 }

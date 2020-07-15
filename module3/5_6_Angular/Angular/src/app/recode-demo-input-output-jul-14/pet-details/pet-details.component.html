@@ -2,10 +2,10 @@
 <div *ngIf="petDetail" class="pet-details">
   <h2>DETAILS OF PET</h2>
 
-  <div (change)="setHealthStatus($event.target.value)" class="pet-details-health-update">
+  <div (change)="setHealthStatus($event)" class="pet-details-health-update">
     <h3>Set status of health today</h3>
     <input type="radio" value="OK" name="status"> OK
-    <input type="radio" value="NOT ok" name="status"> not ok
+    <input type="radio" value="not ok" name="status"> not ok
   </div>
 
   <table class="table table-bordered">
