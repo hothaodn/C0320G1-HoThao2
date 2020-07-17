@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +18,14 @@ import { WordComponent } from './khoaPham-angular4/word/word.component';
 import { UserFormComponent } from './khoaPham-angular4/user-form/user-form.component';
 import { PetDetailsComponent } from './recode-demo-input-output-jul-14/pet-details/pet-details.component';
 import { PetListComponent } from './recode-demo-input-output-jul-14/pet-list/pet-list.component';
+import { UngDungTodoComponent } from './bai-7-angular-form/ung-dung-todo/ung-dung-todo.component';
+import { BaiTapRegisterFormComponent } from './bai-7-angular-form/bai-tap-register-form/bai-tap-register-form.component';
+import { BaiTapLoginFormComponent } from './bai-7-angular-form/bai-tap-login-form/bai-tap-login-form.component';
+import { TestTemplateDrivenFormComponent } from './bai-7-angular-form/test-template-driven-form/test-template-driven-form.component';
+import { ThucHanhTimelinesComponent } from './bai-8-service-and-router/thuc-hanh-timelines/thuc-hanh-timelines.component';
+import { ThucHanhUngDungNgheNhacComponent } from './bai-8-service-and-service/thuc-hanh-ung-dung-nghe-nhac/thuc-hanh-ung-dung-nghe-nhac.component';
+import { YoutubePlaylistComponent } from './bai-8-service-and-router/youtube-playlist/youtube-playlist.component';
+import { YoutubePlayerComponent } from './bai-8-service-and-router/youtube-player/youtube-player.component';
 
 @NgModule({
   declarations: [
@@ -36,11 +44,20 @@ import { PetListComponent } from './recode-demo-input-output-jul-14/pet-list/pet
     UserFormComponent,
     PetDetailsComponent,
     PetListComponent,
+    UngDungTodoComponent,
+    BaiTapRegisterFormComponent,
+    BaiTapLoginFormComponent,
+    TestTemplateDrivenFormComponent,
+    ThucHanhTimelinesComponent,
+    ThucHanhUngDungNgheNhacComponent,
+    YoutubePlaylistComponent,
+    YoutubePlayerComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
