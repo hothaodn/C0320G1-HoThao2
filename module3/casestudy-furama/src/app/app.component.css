@@ -1,0 +1,49 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  background-color: #066056;
+  margin-bottom: 0;
+  border-radius: 0;
+  color: white;
+}
+
+#logo{
+  width: 20px;
+}
+
+.collapse navbar-collapse > ul > li{
+  color: white;
+}
+
+/*.row.content {height: 40vw}*/
+.row.content {height: 45vw}
+
+
+.sidenav {
+  padding-top: 20px;
+  background-color: #f1f1f1;
+  height: 100%;
+}
+
+footer {
+  background-color: #066056;
+  color: white;
+  padding: 15px;
+  bottom: 0 !important;
+
+  position: relative;
+  width: 100%;
+  clear: none;
+  margin-bottom: 0 !important;
+}
+
+@media screen and (max-width: 767px) {
+  .sidenav {
+    height: auto;
+    padding: 15px;
+  }
+  .row.content {height:45vw;}
+}
