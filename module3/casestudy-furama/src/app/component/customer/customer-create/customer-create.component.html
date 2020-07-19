@@ -1,1 +1,65 @@
-<p>customer-add-new works!</p>
+<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+        <h4 class="modal-title custom_align" id="Heading">Add Customer</h4>
+      </div>
+      <div class="modal-body">
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">ID Customer</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="KH-XXXX">
+          <small id="emailHelp" class="form-text text-muted">Please consider carefully before changing data</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Full Name</label>
+          <input type="text" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputBirthday">Date Of Birth</label>
+          <input type="text" class="form-control" id="exampleInputBirthday">
+        </div>
+        <div class="form-group form-check">
+          <label class="form-check-label" for="female">Gender &nbsp;&nbsp;&nbsp;</label>
+          <input type="radio" class="form-check-input" id="male" name="gender"> Male
+          <input type="radio" class="form-check-input" id="female" name="gender"> Female
+        </div>
+        <div class="form-group">
+          <label for="exampleInputIdCard">ID Card / Passport</label>
+          <input type="text" class="form-control" id="exampleInputIdCard" placeholder="XXXXXXXXX or XXXXXXXXXXXX ">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPhone">Phone Number</label>
+          <input type="text" class="form-control" id="exampleInputPhone">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail">Email</label>
+          <input type="email" class="form-control" id="exampleInputEmail">
+        </div>
+        <div class="form-group">
+          <label for="sel1">Type of Customer</label>
+          <select class="form-control" id="sel1">
+            <option selected>Choose...</option>
+            <option value="Member">Member</option>
+            <option value="Silver">Silver</option>
+            <option value="Gold">Gold</option>
+            <option value="Platinum">Platinum</option>
+            <option value="Diamond">Diamond</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputAddress">Address</label>
+          <input type="text" class="form-control" id="exampleInputAddress">
+        </div>
+
+      </div>
+      <div class="modal-footer ">
+        <button type="button" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Save</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>

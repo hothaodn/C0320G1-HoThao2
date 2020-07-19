@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {CUSTOMERS} from '../../../model/DAO/customerDao';
+import {Customer} from '../../../model/customer.model';
 
 @Component({
   selector: 'app-customer-list',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomerListComponent implements OnInit {
 
+  customers = CUSTOMERS;
+
+  @Input()
+  customerDetail: Customer;
+  term: any;
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  showCustomerDetails(customer: Customer) {
+    this.customerDetail = customer;
+  }
 }

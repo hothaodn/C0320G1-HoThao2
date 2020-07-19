@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeeListComponent implements OnInit {
 
+  employees = EMPLOYEES
   constructor() { }
 
   ngOnInit() {

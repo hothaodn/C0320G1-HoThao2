@@ -11,7 +11,7 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="#"><img id="logo" src="/assets/images/logo.png"></a>
-      <a class="navbar-brand" href="#">Home</a>
+      <a class="navbar-brand" [routerLink]="['']">Home</a>
 
     </div>
 
@@ -23,8 +23,6 @@
             Booking<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a routerLink="/admin/booking/add" class="link">Make new booking</a></li>
-<!--            <li><a routerLink="/admin/booking/edit" class="link">Edit booking</a></li>-->
-<!--            <li><a routerLink="/admin/booking/delete" class="link">Delete booking</a></li>-->
             <li role="separator" class="divider"></li>
             <li><a routerLink="/admin/booking/view-all" class="link">List bookings</a></li>
           </ul>
@@ -36,11 +34,9 @@
           <ul class="dropdown-menu">
             <li><a routerLink="/admin/service/add" class="link">Add new service</a></li>
             <li><a routerLink="/admin/service/add" class="link">Add new service detail</a></li>
-<!--            <li><a routerLink="/admin/service/edit" class="link">Edit service</a></li>-->
-<!--            <li><a routerLink="/admin/service/delete" class="link">Delete service</a></li>-->
             <li role="separator" class="divider"></li>
-            <li><a routerLink="/admin/service/view-all" class="link">List services</a></li>
-            <li><a routerLink="/admin/service/view-all" class="link">List service details</a></li>
+            <li><a [routerLink]="['/admin/service/view-all']" class="link">See all services</a></li>
+            <li><a [routerLink]="['/admin/service/view-all']" class="link">See all service details</a></li>
           </ul>
         </li>
 
@@ -48,11 +44,9 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
             Customer<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a routerLink="/admin/customer/add" class="link">Add new customer</a></li>
-            <li><a routerLink="/admin/customer/edit" class="link">Edit customer</a></li>
-            <li><a routerLink="/admin/customer/delete" class="link">Delete customer</a></li>
+            <li><a [routerLink]="['/admin/customer/add-customer']" class="link">Add new customer</a></li>
             <li role="separator" class="divider"></li>
-            <li><a routerLink="/admin/customer/view-all" class="link">See all customers</a></li>
+            <li><a [routerLink]="['/admin/customer/view-all']" class="link">See all customers</a></li>
           </ul>
         </li>
 
@@ -60,11 +54,9 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
             Employee<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a routerLink="/admin/employee/add" class="link">Add new employee</a></li>
-            <li><a routerLink="/admin/employee/edit" class="link">Edit employee</a></li>
-            <li><a routerLink="/admin/employee/delete" class="link">Delete employee</a></li>
+            <li><a [routerLink]="['/admin/employee/add']" class="link">Add new employee</a></li>
             <li role="separator" class="divider"></li>
-            <li><a routerLink="/admin/employee/view-all" class="link">See all employees</a></li>
+            <li><a [routerLink]="['/admin/employee/view-all']" class="link">See all employees</a></li>
           </ul>
         </li>
 
@@ -96,8 +88,6 @@
       <div class="col-1 text-left">
 <!--      <div class="col-sm-10 text-left">-->
         <router-outlet></router-outlet>
-
-        <app-customer-list></app-customer-list>
 
       </div>
       <!--      =================================================-->
