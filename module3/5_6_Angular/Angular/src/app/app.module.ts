@@ -26,6 +26,9 @@ import { ThucHanhTimelinesComponent } from './bai-8-service-and-router/thuc-hanh
 import { ThucHanhUngDungNgheNhacComponent } from './bai-8-service-and-service/thuc-hanh-ung-dung-nghe-nhac/thuc-hanh-ung-dung-nghe-nhac.component';
 import { YoutubePlaylistComponent } from './bai-8-service-and-router/youtube-playlist/youtube-playlist.component';
 import { YoutubePlayerComponent } from './bai-8-service-and-router/youtube-player/youtube-player.component';
+import { DictionaryDetailComponent } from './bai-8-service-and-router/dictionary/dictionary-detail/dictionary-detail.component';
+import { DictionaryPageComponent } from './bai-8-service-and-router/dictionary/dictionary-page/dictionary-page.component';
+import { DictionaryComponent } from './bai-8-service-and-router/dictionary/dictionary/dictionary.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +55,9 @@ import { YoutubePlayerComponent } from './bai-8-service-and-router/youtube-playe
     ThucHanhUngDungNgheNhacComponent,
     YoutubePlaylistComponent,
     YoutubePlayerComponent,
+    DictionaryDetailComponent,
+    DictionaryPageComponent,
+    DictionaryComponent,
   ],
   imports: [
     BrowserModule,

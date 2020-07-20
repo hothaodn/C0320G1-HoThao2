@@ -1,8 +1,8 @@
-export class HotelServiceModel {
+export class HotelService {
   idService: string;
   nameService: string;
   areaUsing: number;
-  rentalCost: number;
+  rentalFee: number;
   maxOccupancies: number; //so khach toi da o moi phong
   rentalType: string;
   roomStandard: string;

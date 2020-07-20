@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
 import {NgxPaginationModule} from 'ngx-pagination';
 
@@ -23,6 +23,7 @@ import { ServiceEditComponent } from './component/hotel-service/service-edit/ser
 import { ServiceDeleteComponent } from './component/hotel-service/service-delete/service-delete.component';
 import { ServiceListComponent } from './component/hotel-service/service-list/service-list.component';
 import { HomepageComponent } from './component/homepage/homepage.component';
+import { AccompaniedServiceComponent } from './component/accompanied-service/accompanied-service.component';
 
 @NgModule({
   declarations: [
@@ -44,14 +45,16 @@ import { HomepageComponent } from './component/homepage/homepage.component';
     ServiceDeleteComponent,
     ServiceListComponent,
     HomepageComponent,
+    AccompaniedServiceComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    Ng2SearchPipeModule,
-    NgxPaginationModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        Ng2SearchPipeModule,
+        NgxPaginationModule,
+        ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

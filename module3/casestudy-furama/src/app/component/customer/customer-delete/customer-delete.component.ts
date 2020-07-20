@@ -11,15 +11,15 @@ export class CustomerDeleteComponent implements OnInit {
 
   customers = CUSTOMERS;
 
-  // @Input()
-  // customer: Customer;
+  @Input()
+  id: string;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  // deleteCustomer(customer: Customer) {
-  //   this.customers.splice(customer);
-  // }
+  deleteCustomer(id: string) {
+
+  }
 }

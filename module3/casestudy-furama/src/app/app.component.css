@@ -48,3 +48,7 @@ footer {
   }
   .row.content {height:45vw;}
 }
+
+.error-notice{
+  color: darkred;
+}

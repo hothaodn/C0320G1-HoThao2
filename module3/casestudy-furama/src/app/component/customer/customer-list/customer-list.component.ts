@@ -23,4 +23,9 @@ export class CustomerListComponent implements OnInit {
   showCustomerDetails(customer: Customer) {
     this.customerDetail = customer;
   }
+
+
+  deleteCustomer(id: any) {
+
+  }
 }

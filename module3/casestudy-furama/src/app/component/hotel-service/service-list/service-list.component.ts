@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {SERVICES} from '../../../model/DAO/hotelServiceDao';
+import {HotelService} from '../../../model/hotelService.model';
 
 @Component({
   selector: 'app-service-list',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServiceListComponent implements OnInit {
 
+  serviceList = SERVICES;
+
+  @Input()
+  serviceDetail: HotelService;
+  term: any;
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  showServiceDetails(service: HotelService) {
+    this.serviceDetail = service;
+  }
 }

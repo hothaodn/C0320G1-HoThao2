@@ -1,6 +1,6 @@
 export class BookingDetailModel {
   idBookingDetail: string;
   idBooking: string;
-  idFreeService: string;
+  idAccompaniedService: string;
   amount: number;
 }

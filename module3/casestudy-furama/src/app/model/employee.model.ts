@@ -9,4 +9,4 @@ export class Employee {
   position: string;
   salary: number;
   idBooking: string[];
-}
+};
