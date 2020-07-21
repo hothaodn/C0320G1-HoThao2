@@ -38,9 +38,9 @@
           <th>Delete</th>
           </thead>
           <tbody>
-          <tr *ngFor="let service of accServiceList | filter:term | paginate: { itemsPerPage: 3, currentPage: p }">
+          <tr *ngFor="let service of accomServiceList | filter:term | paginate: { itemsPerPage: 3, currentPage: p }">
             <!--              <td><input type="checkbox" class="checkthis" /></td>-->
-            <td>{{service.idAccompaniedService}}</td>
+            <td>{{service.codeAccompaniedService}}</td>
             <td>{{service.nameAccompaniedService}}</td>
             <td>{{service.price}}</td>
             <td>{{service.unit}}</td>

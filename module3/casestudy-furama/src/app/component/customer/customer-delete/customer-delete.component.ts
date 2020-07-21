@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Customer} from '../../../model/customer.model';
+import {ICustomer} from '../../../model/customer.model';
 import {CUSTOMERS} from '../../../model/DAO/customerDao';
 
 @Component({

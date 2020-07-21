@@ -4,7 +4,8 @@ import {HomepageComponent} from './component/homepage/homepage.component';
 import {CustomerListComponent} from './component/customer/customer-list/customer-list.component';
 import {ServiceListComponent} from './component/hotel-service/service-list/service-list.component';
 import {EmployeeListComponent} from './component/employee/employee-list/employee-list.component';
-import {AccompaniedServiceComponent} from './component/accompanied-service/accompanied-service.component';
+import {AccompaniedServiceComponent} from './component/accompanied-service-list/accompanied-service.component';
+import {BookingListComponent} from './component/booking/booking-list/booking-list.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,10 @@ const routes: Routes = [
   {
     path: 'admin/employee/view-all',
     component: EmployeeListComponent
+  },
+  {
+    path: 'admin/booking/view-all',
+    component: BookingListComponent
   },
 ];
 

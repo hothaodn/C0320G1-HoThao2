@@ -41,7 +41,7 @@
           <tbody>
           <tr *ngFor="let service of serviceList | filter:term | paginate: { itemsPerPage: 3, currentPage: p }">
             <!--              <td><input type="checkbox" class="checkthis" /></td>-->
-            <td>{{service.idService}}</td>
+            <td>{{service.codeService}}</td>
             <td>{{service.nameService}}</td>
             <td>{{service.rentalFee}}</td>
             <td>{{service.maxOccupancies}}</td>
@@ -77,7 +77,7 @@
           <tbody>
           <tr>
             <th scope="row">ID</th>
-            <td>{{serviceDetail.idService}}</td>
+            <td>{{serviceDetail.codeService}}</td>
           </tr>
           <tr>
             <th scope="row">Name</th>

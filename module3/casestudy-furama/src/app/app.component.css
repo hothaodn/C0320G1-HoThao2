@@ -5,7 +5,7 @@ body{
 }
 
 .navbar {
-  background-color: #066056;
+  background-color: #1e2329;
   margin-bottom: 0;
   border-radius: 0;
   color: white;
@@ -47,8 +47,4 @@ footer {
     padding: 15px;
   }
   .row.content {height:45vw;}
-}
-
-.error-notice{
-  color: darkred;
 }

@@ -15,7 +15,7 @@ export class EmployeeCreateComponent implements OnInit {
 
   constructor() {
     this.createForm = new FormGroup({
-      idEmployee: new FormControl('', [Validators.required, Validators.pattern('^(KH)-[0-9]{4}$')]),
+      idEmployee: new FormControl('', [Validators.required, Validators.pattern('^(NV)-[0-9]{4}$')]),
       nameEmployee: new FormControl('', Validators.required),
       dateOfBirth: new FormControl('', Validators.pattern('^(0[1-9]|[12][0-9]|3[01])\\/(0[1-9]|1[12])\\/[1-9]{4}$')),
       idCard: new FormControl('', Validators.pattern('^[0-9]{9}|[0-9]{12}$')),

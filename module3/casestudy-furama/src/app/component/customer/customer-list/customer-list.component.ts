@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {CUSTOMERS} from '../../../model/DAO/customerDao';
-import {Customer} from '../../../model/customer.model';
+import {ICustomer} from '../../../model/customer.model';
+import {CustomerService} from '../../../services/customer/customer.service';
 
 @Component({
   selector: 'app-customer-list',
@@ -9,23 +9,27 @@ import {Customer} from '../../../model/customer.model';
 })
 export class CustomerListComponent implements OnInit {
 
-  customers = CUSTOMERS;
+  public customers;
 
   @Input()
-  customerDetail: Customer;
+  customerDetail: ICustomer;
   term: any;
 
-  constructor() { }
+  constructor(
+    public customerService: CustomerService
+  ) { }
 
   ngOnInit() {
+    this.customerService.getAllCustomers().subscribe(data => {
+        this.customers = data;
+        console.log(this.customers);
+    });
   }
 
-  showCustomerDetails(customer: Customer) {
+  showCustomerDetails(customer: ICustomer) {
     this.customerDetail = customer;
   }
 
-
   deleteCustomer(id: any) {
-
   }
 }

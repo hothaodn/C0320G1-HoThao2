@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {EMPLOYEES} from '../../../model/DAO/employeeDao';
-import {Employee} from '../../../model/employee.model';
+import {IEmployee} from '../../../model/employee.model';
+import {EmployeeService} from '../../../services/employee/employee.service';
 
 @Component({
   selector: 'app-employee-list',
@@ -9,18 +9,24 @@ import {Employee} from '../../../model/employee.model';
 })
 export class EmployeeListComponent implements OnInit {
 
-  employees = EMPLOYEES;
+  public employees;
 
   @Input()
-  employeeDetail: Employee;
+  employeeDetail: IEmployee;
   term: any;
 
-  constructor() { }
+  constructor(
+    public employeeService: EmployeeService
+  ) { }
 
   ngOnInit() {
+    this.employeeService.getAllEmployees().subscribe(data => {
+      this.employees = data;
+      console.log(this.employees);
+    });
   }
 
-  showEmployeeDetails(employee: Employee) {
+  showEmployeeDetails(employee: IEmployee) {
     this.employeeDetail = employee;
   }
 }

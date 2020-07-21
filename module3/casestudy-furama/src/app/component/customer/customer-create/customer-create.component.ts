@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {CUSTOMERS} from '../../../model/DAO/customerDao';
+import {CustomerService} from '../../../services/customer/customer.service';
 
 @Component({
   selector: 'app-customer-create',
@@ -9,13 +9,24 @@ import {CUSTOMERS} from '../../../model/DAO/customerDao';
 })
 export class CustomerCreateComponent implements OnInit {
 
-  createForm: FormGroup;
-  customerList = CUSTOMERS;
   message = '';
 
-  constructor() {
+  constructor(
+    public customerService: CustomerService,
+    public createForm: FormGroup
+  ) { }
+
+  onSubmit() {
+    console.log(this.createForm.value);
+    this.customerService.addNewCustomer(this.createForm.value).subscribe(data => {
+      console.log(data);
+    });
+    this.message = 'Saved successfully!';
+  }
+
+  ngOnInit() {
     this.createForm = new FormGroup({
-      idCustomer: new FormControl('', [Validators.required, Validators.pattern('^(KH)-[0-9]{4}$')]),
+      codeCustomer: new FormControl('', [Validators.required, Validators.pattern('^(KH)-[0-9]{4}$')]),
       nameCustomer: new FormControl('', Validators.required),
       dateOfBirth: new FormControl('', Validators.pattern('^(0[1-9]|[12][0-9]|3[01])\\/(0[1-9]|1[12])\\/[1-9]{4}$')),
       gender: new FormControl(''),
@@ -26,15 +37,6 @@ export class CustomerCreateComponent implements OnInit {
       address: new FormControl(''),
       idBooking: new FormControl(''),
     });
-  }
-
-  onSubmit() {
-    console.log(this.createForm.value);
-    this.customerList.push(this.createForm.value);
-    this.message = 'Saved successfully!';
-  }
-
-  ngOnInit() {
   }
 
 }

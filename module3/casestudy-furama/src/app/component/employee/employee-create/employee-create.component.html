@@ -10,7 +10,7 @@
         <form class="form" [formGroup]="createForm" (ngSubmit)="onSubmit()">
           <div class="form-group">
             <label for="exampleInputEmail1">ID Employee</label>
-            <input formControlName="idEmployee" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="KH-XXXX">
+            <input formControlName="idEmployee" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="NV-XXXX">
           </div>
           <div *ngIf="createForm.get('idEmployee').invalid && createForm.get('idEmployee').touched">
             <div *ngIf="createForm.get('idEmployee').hasError('required')">

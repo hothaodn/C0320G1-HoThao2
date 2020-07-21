@@ -53,9 +53,9 @@
             <th>Delete</th>
           </thead>
           <tbody>
-            <tr *ngFor="let customer of customers | filter:term | paginate: { itemsPerPage: 3, currentPage: p }">
+            <tr *ngFor="let customer of customers | filter:term | paginate: { itemsPerPage: 5, currentPage: p }">
 <!--              <td><input type="checkbox" class="checkthis" /></td>-->
-              <td>{{customer.idCustomer}}</td>
+              <td>{{customer.codeCustomer}}</td>
               <td>{{customer.nameCustomer}}</td>
               <td>{{customer.typeCustomer}}</td>
               <td>{{customer.email}}</td>
@@ -104,7 +104,7 @@
           <tbody>
           <tr>
             <th scope="row">ID</th>
-            <td>{{customerDetail.idCustomer}}</td>
+            <td>{{customerDetail.codeCustomer}}</td>
           </tr>
           <tr>
             <th scope="row">Full Name</th>
@@ -139,7 +139,7 @@
             <td>{{customerDetail.address}}</td>
           </tr>
           <tr>
-            <th scope="row">Booking</th>
+            <th scope="row">BookingModel</th>
             <td>{{customerDetail.idBooking}}</td>
           </tr>
           </tbody>

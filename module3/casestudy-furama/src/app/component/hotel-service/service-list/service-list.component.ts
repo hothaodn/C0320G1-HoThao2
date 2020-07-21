@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {SERVICES} from '../../../model/DAO/hotelServiceDao';
-import {HotelService} from '../../../model/hotelService.model';
+// import {SERVICES} from '../../../model/DAO/hotelServiceDao';
+import {IHotelService} from '../../../model/hotelService.model';
+import {HotelServiceService} from '../../../services/hotel-service/hotel-service.service';
 
 @Component({
   selector: 'app-service-list',
@@ -9,18 +10,23 @@ import {HotelService} from '../../../model/hotelService.model';
 })
 export class ServiceListComponent implements OnInit {
 
-  serviceList = SERVICES;
+  public serviceList;
 
   @Input()
-  serviceDetail: HotelService;
+  serviceDetail: IHotelService;
   term: any;
 
-  constructor() { }
+  constructor(
+    public hotelServiceService: HotelServiceService
+  ) { }
 
   ngOnInit() {
+    this.hotelServiceService.getAllHotelServices().subscribe(data => {
+      this.serviceList = data;
+    });
   }
 
-  showServiceDetails(service: HotelService) {
+  showServiceDetails(service: IHotelService) {
     this.serviceDetail = service;
   }
 }

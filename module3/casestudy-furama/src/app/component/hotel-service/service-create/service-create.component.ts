@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {EMPLOYEES} from "../../../model/DAO/employeeDao";
-import {SERVICES} from "../../../model/DAO/hotelServiceDao";
+import {SERVICES} from '../../../model/DAO/hotelServiceDao';
 
 @Component({
   selector: 'app-service-create',

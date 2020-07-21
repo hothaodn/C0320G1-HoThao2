@@ -1,0 +1,311 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "codeCustomer": "KH-0001",
+      "nameCustomer": "Emma Watson",
+      "dateOfBirth": "15/04/1990",
+      "gender": "F",
+      "idCard": "999999999666",
+      "phone": "0905123456",
+      "email": "emma@prettywoman.uk",
+      "typeCustomer": "Platinum",
+      "address": "UK",
+      "idBooking": [
+        "BK-0001"
+      ]
+    },
+    {
+      "id": 2,
+      "codeCustomer": "KH-0002",
+      "nameCustomer": "Avril Lavigne",
+      "dateOfBirth": "27/09/1984",
+      "gender": "F",
+      "idCard": "888999999666",
+      "phone": "0905123456",
+      "email": "avril@prettywoman.ca",
+      "typeCustomer": "Platinum",
+      "address": "Canada",
+      "idBooking": [
+        "BK-0002",
+        "BK-0003"
+      ]
+    },
+    {
+      "id": 3,
+      "codeCustomer": "KH-0003",
+      "nameCustomer": "Miley Cyrus",
+      "dateOfBirth": "23/11/1992",
+      "gender": "F",
+      "idCard": "696969696",
+      "phone": "0905123456",
+      "email": "miley@prettywoman.us",
+      "typeCustomer": "Platinum",
+      "address": "US",
+      "idBooking": [
+        "BK-0004"
+      ]
+    },
+    {
+      "id": 4,
+      "codeCustomer": "KH-0004",
+      "nameCustomer": "Emma Watson",
+      "dateOfBirth": "15/04/1990",
+      "gender": "F",
+      "idCard": "999999999666",
+      "phone": "0905123456",
+      "email": "emma@prettywoman.uk",
+      "typeCustomer": "Platinum",
+      "address": "UK",
+      "idBooking": [
+        "BK-0005"
+      ]
+    },
+    {
+      "id": 5,
+      "codeCustomer": "KH-0005",
+      "nameCustomer": "Adele",
+      "dateOfBirth": "05/05/1988",
+      "gender": "F",
+      "idCard": "999999999666",
+      "phone": "0905123456",
+      "email": "adelelovekfc@prettywoman.uk",
+      "typeCustomer": "Diamond",
+      "address": "UK",
+      "idBooking": [
+        "BK-0006",
+        "BK-0007",
+        "BK-0008"
+      ]
+    },
+    {
+      "id": 6,
+      "codeCustomer": "KH-0006",
+      "nameCustomer": "Meow",
+      "idCard": "999999999666",
+      "phone": "0905123456",
+      "email": "hi@gmail.com",
+      "typeCustomer": "Platinum",
+      "address": "UK",
+      "idBooking": [
+        "BK-0001"
+      ]
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "codeEmployee": "NV-0001",
+      "nameEmployee": "Vi An",
+      "dateOfBirth": "01/01/1994",
+      "idCard": "212121212",
+      "phone": "0905123789",
+      "email": "vian@gmail.com",
+      "educationLevel": "Bachelor",
+      "position": "Sales Dept.",
+      "salary": "8500000",
+      "idBooking": ["BK-0001","BK-0009"]
+    },
+    {
+      "id": 2,
+      "codeEmployee": "NV-0002",
+      "nameEmployee": "Như Ý",
+      "dateOfBirth": "01/01/1994",
+      "idCard": "212121212",
+      "phone": "0905123789",
+      "email": "vian@gmail.com",
+      "educationLevel": "Bachelor",
+      "position": "Sales Dept.",
+      "salary": "8500000",
+      "idBooking": ["BK-0003","BK-0004"]
+    },
+    {
+      "id": 3,
+      "codeEmployee": "NV-0003",
+      "nameEmployee": "Thành Nhân",
+      "dateOfBirth": "01/01/1994",
+      "idCard": "212121212",
+      "phone": "0905123789",
+      "email": "vian@gmail.com",
+      "educationLevel": "Bachelor",
+      "position": "Sales Dept.",
+      "salary": "8500000",
+      "idBooking": ["BK-0005","BK-0006"]
+    },
+    {
+      "id": 4,
+      "codeEmployee": "NV-0004",
+      "nameEmployee": "Cát Vỹ",
+      "dateOfBirth": "01/01/1994",
+      "idCard": "212121212",
+      "phone": "0905123789",
+      "email": "vian@gmail.com",
+      "educationLevel": "Bachelor",
+      "position": "Sales Dept.",
+      "salary": "8500000",
+      "idBooking": ["BK-0007"]
+    },
+    {
+      "id": 5,
+      "codeEmployee": "NV-0005",
+      "nameEmployee": "Thanh Nhàn",
+      "dateOfBirth": "01/01/1994",
+      "idCard": "212121212",
+      "phone": "0905123789",
+      "email": "vian@gmail.com",
+      "educationLevel": "Bachelor",
+      "position": "Sales Dept.",
+      "salary": "8500000",
+      "idBooking": ["BK-0008","BK-0009"]
+    },
+    {
+      "id": 6,
+      "codeEmployee": "NV-0006",
+      "nameEmployee": "Dương Ca",
+      "dateOfBirth": "01/01/1994",
+      "idCard": "212121212",
+      "phone": "0905123789",
+      "email": "vian@gmail.com",
+      "educationLevel": "Bachelor",
+      "position": "Sales Dept.",
+      "salary": "8500000",
+      "idBooking": ["BK-00010","BK-0011"]
+    }
+  ],
+  "hotelservices": [
+    {
+      "id": 1,
+      "codeService": "DV-0001",
+      "nameService": "Villa",
+      "areaUsing": 200,
+      "rentalFee": 1500,
+      "maxOccupancies": 6,
+      "rentalType": "Full day",
+      "roomStandard": "Deluxe",
+      "facilities": "Full",
+      "numberOfFloor": 2,
+      "areaSwimmingPool": 20,
+      "freeService": ""
+    },
+    {
+      "id": 2,
+      "codeService": "DV-0002",
+      "nameService": "House",
+      "areaUsing": 120,
+      "rentalFee": 1000,
+      "maxOccupancies": 4,
+      "rentalType": "Full day",
+      "roomStandard": "Deluxe",
+      "facilities": "Full",
+      "numberOfFloor": 1,
+      "areaSwimmingPool": 18,
+      "freeService": ""
+    },
+    {
+      "id": 3,
+      "codeService": "DV-0003",
+      "nameService": "Room",
+      "areaUsing": 60,
+      "rentalFee": 450,
+      "maxOccupancies": 2,
+      "rentalType": "Full day",
+      "roomStandard": "Luxury",
+      "facilities": "Full",
+      "numberOfFloor": "",
+      "areaSwimmingPool": "",
+      "freeService": "Welcome drinking"
+    }
+  ],
+  "accompaniedService": [
+    {
+      "id": 1,
+      "codeAccompaniedService": "DK-0001",
+      "nameAccompaniedService": "Laundry",
+      "price": 1,
+      "unit": "item"
+    },
+    {
+      "id": 2,
+      "codeAccompaniedService": "DK-0002",
+      "nameAccompaniedService": "Resort Trip by Car",
+      "price": 50,
+      "unit": "trip"
+    },
+    {
+      "id": 3,
+      "codeAccompaniedService": "DK-0003",
+      "nameAccompaniedService": "Snack",
+      "price": 1,
+      "unit": "item"
+    },
+    {
+      "id": 4,
+      "codeAccompaniedService": "DK-0004",
+      "nameAccompaniedService": "Honeymoon Decoration Package",
+      "price": 400,
+      "unit": "package"
+    }
+  ],
+  "bookings": [
+    {
+      "id": 1,
+      "codeBooking": "BK-0001",
+      "codeCustomer": "KH-0001",
+      "codeService": "DV-0001",
+      "codeEmployee": "NV-0001",
+      "checkInDate": "21/07/2020",
+      "checkOutDate": "21/07/2020",
+      "idBookingDetail": ["CT-0001", "CT-0002", "CT-0003"],
+      "deposit": 10000000,
+      "totalAmount": 20000000
+    },
+    {
+      "id": 2,
+      "codeBooking": "BK-0002",
+      "codeCustomer": "KH-0001",
+      "codeService": "DV-0001",
+      "codeEmployee": "NV-0001",
+      "checkInDate": "21/07/2020",
+      "checkOutDate": "21/07/2020",
+      "idBookingDetail": ["CT-0001", "CT-0002", "CT-0003"],
+      "deposit": 10000000,
+      "totalAmount": 20000000
+    },
+    {
+      "id": 3,
+      "codeBooking": "BK-0003",
+      "codeCustomer": "KH-0001",
+      "codeService": "DV-0001",
+      "codeEmployee": "NV-0001",
+      "checkInDate": "21/07/2020",
+      "checkOutDate": "21/07/2020",
+      "idBookingDetail": ["CT-0001", "CT-0002", "CT-0003"],
+      "deposit": 10000000,
+      "totalAmount": 20000000
+    },
+    {
+      "id": 4,
+      "codeBooking": "BK-0004",
+      "codeCustomer": "KH-0001",
+      "codeService": "DV-0001",
+      "codeEmployee": "NV-0001",
+      "checkInDate": "21/07/2020",
+      "checkOutDate": "21/07/2020",
+      "idBookingDetail": ["CT-0001", "CT-0002", "CT-0003"],
+      "deposit": 10000000,
+      "totalAmount": 20000000
+    },
+    {
+      "id": 5,
+      "codeBooking": "BK-0005",
+      "codeCustomer": "KH-0001",
+      "codeService": "DV-0001",
+      "codeEmployee": "NV-0001",
+      "checkInDate": "21/07/2020",
+      "checkOutDate": "21/07/2020",
+      "idBookingDetail": ["CT-0001", "CT-0002", "CT-0003"],
+      "deposit": 10000000,
+      "totalAmount": 20000000
+    }
+  ]
+}

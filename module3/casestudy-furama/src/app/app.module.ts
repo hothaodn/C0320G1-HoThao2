@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,7 +24,11 @@ import { ServiceEditComponent } from './component/hotel-service/service-edit/ser
 import { ServiceDeleteComponent } from './component/hotel-service/service-delete/service-delete.component';
 import { ServiceListComponent } from './component/hotel-service/service-list/service-list.component';
 import { HomepageComponent } from './component/homepage/homepage.component';
-import { AccompaniedServiceComponent } from './component/accompanied-service/accompanied-service.component';
+import { AccompaniedServiceComponent } from './component/accompanied-service-list/accompanied-service.component';
+import { BookingDetailsCreateComponent } from './component/booking-details/booking-details-create/booking-details-create.component';
+import { BookingDetailsListComponent } from './component/booking-details/booking-details-list/booking-details-list.component';
+import { BookingDetailsEditComponent } from './component/booking-details/booking-details-edit/booking-details-edit.component';
+
 
 @NgModule({
   declarations: [
@@ -46,6 +51,9 @@ import { AccompaniedServiceComponent } from './component/accompanied-service/acc
     ServiceListComponent,
     HomepageComponent,
     AccompaniedServiceComponent,
+    BookingDetailsCreateComponent,
+    BookingDetailsListComponent,
+    BookingDetailsEditComponent,
   ],
     imports: [
         BrowserModule,
@@ -53,7 +61,8 @@ import { AccompaniedServiceComponent } from './component/accompanied-service/acc
         FormsModule,
         Ng2SearchPipeModule,
         NgxPaginationModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        HttpClientModule
     ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
-export class Employee {
-  idEmployee: string;
+export interface IEmployee {
+  id: number;
+  codeEmployee: string;
   nameEmployee: string;
   dateOfBirth: string;
   idCard: string;

@@ -1,5 +1,6 @@
-export class Customer {
-  idCustomer: string;
+export interface ICustomer {
+  id: number;
+  codeCustomer: string;
   nameCustomer: string;
   dateOfBirth: string;
   gender: string;

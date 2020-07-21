@@ -1,8 +1,9 @@
-import {Customer} from '../customer.model';
+import {ICustomer} from '../customer.model';
 
-export const CUSTOMERS: Customer[] = [
+export const CUSTOMERS: ICustomer[] = [
   {
-    idCustomer: 'KH-0001',
+    id: 1,
+    codeCustomer: 'KH-0001',
     nameCustomer: 'Emma Watson',
     dateOfBirth: '15/04/1990',
     gender: 'F',
@@ -14,7 +15,8 @@ export const CUSTOMERS: Customer[] = [
     idBooking: ['BK-0001'],
   },
   {
-    idCustomer: 'KH-0002',
+    id: 2,
+    codeCustomer: 'KH-0002',
     nameCustomer: 'Avril Lavigne',
     dateOfBirth: '27/09/1984',
     gender: 'F',
@@ -26,7 +28,8 @@ export const CUSTOMERS: Customer[] = [
     idBooking: ['BK-0002'],
   },
   {
-    idCustomer: 'KH-0003',
+    id: 3,
+    codeCustomer: 'KH-0003',
     nameCustomer: 'Miley Cyrus',
     dateOfBirth: '23/11/1992',
     gender: 'F',
@@ -38,7 +41,8 @@ export const CUSTOMERS: Customer[] = [
     idBooking: ['BK-0003'],
   },
   {
-    idCustomer: 'KH-0004',
+    id: 4,
+    codeCustomer: 'KH-0004',
     nameCustomer: 'Emma Watson',
     dateOfBirth: '15/04/1990',
     gender: 'F',
@@ -50,7 +54,8 @@ export const CUSTOMERS: Customer[] = [
     idBooking: ['BK-0004'],
   },
   {
-    idCustomer: 'KH-0005',
+    id: 5,
+    codeCustomer: 'KH-0005',
     nameCustomer: 'Adele',
     dateOfBirth: '05/05/1988',
     gender: 'F',

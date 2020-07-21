@@ -1,1 +1,132 @@
-<p>booking-list works!</p>
+<!--https://bootsnipp.com/snippets/2P90-->
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-12">
+      <h3>BOOKING LIST</h3>
+      <!--      SEARCH BOX https://bootsnipp.com/snippets/9Avx -->
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-8 col-xs-offset-2">
+            <div class="input-group">
+              <input type="hidden" name="search_param" value="all" id="search_param">
+              <input type="text" class="form-control" name="x" placeholder="Search bookings..." [(ngModel)]="term">
+              <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--      TABLE-->
+      <div class="table-responsive">
+        <br>
+        <a  class="btn btn-primary btn-xs pull-right link" data-title="Create" data-toggle="modal" data-target="#create"><b>+</b> Add new booking</a>
+
+        <br><br>
+        <table id="mytable" class="table table-bordered table-striped">
+
+          <thead>
+          <th>ID</th>
+          <th>Customer</th>
+          <th>Service</th>
+          <th>Check-in Date</th>
+          <th>Check-out Date</th>
+          <th>Total Amount</th>
+          <th>Details</th>
+          <th>Edit</th>
+          <th>Delete</th>
+          </thead>
+          <tbody>
+          <tr *ngFor="let booking of bookingList | filter:term | paginate: { itemsPerPage: 5, currentPage: p }">
+            <td>{{booking.codeBooking}}</td>
+            <td>{{booking.codeCustomer}}</td>
+            <td>{{booking.codeService}}</td>
+            <td>{{booking.checkInDate}}</td>
+            <td>{{booking.checkOutDate}}</td>
+            <td>{{booking.totalAmount}}</td>
+            <td><p (click)="showBookingDetails(booking)" data-placement="top" data-toggle="tooltip" title="See more details"><button class="btn btn-primary btn-xs" data-title="See more details" data-toggle="modal" data-target="#view-details" ><span class="glyphicon glyphicon-eye-open"></span></button></p></td>
+            <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+            <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
+          </tr>
+          </tbody>
+
+        </table>
+
+        <div class="clearfix"></div>
+        <div class="pagination pull-right">
+          <pagination-controls (pageChange)="p = $event">hi</pagination-controls>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!--SEE DETAILS-->
+<div class="modal fade" id="view-details" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+        <h4 class="modal-title custom_align" id="Heading">Employee Details</h4>
+      </div>
+      <div class="modal-body" *ngIf="bookingDetail">
+
+        <table class="table">
+          <tbody>
+          <tr>
+            <th scope="row">ID Booking</th>
+            <td>{{bookingDetail.codeBooking}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Customer</th>
+            <td>{{bookingDetail.codeCustomer}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Service</th>
+            <td>{{bookingDetail.codeService}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Person in charge</th>
+            <td>{{bookingDetail.codeEmployee}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Check-in Date</th>
+            <td>{{bookingDetail.checkInDate}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Check-out Date</th>
+            <td>{{bookingDetail.checkOutDate}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Booking Details</th>
+            <td>{{bookingDetail.idBookingDetail.join("\n")}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Deposit</th>
+            <td>{{bookingDetail.deposit}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Total Amount</th>
+            <td>{{bookingDetail.totalAmount}}</td>
+          </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+
+<!--ADD NEW booking-->
+<app-booking-create></app-booking-create>
+
+<!--delete booking-->
+<app-booking-delete></app-booking-delete>
+
+<!--edit booking-->
+<app-booking-edit></app-booking-edit>
