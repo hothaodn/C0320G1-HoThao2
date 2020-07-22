@@ -1,10 +1,9 @@
 {
   "customers": [
     {
-      "id": 1,
       "codeCustomer": "KH-0001",
-      "nameCustomer": "Emma Watson",
-      "dateOfBirth": "15/04/1990",
+      "nameCustomer": "Emma Watson Meow",
+      "dateOfBirth": "1990-04-14T17:00:00.000Z",
       "gender": "F",
       "idCard": "999999999666",
       "phone": "0905123456",
@@ -13,7 +12,8 @@
       "address": "UK",
       "idBooking": [
         "BK-0001"
-      ]
+      ],
+      "id": 1
     },
     {
       "id": 2,
@@ -90,6 +90,112 @@
       "idBooking": [
         "BK-0001"
       ]
+    },
+    {
+      "codeCustomer": "KH-0009",
+      "nameCustomer": "Katy",
+      "dateOfBirth": "04/09/1992",
+      "gender": "M",
+      "idCard": "999999999",
+      "phone": "0905666666",
+      "email": "hothaodn@gmail.com",
+      "typeCustomer": "Member",
+      "address": "DN",
+      "idBooking": "",
+      "id": 7
+    },
+    {
+      "codeCustomer": "KH-0010",
+      "nameCustomer": "Min Kyung",
+      "dateOfBirth": "01/01/1990",
+      "gender": "F",
+      "idCard": "22222222222",
+      "phone": "0905555666",
+      "email": "min@naver.com",
+      "typeCustomer": "Gold",
+      "address": "KR",
+      "idBooking": "",
+      "id": 8
+    },
+    {
+      "codeCustomer": "KH-0011",
+      "nameCustomer": "Kim Min Hee",
+      "dateOfBirth": "01/01/1982",
+      "gender": "F",
+      "idCard": "111222111222",
+      "phone": "0905666666",
+      "email": "hee@naver.kr",
+      "typeCustomer": "Gold",
+      "address": "KR",
+      "idBooking": "",
+      "id": 12
+    },
+    {
+      "codeCustomer": "KH-0009",
+      "nameCustomer": "Katy",
+      "dateOfBirth": "04/09/1992",
+      "gender": "M",
+      "idCard": "999999999",
+      "phone": "0905555666",
+      "email": "hothaodn@gmail.com",
+      "typeCustomer": "Silver",
+      "address": "DN",
+      "idBooking": "",
+      "id": 13
+    },
+    {
+      "codeCustomer": "KH-0009",
+      "nameCustomer": "Katy",
+      "dateOfBirth": "2020-07-20T17:00:00.000Z",
+      "gender": "F",
+      "idCard": "999999999",
+      "phone": "0905555666",
+      "email": "hothaodn@gmail.com",
+      "typeCustomer": "Member",
+      "address": "DN",
+      "idBooking": "",
+      "id": 16
+    },
+    {
+      "codeCustomer": "KH-2222",
+      "nameCustomer": "Unnie",
+      "dateOfBirth": "2020-06-29T17:00:00.000Z",
+      "gender": "F",
+      "idCard": "999999999",
+      "phone": "0905555666",
+      "email": "unnie@abc.com",
+      "typeCustomer": "Platinum",
+      "address": "KR",
+      "idBooking": "",
+      "id": 17
+    },
+    {
+      "codeCustomer": "KH-3333",
+      "nameCustomer": "Kim Min Hee",
+      "dateOfBirth": "",
+      "gender": "",
+      "idCard": "999999999",
+      "phone": "0905666666",
+      "email": "hothaodn@gmail.com",
+      "typeCustomer": "Platinum",
+      "address": "KR",
+      "idBooking": "",
+      "id": 18
+    },
+    {
+      "id": 20,
+      "codeCustomer": "KH-0001",
+      "nameCustomer": "Emma Watson",
+      "dateOfBirth": "15/04/1990",
+      "gender": "F",
+      "idCard": "999999999666",
+      "phone": "0905123456",
+      "email": "emma@prettywoman.uk",
+      "typeCustomer": "Platinum",
+      "address": "UK",
+      "idBooking": [
+        "BK-0001"
+      ]
     }
   ],
   "employees": [
@@ -104,7 +210,10 @@
       "educationLevel": "Bachelor",
       "position": "Sales Dept.",
       "salary": "8500000",
-      "idBooking": ["BK-0001","BK-0009"]
+      "idBooking": [
+        "BK-0001",
+        "BK-0009"
+      ]
     },
     {
       "id": 2,
@@ -117,7 +226,10 @@
       "educationLevel": "Bachelor",
       "position": "Sales Dept.",
       "salary": "8500000",
-      "idBooking": ["BK-0003","BK-0004"]
+      "idBooking": [
+        "BK-0003",
+        "BK-0004"
+      ]
     },
     {
       "id": 3,
@@ -130,7 +242,10 @@
       "educationLevel": "Bachelor",
       "position": "Sales Dept.",
       "salary": "8500000",
-      "idBooking": ["BK-0005","BK-0006"]
+      "idBooking": [
+        "BK-0005",
+        "BK-0006"
+      ]
     },
     {
       "id": 4,
@@ -143,7 +258,9 @@
       "educationLevel": "Bachelor",
       "position": "Sales Dept.",
       "salary": "8500000",
-      "idBooking": ["BK-0007"]
+      "idBooking": [
+        "BK-0007"
+      ]
     },
     {
       "id": 5,
@@ -156,7 +273,10 @@
       "educationLevel": "Bachelor",
       "position": "Sales Dept.",
       "salary": "8500000",
-      "idBooking": ["BK-0008","BK-0009"]
+      "idBooking": [
+        "BK-0008",
+        "BK-0009"
+      ]
     },
     {
       "id": 6,
@@ -169,7 +289,10 @@
       "educationLevel": "Bachelor",
       "position": "Sales Dept.",
       "salary": "8500000",
-      "idBooking": ["BK-00010","BK-0011"]
+      "idBooking": [
+        "BK-00010",
+        "BK-0011"
+      ]
     }
   ],
   "hotelservices": [
@@ -255,7 +378,11 @@
       "codeEmployee": "NV-0001",
       "checkInDate": "21/07/2020",
       "checkOutDate": "21/07/2020",
-      "idBookingDetail": ["CT-0001", "CT-0002", "CT-0003"],
+      "idBookingDetail": [
+        "CT-0001",
+        "CT-0002",
+        "CT-0003"
+      ],
       "deposit": 10000000,
       "totalAmount": 20000000
     },
@@ -267,7 +394,11 @@
       "codeEmployee": "NV-0001",
       "checkInDate": "21/07/2020",
       "checkOutDate": "21/07/2020",
-      "idBookingDetail": ["CT-0001", "CT-0002", "CT-0003"],
+      "idBookingDetail": [
+        "CT-0001",
+        "CT-0002",
+        "CT-0003"
+      ],
       "deposit": 10000000,
       "totalAmount": 20000000
     },
@@ -279,7 +410,11 @@
       "codeEmployee": "NV-0001",
       "checkInDate": "21/07/2020",
       "checkOutDate": "21/07/2020",
-      "idBookingDetail": ["CT-0001", "CT-0002", "CT-0003"],
+      "idBookingDetail": [
+        "CT-0001",
+        "CT-0002",
+        "CT-0003"
+      ],
       "deposit": 10000000,
       "totalAmount": 20000000
     },
@@ -291,7 +426,11 @@
       "codeEmployee": "NV-0001",
       "checkInDate": "21/07/2020",
       "checkOutDate": "21/07/2020",
-      "idBookingDetail": ["CT-0001", "CT-0002", "CT-0003"],
+      "idBookingDetail": [
+        "CT-0001",
+        "CT-0002",
+        "CT-0003"
+      ],
       "deposit": 10000000,
       "totalAmount": 20000000
     },
@@ -303,7 +442,11 @@
       "codeEmployee": "NV-0001",
       "checkInDate": "21/07/2020",
       "checkOutDate": "21/07/2020",
-      "idBookingDetail": ["CT-0001", "CT-0002", "CT-0003"],
+      "idBookingDetail": [
+        "CT-0001",
+        "CT-0002",
+        "CT-0003"
+      ],
       "deposit": 10000000,
       "totalAmount": 20000000
     }

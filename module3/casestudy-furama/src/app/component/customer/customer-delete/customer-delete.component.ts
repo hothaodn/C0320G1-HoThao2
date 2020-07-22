@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {CustomerService} from '../../../services/customer/customer.service';
 import {ICustomer} from '../../../model/customer.model';
-import {CUSTOMERS} from '../../../model/DAO/customerDao';
 
 @Component({
   selector: 'app-customer-delete',
@@ -8,18 +8,22 @@ import {CUSTOMERS} from '../../../model/DAO/customerDao';
   styleUrls: ['./customer-delete.component.css']
 })
 export class CustomerDeleteComponent implements OnInit {
-
-  customers = CUSTOMERS;
+  message = '';
 
   @Input()
-  id: string;
+  customerDetail: ICustomer;
 
-  constructor() { }
+  constructor(
+    public customerService: CustomerService
+  ) { }
 
   ngOnInit() {
   }
 
-  deleteCustomer(id: string) {
-
+  deleteCustomer(): void {
+    console.log('trước delete: ' + this.customerDetail.nameCustomer);
+    this.customerService.deleteCustomer(this.customerDetail).subscribe(data => {
+      console.log('sau delete: ' + this.customerDetail);
+    });
   }
 }

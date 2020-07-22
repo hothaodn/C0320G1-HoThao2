@@ -11,33 +11,46 @@
         <div class="form-group">
           <label for="exampleInputEmail1">ID Customer</label>
           <input formControlName="codeCustomer" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="KH-XXXX">
-        </div>
-        <div *ngIf="createForm.get('codeCustomer').invalid && createForm.get('codeCustomer').touched">
-          <div *ngIf="createForm.get('codeCustomer').hasError('required')">
-            <p class="error-notice">Must be filled</p>
-          </div>
-          <div *ngIf="createForm.get('codeCustomer').hasError('pattern')">
-            <p class="error-notice">Must be format KH-XXXX (X is a number from 0 to 9)</p>
+          <div *ngIf="createForm.get('codeCustomer').invalid && createForm.get('codeCustomer').touched">
+            <div *ngIf="createForm.get('codeCustomer').hasError('required')">
+              <p class="error-notice">Must be filled</p>
+            </div>
+            <div *ngIf="createForm.get('codeCustomer').hasError('pattern')">
+              <p class="error-notice">Must be format KH-XXXX (X is a number from 0 to 9)</p>
+            </div>
           </div>
         </div>
 
         <div class="form-group">
           <label for="exampleInputPassword1">Full Name</label>
           <input formControlName="nameCustomer" type="text" class="form-control" id="exampleInputPassword1">
-        </div>
-        <div *ngIf="createForm.get('nameCustomer').invalid && createForm.get('nameCustomer').touched">
-          <div *ngIf="createForm.get('nameCustomer').hasError('required')">
-            <p class="error-notice">Must be filled</p>
+          <div *ngIf="createForm.get('nameCustomer').invalid && createForm.get('nameCustomer').touched">
+            <div *ngIf="createForm.get('nameCustomer').hasError('required')">
+              <p class="error-notice">Must be filled</p>
+            </div>
           </div>
         </div>
 
+<!--        https://appdividend.com/2018/09/16/angular-datepicker-example-tutorial/-->
         <div class="form-group">
-          <label for="exampleInputBirthday">Date Of Birth</label>
-          <input formControlName="dateOfBirth" type="text" class="form-control" id="exampleInputBirthday">
-        </div>
-        <div *ngIf="createForm.get('dateOfBirth').invalid && createForm.get('dateOfBirth').touched">
-          <div *ngIf="createForm.get('dateOfBirth').hasError('pattern')">
-            <p class="error-notice">Must be format DD/MM/YYYY)</p>
+          <label for="exampleInputBirthday">Date Of Birth &nbsp;&nbsp;&nbsp;</label>
+          <mat-form-field>
+            <input [max]="maxDate" [min]="minDate" id="exampleInputBirthday" formControlName="dateOfBirth" matInput [matDatepicker]="picker" placeholder="Choose a date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker style="z-index: 1200" #picker></mat-datepicker>
+          </mat-form-field>
+
+<!--          <mat-form-field>-->
+<!--            <input formControlName="dateOfBirth" matInput placeholder="Select Date" [matDatepicker]="datepickerRef" name="datepicker" ngModel #dateCtrl="ngModel" required readonly/>-->
+<!--            <mat-datepicker-toggle [for]="datepickerRef" matSuffix></mat-datepicker-togjson-server --watch db.json.gle>-->
+<!--            <mat-datepicker #datepickerRef></mat-datepicker>-->
+<!--&lt;!&ndash;            <mat-error *ngIf="dateCtrl.errors?.required && deptCtrl.touched">Choose a Date</mat-error>&ndash;&gt;-->
+<!--          </mat-form-field>-->
+
+          <div *ngIf="createForm.get('dateOfBirth').invalid && createForm.get('dateOfBirth').touched">
+            <div *ngIf="createForm.get('dateOfBirth').hasError('pattern')">
+              <p class="error-notice">Must be format DD/MM/YYYY</p>
+            </div>
           </div>
         </div>
 
@@ -46,33 +59,34 @@
           <input formControlName="gender" type="radio" class="form-check-input" value="M" name="gender"> Male
           <input formControlName="gender" type="radio" class="form-check-input" value="F" name="gender"> Female
         </div>
+
         <div class="form-group">
           <label for="exampleInputIdCard">ID Card / Passport</label>
           <input formControlName="idCard" type="text" class="form-control" id="exampleInputIdCard" placeholder="XXXXXXXXX or XXXXXXXXXXXX ">
-        </div>
-        <div *ngIf="createForm.get('idCard').invalid && createForm.get('idCard').touched">
-          <div *ngIf="createForm.get('idCard').hasError('pattern')">
-            <p class="error-notice">Must be 9 digits numbers or 12 digits numbers </p>
+          <div *ngIf="createForm.get('idCard').invalid && createForm.get('idCard').touched">
+            <div *ngIf="createForm.get('idCard').hasError('pattern')">
+              <p class="error-notice">Must be 9 digits numbers or 12 digits numbers </p>
+            </div>
           </div>
         </div>
 
         <div class="form-group">
           <label for="exampleInputPhone">Phone Number</label>
           <input formControlName="phone" type="text" class="form-control" id="exampleInputPhone">
-        </div>
-        <div *ngIf="createForm.get('phone').invalid && createForm.get('phone').touched">
-          <div *ngIf="createForm.get('phone').hasError('pattern')">
-            <p class="error-notice">Must be format 090xxxxxxx or 091xxxxxxx or (84)+90xxxxxxx or (84)+91xxxxxxx)</p>
+          <div *ngIf="createForm.get('phone').invalid && createForm.get('phone').touched">
+            <div *ngIf="createForm.get('phone').hasError('pattern')">
+              <p class="error-notice">Must be format 090xxxxxxx or 091xxxxxxx or (84)+90xxxxxxx or (84)+91xxxxxxx)</p>
+            </div>
           </div>
         </div>
 
         <div class="form-group">
           <label for="exampleInputEmail">Email</label>
           <input formControlName="email" type="email" class="form-control" id="exampleInputEmail">
-        </div>
-        <div *ngIf="createForm.get('email').invalid && createForm.get('email').touched">
-          <div *ngIf="createForm.get('email').hasError('email')">
-            <p class="error-notice">Invalid email</p>
+          <div *ngIf="createForm.get('email').invalid && createForm.get('email').touched">
+            <div *ngIf="createForm.get('email').hasError('email')">
+              <p class="error-notice">Invalid email</p>
+            </div>
           </div>
         </div>
 
@@ -86,16 +100,16 @@
             <option value="Platinum">Platinum</option>
             <option value="Diamond">Diamond</option>
           </select>
-        </div>
-        <div class="form-group">
-          <label for="exampleInputAddress">Address</label>
-          <input formControlName="address" type="text" class="form-control" id="exampleInputAddress">
+          <div class="form-group">
+            <label for="exampleInputAddress">Address</label>
+            <input formControlName="address" type="text" class="form-control" id="exampleInputAddress">
+          </div>
         </div>
 
         <div class="modal-footer ">
           <p class="error-notice">{{message}}</p>
-          <button type="submit" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Save</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
+          <button id="btnSave" [disabled]="createForm.invalid" type="submit" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Save</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
         </div>
       </form>
 
@@ -106,3 +120,9 @@
   </div>
   <!-- /.modal-dialog -->
 </div>
+
+<script>
+  $("#btnSave").click(function() {
+    $("#create").modal("hide");
+  });
+</script>

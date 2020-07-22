@@ -16,7 +16,19 @@ export class CustomerService {
     return this.http.get(this.API);
   }
 
+  getCustomerById(id): Observable<any> {
+    return this.http.get(this.API + `/${id}`);
+  }
+
   addNewCustomer(customer): Observable<any> {
     return this.http.post(this.API, customer);
+  }
+
+  deleteCustomer(customer): Observable<any> {
+    return this.http.delete(this.API + `/${customer.id}`);
+  }
+
+  editCustomer(customer, idCustomer): Observable<any> {
+    return this.http.put(this.API + `/${idCustomer}`, customer);
   }
 }

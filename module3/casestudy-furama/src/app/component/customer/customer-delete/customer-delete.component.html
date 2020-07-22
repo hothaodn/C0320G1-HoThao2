@@ -7,11 +7,14 @@
       </div>
       <div class="modal-body">
 
-        <div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> Are you sure you want to delete this Record?</div>
-
+        <div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span>
+          <p>Are you sure you want to delete this Record ?</p>
+          <p>Code: {{customerDetail.codeCustomer}}</p>
+          <p>Name: {{customerDetail.nameCustomer}}</p>
+        </div>
       </div>
       <div class="modal-footer ">
-        <button (click)="deleteCustomer(customer.id)"  type="button" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Yes</button>
+        <button id="btnDel" (click)="deleteCustomer()" data-dismiss="modal"  type="button" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Yes</button>
         <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
       </div>
     </div>
@@ -19,3 +22,9 @@
   </div>
   <!-- /.modal-dialog -->
 </div>
+
+<script>
+  $("#btnDel").click(function() {
+    $("#delete").modal("hide");
+  });
+</script>

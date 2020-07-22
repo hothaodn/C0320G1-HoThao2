@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {EMPLOYEES} from '../../../model/DAO/employeeDao';
+
 
 @Component({
   selector: 'app-employee-create',
@@ -10,7 +10,7 @@ import {EMPLOYEES} from '../../../model/DAO/employeeDao';
 export class EmployeeCreateComponent implements OnInit {
 
   createForm: FormGroup;
-  employeeList = EMPLOYEES;
+  // employeeList = EMPLOYEES;
   message = '';
 
   constructor() {
@@ -30,7 +30,7 @@ export class EmployeeCreateComponent implements OnInit {
 
   onSubmit() {
     console.log(this.createForm.value);
-    this.employeeList.push(this.createForm.value);
+    // this.employeeList.push(this.createForm.value);
     this.message = 'Saved successfully!';
   }
 

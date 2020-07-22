@@ -6,6 +6,7 @@ import {ServiceListComponent} from './component/hotel-service/service-list/servi
 import {EmployeeListComponent} from './component/employee/employee-list/employee-list.component';
 import {AccompaniedServiceComponent} from './component/accompanied-service-list/accompanied-service.component';
 import {BookingListComponent} from './component/booking/booking-list/booking-list.component';
+import {CustomerEditComponent} from './component/customer/customer-edit/customer-edit.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
     path: 'admin/booking/view-all',
     component: BookingListComponent
   },
+  {
+    path: 'admin/customer/edit/:id',
+    component: CustomerEditComponent
+  }
 ];
 
 @NgModule({

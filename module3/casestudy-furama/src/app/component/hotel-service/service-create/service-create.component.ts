@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {SERVICES} from '../../../model/DAO/hotelServiceDao';
+// import {SERVICES} from '../../../model/DAO/hotelServiceDao';
 
 @Component({
   selector: 'app-service-create',
@@ -10,7 +10,7 @@ import {SERVICES} from '../../../model/DAO/hotelServiceDao';
 export class ServiceCreateComponent implements OnInit {
 
   createForm: FormGroup;
-  serviceList = SERVICES;
+  // serviceList = SERVICES;
   message = '';
 
   constructor() {
@@ -31,7 +31,7 @@ export class ServiceCreateComponent implements OnInit {
 
   onSubmit() {
     console.log(this.createForm.value);
-    this.serviceList.push(this.createForm.value);
+    // this.serviceList.push(this.createForm.value);
     this.message = 'Saved successfully!';
   }
 

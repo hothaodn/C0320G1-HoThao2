@@ -1,8 +1,13 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
 .error-notice{
   color: orangered;
   text-align: right;
 }
 
 body{
-  background-color: #fcffc6;
+  background-color: white;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

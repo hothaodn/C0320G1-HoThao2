@@ -28,6 +28,8 @@ import { AccompaniedServiceComponent } from './component/accompanied-service-lis
 import { BookingDetailsCreateComponent } from './component/booking-details/booking-details-create/booking-details-create.component';
 import { BookingDetailsListComponent } from './component/booking-details/booking-details-list/booking-details-list.component';
 import { BookingDetailsEditComponent } from './component/booking-details/booking-details-edit/booking-details-edit.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.module';
 
 
 @NgModule({
@@ -62,7 +64,9 @@ import { BookingDetailsEditComponent } from './component/booking-details/booking
         Ng2SearchPipeModule,
         NgxPaginationModule,
         ReactiveFormsModule,
-        HttpClientModule
+        HttpClientModule,
+        BrowserAnimationsModule,
+        MaterialModule
     ],
   providers: [],
   bootstrap: [AppComponent]

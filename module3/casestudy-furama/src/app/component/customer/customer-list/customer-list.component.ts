@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ICustomer} from '../../../model/customer.model';
 import {CustomerService} from '../../../services/customer/customer.service';
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-customer-list',
@@ -11,12 +12,12 @@ export class CustomerListComponent implements OnInit {
 
   public customers;
 
-  @Input()
   customerDetail: ICustomer;
   term: any;
 
   constructor(
-    public customerService: CustomerService
+    public customerService: CustomerService,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit() {
@@ -28,8 +29,17 @@ export class CustomerListComponent implements OnInit {
 
   showCustomerDetails(customer: ICustomer) {
     this.customerDetail = customer;
+    console.log('click edit : ' + this.customerDetail.nameCustomer);
   }
 
-  deleteCustomer(id: any) {
+  getCustomerById(id: any) {
+    this.customerDetail.id = id;
+    // console.log('id là  ' + this.customerDetail.id);
   }
+
+  // showDeleteForm(customer: ICustomer) {
+  //   this.customerDetail = customer;
+  //   console.log('test ở list: ' + this.customerDetail.nameCustomer);
+  // }
+
 }
