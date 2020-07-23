@@ -1,1 +1,115 @@
-<p>employee-edit works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <h3 class="modal-title custom_align" id="Heading">EDIT EMPLOYEE</h3>
+      <form class="form" [formGroup]="createForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="exampleInputEmail1">ID Employee</label>
+          <input formControlName="idEmployee" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="NV-XXXX">
+        </div>
+        <div *ngIf="createForm.get('idEmployee').invalid && createForm.get('idEmployee').touched">
+          <div *ngIf="createForm.get('idEmployee').hasError('required')">
+            <p class="error-notice">Must be filled</p>
+          </div>
+          <div *ngIf="createForm.get('idEmployee').hasError('pattern')">
+            <p class="error-notice">Must be format NV-XXXX (X is a number from 0 to 9)</p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputPassword1">Full Name</label>
+          <input formControlName="nameEmployee" type="text" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div *ngIf="createForm.get('nameEmployee').invalid && createForm.get('nameEmployee').touched">
+          <div *ngIf="createForm.get('nameEmployee').hasError('required')">
+            <p class="error-notice">Must be filled</p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputBirthday">Date Of Birth</label>
+          <input formControlName="dateOfBirth" type="text" class="form-control" id="exampleInputBirthday">
+        </div>
+        <div *ngIf="createForm.get('dateOfBirth').invalid && createForm.get('dateOfBirth').touched">
+          <div *ngIf="createForm.get('dateOfBirth').hasError('pattern')">
+            <p class="error-notice">Must be format DD/MM/YYYY)</p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputIdCard">ID Card / Passport</label>
+          <input formControlName="idCard" type="text" class="form-control" id="exampleInputIdCard" placeholder="XXXXXXXXX or XXXXXXXXXXXX ">
+        </div>
+        <div *ngIf="createForm.get('idCard').invalid && createForm.get('idCard').touched">
+          <div *ngIf="createForm.get('idCard').hasError('pattern')">
+            <p class="error-notice">Must be 9 digits numbers or 12 digits numbers </p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputPhone">Phone Number</label>
+          <input formControlName="phone" type="text" class="form-control" id="exampleInputPhone">
+        </div>
+        <div *ngIf="createForm.get('phone').invalid && createForm.get('phone').touched">
+          <div *ngIf="createForm.get('phone').hasError('pattern')">
+            <p class="error-notice">Must be format 090xxxxxxx or 091xxxxxxx or (84)+90xxxxxxx or (84)+91xxxxxxx)</p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputEmail">Email</label>
+          <input formControlName="email" type="email" class="form-control" id="exampleInputEmail">
+        </div>
+        <div *ngIf="createForm.get('email').invalid && createForm.get('email').touched">
+          <div *ngIf="createForm.get('email').hasError('email')">
+            <p class="error-notice">Invalid email</p>
+          </div>
+        </div>
+        <!--          Trung cấp, Cao đẳng, Đại học và sau đại học-->
+        <div class="form-group">
+          <label for="sel1">Education Level</label>
+          <select formControlName="educationLevel" class="form-control" id="sel1">
+            <option selected>Choose...</option>
+            <option value="Practical School">Practical School</option>
+            <option value="College">College</option>
+            <option value="University">University</option>
+            <option value="Postgraduate">Postgraduate</option>
+          </select>
+        </div>
+
+        <!--          Sale – Marketing, Hành Chính, Phục vụ, Quản lý.-->
+        <div class="form-group">
+          <label for="sel1">Position</label>
+          <select formControlName="position" class="form-control" id="sel1">
+            <option selected>Choose...</option>
+            <option value="Sale & Marketing">Sale & Marketing</option>
+            <option value="Administration Office">Administration Office</option>
+            <option value="Front Office">Front Office</option>
+            <option value="Manager">Manager</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputEmail">Salary</label>
+          <input formControlName="salary" type="text" class="form-control" id="exampleInputEmail">
+        </div>
+        <div *ngIf="createForm.get('salary').invalid && createForm.get('salary').touched">
+          <div *ngIf="createForm.get('salary').hasError('min')">
+            <p class="error-notice">Must be large than 0</p>
+          </div>
+          <div *ngIf="createForm.get('salary').hasError('pattern')">
+            <p class="error-notice">Must be a number</p>
+          </div>
+        </div>
+
+        <div class="modal-footer ">
+          <p class="error-notice">{{message}}</p>
+          <button type="submit" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Save</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>

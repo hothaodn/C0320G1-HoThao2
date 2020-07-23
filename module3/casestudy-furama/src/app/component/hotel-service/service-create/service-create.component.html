@@ -1,59 +1,57 @@
-<div class="modal fade" id="create" tabindex="-1" role="dialog" aria-labelledby="create" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-        <h4 class="modal-title custom_align" id="Heading">Add New Service</h4>
-      </div>
-      <div class="modal-body">
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <h3 class="modal-title custom_align" id="Heading">ADD NEW SERVICE</h3>
 
         <form class="form" [formGroup]="createForm" (ngSubmit)="onSubmit()">
           <div class="form-group">
             <label for="exampleInputEmail1">ID</label>
             <input formControlName="idService" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="DV-XXXX">
-          </div>
-          <div *ngIf="createForm.get('idService').invalid && createForm.get('idService').touched">
-            <div *ngIf="createForm.get('idService').hasError('required')">
-              <p class="error-notice">Must be filled</p>
+            <div *ngIf="createForm.get('idService').invalid && createForm.get('idService').touched">
+              <div *ngIf="createForm.get('idService').hasError('required')">
+                <p class="error-notice">Must be filled</p>
+              </div>
+              <div *ngIf="createForm.get('idService').hasError('pattern')">
+                <p class="error-notice">Must be format DV-XXXX (X is a number from 0 to 9)</p>
+              </div>
             </div>
-            <div *ngIf="createForm.get('idService').hasError('pattern')">
-              <p class="error-notice">Must be format DV-XXXX (X is a number from 0 to 9)</p>
-            </div>
           </div>
+
 
           <div class="form-group">
             <label for="exampleInputPassword1">Service Name</label>
             <input formControlName="nameService" type="text" class="form-control" id="exampleInputPassword1">
-          </div>
-          <div *ngIf="createForm.get('nameService').invalid && createForm.get('nameService').touched">
-            <div *ngIf="createForm.get('nameService').hasError('required')">
-              <p class="error-notice">Must be filled</p>
+            <div *ngIf="createForm.get('nameService').invalid && createForm.get('nameService').touched">
+              <div *ngIf="createForm.get('nameService').hasError('required')">
+                <p class="error-notice">Must be filled</p>
+              </div>
             </div>
           </div>
 
           <div class="form-group">
             <label for="exampleInputEmail">Rental Fee</label>
             <input formControlName="rentalFee" type="text" class="form-control" id="exampleInputEmail">
-          </div>
-          <div *ngIf="createForm.get('rentalFee').invalid && createForm.get('rentalFee').touched">
-            <div *ngIf="createForm.get('rentalFee').hasError('min')">
-              <p class="error-notice">Must be large than 0</p>
-            </div>
-            <div *ngIf="createForm.get('rentalFee').hasError('pattern')">
-              <p class="error-notice">Must be a number</p>
+            <div *ngIf="createForm.get('rentalFee').invalid && createForm.get('rentalFee').touched">
+              <div *ngIf="createForm.get('rentalFee').hasError('min')">
+                <p class="error-notice">Must be large than 0</p>
+              </div>
+              <div *ngIf="createForm.get('rentalFee').hasError('pattern')">
+                <p class="error-notice">Must be a number</p>
+              </div>
             </div>
           </div>
 
           <div class="form-group">
             <label for="exampleInputEmail">Max Occupancies</label>
             <input formControlName="maxOccupancies" type="text" class="form-control" id="exampleInputEmail">
-          </div>
-          <div *ngIf="createForm.get('maxOccupancies').invalid && createForm.get('maxOccupancies').touched">
-            <div *ngIf="createForm.get('maxOccupancies').hasError('min')">
-              <p class="error-notice">Must be large than 0</p>
-            </div>
-            <div *ngIf="createForm.get('maxOccupancies').hasError('pattern')">
-              <p class="error-notice">Must be a number</p>
+            <div *ngIf="createForm.get('maxOccupancies').invalid && createForm.get('maxOccupancies').touched">
+              <div *ngIf="createForm.get('maxOccupancies').hasError('min')">
+                <p class="error-notice">Must be large than 0</p>
+              </div>
+              <div *ngIf="createForm.get('maxOccupancies').hasError('pattern')">
+                <p class="error-notice">Must be a number</p>
+              </div>
             </div>
           </div>
 
@@ -66,10 +64,10 @@
               <option value="Month">Month</option>
               <option value="Year">Year</option>
             </select>
-          </div>
-          <div *ngIf="createForm.get('rentalType').invalid && createForm.get('rentalType').touched">
-            <div *ngIf="createForm.get('rentalType').hasError('required')">
-              <p class="error-notice">Must be chosen</p>
+            <div *ngIf="createForm.get('rentalType').invalid && createForm.get('rentalType').touched">
+              <div *ngIf="createForm.get('rentalType').hasError('required')">
+                <p class="error-notice">Must be chosen</p>
+              </div>
             </div>
           </div>
 
@@ -95,26 +93,26 @@
           <div class="form-group">
             <label>Number of Floor</label>
             <input formControlName="numberOfFloor" type="text" class="form-control">
-          </div>
-          <div *ngIf="createForm.get('numberOfFloor').invalid && createForm.get('numberOfFloor').touched">
-            <div *ngIf="createForm.get('numberOfFloor').hasError('min')">
-              <p class="error-notice">Must be large than 0</p>
-            </div>
-            <div *ngIf="createForm.get('numberOfFloor').hasError('pattern')">
-              <p class="error-notice">Must be a number</p>
+            <div *ngIf="createForm.get('numberOfFloor').invalid && createForm.get('numberOfFloor').touched">
+              <div *ngIf="createForm.get('numberOfFloor').hasError('min')">
+                <p class="error-notice">Must be large than 0</p>
+              </div>
+              <div *ngIf="createForm.get('numberOfFloor').hasError('pattern')">
+                <p class="error-notice">Must be a number</p>
+              </div>
             </div>
           </div>
 
           <div class="form-group">
             <label for="exampleInputEmail">Swimming Pool Area</label>
             <input formControlName="areaSwimmingPool" type="text" class="form-control">
-          </div>
-          <div *ngIf="createForm.get('areaSwimmingPool').invalid && createForm.get('areaSwimmingPool').touched">
-            <div *ngIf="createForm.get('areaSwimmingPool').hasError('min')">
-              <p class="error-notice">Must be large than 0</p>
-            </div>
-            <div *ngIf="createForm.get('areaSwimmingPool').hasError('pattern')">
-              <p class="error-notice">Must be a number</p>
+            <div *ngIf="createForm.get('areaSwimmingPool').invalid && createForm.get('areaSwimmingPool').touched">
+              <div *ngIf="createForm.get('areaSwimmingPool').hasError('min')">
+                <p class="error-notice">Must be large than 0</p>
+              </div>
+              <div *ngIf="createForm.get('areaSwimmingPool').hasError('pattern')">
+                <p class="error-notice">Must be a number</p>
+              </div>
             </div>
           </div>
 
@@ -140,4 +138,3 @@
     <!-- /.modal-content -->
   </div>
   <!-- /.modal-dialog -->
-</div>

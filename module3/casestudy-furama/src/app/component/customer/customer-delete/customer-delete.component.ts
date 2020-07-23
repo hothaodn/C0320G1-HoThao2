@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import {CustomerService} from '../../../services/customer/customer.service';
 import {ICustomer} from '../../../model/customer.model';
 
@@ -12,6 +12,8 @@ export class CustomerDeleteComponent implements OnInit {
 
   @Input()
   customerDetail: ICustomer;
+  @Output()
+  deleteConfirmed = new EventEmitter<ICustomer>();
 
   constructor(
     public customerService: CustomerService
@@ -24,6 +26,7 @@ export class CustomerDeleteComponent implements OnInit {
     console.log('trước delete: ' + this.customerDetail.nameCustomer);
     this.customerService.deleteCustomer(this.customerDetail).subscribe(data => {
       console.log('sau delete: ' + this.customerDetail);
+      this.deleteConfirmed.emit(this.customerDetail);
     });
   }
 }

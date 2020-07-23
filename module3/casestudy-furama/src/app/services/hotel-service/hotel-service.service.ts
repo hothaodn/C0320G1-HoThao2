@@ -18,8 +18,40 @@ export class HotelServiceService {
     return this.http.get(this.API);
   }
 
+  getHotelServiceById(id): Observable<any> {
+    return this.http.get(this.API + `/${id}`);
+  }
+
+  addNewHotelService(service): Observable<any> {
+    return this.http.post(this.API, service);
+  }
+
+  deleteHotelService(service): Observable<any> {
+    return this.http.delete(this.API + `/${service.id}`);
+  }
+
+  editHotelService(service, idService): Observable<any> {
+    return this.http.put(this.API + `/${idService}`, service);
+  }
+
+// dich vu di kem
   getAllAccompaniedServices(): Observable<any> {
     return this.http.get(this.API2);
   }
 
+  getAccompaniedServicesById(id): Observable<any> {
+    return this.http.get(this.API + `/${id}`);
+  }
+
+  addNewAccompaniedServices(service): Observable<any> {
+    return this.http.post(this.API, service);
+  }
+
+  deleteAccompaniedServices(service): Observable<any> {
+    return this.http.delete(this.API + `/${service.id}`);
+  }
+
+  editAccompaniedServices(service, idService): Observable<any> {
+    return this.http.put(this.API + `/${idService}`, service);
+  }
 }

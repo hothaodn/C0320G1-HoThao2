@@ -1,7 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ICustomer} from '../../../model/customer.model';
 import {CustomerService} from '../../../services/customer/customer.service';
-import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-customer-list',
@@ -17,13 +16,13 @@ export class CustomerListComponent implements OnInit {
 
   constructor(
     public customerService: CustomerService,
-    public dialog: MatDialog
-  ) { }
+  ) {
+  }
 
   ngOnInit() {
     this.customerService.getAllCustomers().subscribe(data => {
-        this.customers = data;
-        console.log(this.customers);
+      this.customers = data;
+      console.log(this.customers);
     });
   }
 
@@ -32,14 +31,10 @@ export class CustomerListComponent implements OnInit {
     console.log('click edit : ' + this.customerDetail.nameCustomer);
   }
 
-  getCustomerById(id: any) {
-    this.customerDetail.id = id;
-    // console.log('id là  ' + this.customerDetail.id);
+  onDeleteConfirmed(customer: ICustomer) {
+    console.table(customer);
+    this.customers = this.customers.filter((c) => {
+      return c.id !== customer.id;
+    });
   }
-
-  // showDeleteForm(customer: ICustomer) {
-  //   this.customerDetail = customer;
-  //   console.log('test ở list: ' + this.customerDetail.nameCustomer);
-  // }
-
 }

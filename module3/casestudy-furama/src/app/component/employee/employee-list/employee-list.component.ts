@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {IEmployee} from '../../../model/employee.model';
 import {EmployeeService} from '../../../services/employee/employee.service';
+import {ICustomer} from "../../../model/customer.model";
 
 @Component({
   selector: 'app-employee-list',
@@ -28,5 +29,12 @@ export class EmployeeListComponent implements OnInit {
 
   showEmployeeDetails(employee: IEmployee) {
     this.employeeDetail = employee;
+  }
+
+  onDeleteConfirmed(employee: IEmployee) {
+    console.table(employee);
+    this.employees = this.employees.filter((c) => {
+      return c.id !== employee.id;
+    });
   }
 }

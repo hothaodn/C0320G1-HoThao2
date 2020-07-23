@@ -7,6 +7,11 @@ import {EmployeeListComponent} from './component/employee/employee-list/employee
 import {AccompaniedServiceComponent} from './component/accompanied-service-list/accompanied-service.component';
 import {BookingListComponent} from './component/booking/booking-list/booking-list.component';
 import {CustomerEditComponent} from './component/customer/customer-edit/customer-edit.component';
+import {CustomerCreateComponent} from './component/customer/customer-create/customer-create.component';
+import {EmployeeEditComponent} from './component/employee/employee-edit/employee-edit.component';
+import {EmployeeCreateComponent} from './component/employee/employee-create/employee-create.component';
+import {ServiceCreateComponent} from "./component/hotel-service/service-create/service-create.component";
+import {ServiceEditComponent} from "./component/hotel-service/service-edit/service-edit.component";
 
 const routes: Routes = [
   {
@@ -17,24 +22,44 @@ const routes: Routes = [
     component: CustomerListComponent
   },
   {
-    path: 'admin/service/view-all-hotel-services',
-    component: ServiceListComponent
+    path: 'admin/customer/edit/:id',
+    component: CustomerEditComponent
   },
   {
-    path: 'admin/service/view-all-accompanies-services',
-    component: AccompaniedServiceComponent
+    path: 'admin/customer/create',
+    component: CustomerCreateComponent
   },
   {
     path: 'admin/employee/view-all',
     component: EmployeeListComponent
   },
   {
-    path: 'admin/booking/view-all',
-    component: BookingListComponent
+    path: 'admin/employee/edit/:id',
+    component: EmployeeEditComponent
   },
   {
-    path: 'admin/customer/edit/:id',
-    component: CustomerEditComponent
+    path: 'admin/employee/create',
+    component: EmployeeCreateComponent
+  },
+  {
+    path: 'admin/service/view-all-hotel-services',
+    component: ServiceListComponent
+  },
+  {
+    path: 'admin/service/create',
+    component: ServiceCreateComponent
+  },
+  {
+    path: 'admin/service/edit/:id',
+    component: ServiceEditComponent
+  },
+  {
+    path: 'admin/service/view-all-accompanies-services',
+    component: AccompaniedServiceComponent
+  },
+  {
+    path: 'admin/booking/view-all',
+    component: BookingListComponent
   }
 ];
 

@@ -22,8 +22,8 @@
       <!--      TABLE-->
       <div class="table-responsive">
         <br>
-        <a  class="btn btn-primary btn-xs pull-right link" data-title="Create" data-toggle="modal" data-target="#create"><b>+</b> Add new service</a>
-        <!--        routerLink="/admin/customer/add"-->
+<!--        <a [routerLink]="['../create']" class="btn btn-primary btn-xs pull-right link" data-title="Create" data-toggle="modal" data-target="#create"><b>+</b> Add new service</a>-->
+        <a [routerLink]="['../create']" class="btn btn-primary btn-xs pull-right link"><b>+</b> Add new service</a>
 
         <br><br>
         <table id="mytable" class="table table-bordered table-striped">
@@ -45,9 +45,10 @@
             <td>{{service.nameService}}</td>
             <td>{{service.rentalFee}}</td>
             <td>{{service.maxOccupancies}}</td>
-            <td><p (click)="showServiceDetails(service)" data-placement="top" data-toggle="tooltip" title="See more details"><button class="btn btn-primary btn-xs" data-title="See more details" data-toggle="modal" data-target="#view-details" ><span class="glyphicon glyphicon-eye-open"></span></button></p></td>
-            <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-            <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
+            <td><p (click)="showServiceDetails(service)" data-placement="top" data-toggle="tooltip" title="See more details"><button class="btn btn-success btn-xs" data-title="See more details" data-toggle="modal" data-target="#view-details" ><span class="glyphicon glyphicon-eye-open"></span></button></p></td>
+<!--            <td><p [routerLink]="['../edit/',service.id]" data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>-->
+            <td><a [routerLink]="['../edit/',service.id]" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil"></span></a></td>
+            <td><p (click)="showServiceDetails(service)" data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
           </tr>
           </tbody>
 
@@ -129,5 +130,4 @@
   <!-- /.modal-dialog -->
 </div>
 
-<!--ADD NEW SERVICE-->
-<app-service-create></app-service-create>
+<app-service-delete [serviceDetail]="serviceDetail" (deleteConfirmed)="onDeleteConfirmed($event)"></app-service-delete>

@@ -1,11 +1,8 @@
-<div class="modal fade" id="create" tabindex="-1" role="dialog" aria-labelledby="create" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-        <h4 class="modal-title custom_align" id="Heading">Add Customer</h4>
-      </div>
-      <div class="modal-body">
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+        <h3 class="modal-title custom_align" id="Heading">ADD NEW BOOKING</h3>
 
         <form class="form" [formGroup]="createForm" (ngSubmit)="onSubmit()">
           <div class="form-group">
@@ -102,7 +99,4 @@
       </div>
 
     </div>
-    <!-- /.modal-content -->
   </div>
-  <!-- /.modal-dialog -->
-</div>

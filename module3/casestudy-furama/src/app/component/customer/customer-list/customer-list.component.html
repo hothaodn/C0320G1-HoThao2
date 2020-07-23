@@ -34,8 +34,8 @@
 <!--      TABLE-->
       <div class="table-responsive">
         <br>
-        <a  class="btn btn-primary btn-xs pull-right link" data-title="Create" data-toggle="modal" data-target="#create"><b>+</b> Add new customer</a>
-<!--        routerLink="/admin/customer/add"-->
+<!--        <a [routerLink]="['../create']"  class="btn btn-primary btn-xs pull-right link" data-title="Create" data-toggle="modal" data-target="#create"><b>+</b> Add new customer</a>-->
+        <a [routerLink]="['../create']"  class="btn btn-primary btn-xs pull-right link"><b>+</b> Add new customer</a>
 
         <br><br>
         <table id="mytable" class="table table-bordered table-striped">
@@ -79,7 +79,7 @@
 </div>
 
 <!--ADD CUSTOMER-->
-<app-customer-create></app-customer-create>
+<!--<app-customer-create></app-customer-create>-->
 
 <!--SEE DETAILS-->
 <div class="modal fade" id="view-details" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
@@ -147,36 +147,36 @@
 <!--<app-customer-edit [customerDetail]="customerDetail"></app-customer-edit>-->
 
 <!--DELETE-->
-<app-customer-delete [customerDetail]="customerDetail"></app-customer-delete>
+<app-customer-delete [customerDetail]="customerDetail" (deleteConfirmed)="onDeleteConfirmed($event)"></app-customer-delete>
 
-<script>
-  // main
-  $(document).ready(function(){
-    $("#mytable #checkall").click(function () {
-      if ($("#mytable #checkall").is(':checked')) {
-        $("#mytable input[type=checkbox]").each(function () {
-          $(this).prop("checked", true);
-        });
+<!--<script>-->
+<!--  // main-->
+<!--  $(document).ready(function(){-->
+<!--    $("#mytable #checkall").click(function () {-->
+<!--      if ($("#mytable #checkall").is(':checked')) {-->
+<!--        $("#mytable input[type=checkbox]").each(function () {-->
+<!--          $(this).prop("checked", true);-->
+<!--        });-->
 
-      } else {
-        $("#mytable input[type=checkbox]").each(function () {
-          $(this).prop("checked", false);
-        });
-      }
-    });
+<!--      } else {-->
+<!--        $("#mytable input[type=checkbox]").each(function () {-->
+<!--          $(this).prop("checked", false);-->
+<!--        });-->
+<!--      }-->
+<!--    });-->
 
-    $("[data-toggle=tooltip]").tooltip();
-  });
+<!--    $("[data-toggle=tooltip]").tooltip();-->
+<!--  });-->
 
-  // search box
-  $(document).ready(function(e){
-    $('.search-panel .dropdown-menu').find('a').click(function(e) {
-      e.preventDefault();
-      var param = $(this).attr("href").replace("#","");
-      var concept = $(this).text();
-      $('.search-panel span#search_concept').text(concept);
-      $('.input-group #search_param').val(param);
-    });
-  });
-</script>
+<!--  // search box-->
+<!--  $(document).ready(function(e){-->
+<!--    $('.search-panel .dropdown-menu').find('a').click(function(e) {-->
+<!--      e.preventDefault();-->
+<!--      var param = $(this).attr("href").replace("#","");-->
+<!--      var concept = $(this).text();-->
+<!--      $('.search-panel span#search_concept').text(concept);-->
+<!--      $('.input-group #search_param').val(param);-->
+<!--    });-->
+<!--  });-->
+<!--</script>-->
 

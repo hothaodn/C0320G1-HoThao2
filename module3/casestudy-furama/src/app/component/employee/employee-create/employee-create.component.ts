@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {DatePipe} from '@angular/common';
+import {EmployeeService} from '../../../services/employee/employee.service';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -9,15 +12,35 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 })
 export class EmployeeCreateComponent implements OnInit {
 
-  createForm: FormGroup;
-  // employeeList = EMPLOYEES;
-  message = '';
+  public createForm: FormGroup;
+  public message = '';
+  public maxDate = new Date();
+  public minDate = new Date(1900,0,1);
+  private datepipe: DatePipe;
 
-  constructor() {
+  constructor(
+    public employeeService: EmployeeService,
+    public router: Router
+  ) {
+  }
+
+  onSubmit() {
+    if ( this.createForm.valid ) {
+      // this.datepipe.transform(this.createForm.value.dateOfBirth, 'dd/mm/yyyy');
+      console.log(this.createForm.value);
+      this.employeeService.addNewEmployee(this.createForm.value).subscribe(data => {
+        console.log(data);
+      });
+      this.router.navigateByUrl('/admin/employee/view-all');
+      this.message = 'Saved successfully!';
+    }
+  }
+
+  ngOnInit() {
     this.createForm = new FormGroup({
       idEmployee: new FormControl('', [Validators.required, Validators.pattern('^(NV)-[0-9]{4}$')]),
       nameEmployee: new FormControl('', Validators.required),
-      dateOfBirth: new FormControl('', Validators.pattern('^(0[1-9]|[12][0-9]|3[01])\\/(0[1-9]|1[12])\\/[1-9]{4}$')),
+      dateOfBirth: new FormControl(''),
       idCard: new FormControl('', Validators.pattern('^[0-9]{9}|[0-9]{12}$')),
       phone: new FormControl('', Validators.pattern('^(090|091|([\(]84[\)][\+]90)|([\(]84[\)][\+]91))[0-9]{7}$')),
       email: new FormControl('', Validators.email),
@@ -26,15 +49,6 @@ export class EmployeeCreateComponent implements OnInit {
       salary: new FormControl('', [Validators.min(0), Validators.pattern('[0-9]{1,}')]),
       idBooking: new FormControl(''),
     });
-  }
-
-  onSubmit() {
-    console.log(this.createForm.value);
-    // this.employeeList.push(this.createForm.value);
-    this.message = 'Saved successfully!';
-  }
-
-  ngOnInit() {
   }
 
 }

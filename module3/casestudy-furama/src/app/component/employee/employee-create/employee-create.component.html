@@ -1,12 +1,17 @@
-<div class="modal fade" id="create" tabindex="-1" role="dialog" aria-labelledby="create" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-        <h4 class="modal-title custom_align" id="Heading">Add Employee</h4>
-      </div>
-      <div class="modal-body">
+<!--<div class="modal fade" id="create" tabindex="-1" role="dialog" aria-labelledby="create" aria-hidden="true">-->
+<!--  <div class="modal-dialog">-->
+<!--    <div class="modal-content">-->
+<!--      <div class="modal-header">-->
+<!--        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>-->
+<!--        <h4 class="modal-title custom_align" id="Heading">Add Employee</h4>-->
+<!--      </div>-->
+<!--      <div class="modal-body">-->
 
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+    <h3 class="modal-title custom_align" id="Heading">ADD NEW EMPLOYEE</h3>
         <form class="form" [formGroup]="createForm" (ngSubmit)="onSubmit()">
           <div class="form-group">
             <label for="exampleInputEmail1">ID Employee</label>
@@ -32,12 +37,17 @@
           </div>
 
           <div class="form-group">
-            <label for="exampleInputBirthday">Date Of Birth</label>
-            <input formControlName="dateOfBirth" type="text" class="form-control" id="exampleInputBirthday">
-          </div>
-          <div *ngIf="createForm.get('dateOfBirth').invalid && createForm.get('dateOfBirth').touched">
-            <div *ngIf="createForm.get('dateOfBirth').hasError('pattern')">
-              <p class="error-notice">Must be format DD/MM/YYYY)</p>
+            <label for="exampleInputBirthday">Date Of Birth &nbsp;&nbsp;</label>
+            <mat-form-field>
+              <input [max]="maxDate" [min]="minDate" id="exampleInputBirthday" formControlName="dateOfBirth" matInput [matDatepicker]="picker" placeholder="Choose a date">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker style="z-index: 1200" #picker></mat-datepicker>
+            </mat-form-field>
+
+            <div *ngIf="createForm.get('dateOfBirth').invalid && createForm.get('dateOfBirth').touched">
+              <div *ngIf="createForm.get('dateOfBirth').hasError('pattern')">
+                <p class="error-notice">Must be format DD/MM/YYYY)</p>
+              </div>
             </div>
           </div>
 
@@ -120,4 +130,3 @@
     <!-- /.modal-content -->
   </div>
   <!-- /.modal-dialog -->
-</div>
