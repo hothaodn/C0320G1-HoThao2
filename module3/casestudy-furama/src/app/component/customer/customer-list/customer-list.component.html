@@ -45,6 +45,7 @@
             <th>ID</th>
             <th>Full Name</th>
             <th>Customer Type</th>
+            <th>DOB</th>
             <th>Email</th>
             <th>Tel</th>
             <th>Details</th>
@@ -57,6 +58,7 @@
               <td>{{customer.codeCustomer}}</td>
               <td>{{customer.nameCustomer}}</td>
               <td>{{customer.typeCustomer}}</td>
+              <td>{{customer.dateOfBirth| date: 'dd/MM/yyyy'}}</td>
               <td>{{customer.email}}</td>
               <td>{{customer.phone}}</td>
               <td><p (click)="showCustomerDetails(customer)" data-placement="top" data-toggle="tooltip" title="See more details"><button class="btn btn-success btn-xs " data-title="See more details" data-toggle="modal" data-target="#view-details" ><span class="glyphicon glyphicon-eye-open"></span></button></p></td>
@@ -103,7 +105,7 @@
           </tr>
           <tr>
             <th scope="row">DOB</th>
-            <td>{{customerDetail.dateOfBirth}}</td>
+            <td>{{customerDetail.dateOfBirth| date: 'dd/MM/yyyy'}}</td>
           </tr>
           <tr>
             <th scope="row">Gender</th>

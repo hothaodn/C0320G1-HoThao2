@@ -10,8 +10,10 @@ import {CustomerEditComponent} from './component/customer/customer-edit/customer
 import {CustomerCreateComponent} from './component/customer/customer-create/customer-create.component';
 import {EmployeeEditComponent} from './component/employee/employee-edit/employee-edit.component';
 import {EmployeeCreateComponent} from './component/employee/employee-create/employee-create.component';
-import {ServiceCreateComponent} from "./component/hotel-service/service-create/service-create.component";
-import {ServiceEditComponent} from "./component/hotel-service/service-edit/service-edit.component";
+import {ServiceCreateComponent} from './component/hotel-service/service-create/service-create.component';
+import {ServiceEditComponent} from './component/hotel-service/service-edit/service-edit.component';
+import {BookingCreateComponent} from "./component/booking/booking-create/booking-create.component";
+import {BookingEditComponent} from "./component/booking/booking-edit/booking-edit.component";
 
 const routes: Routes = [
   {
@@ -60,6 +62,14 @@ const routes: Routes = [
   {
     path: 'admin/booking/view-all',
     component: BookingListComponent
+  },
+  {
+    path: 'admin/booking/create',
+    component: BookingCreateComponent
+  },
+  {
+    path: 'admin/booking/edit/:id',
+    component: BookingEditComponent
   }
 ];
 

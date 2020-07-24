@@ -23,9 +23,7 @@ export class CustomerDeleteComponent implements OnInit {
   }
 
   deleteCustomer(): void {
-    console.log('trước delete: ' + this.customerDetail.nameCustomer);
     this.customerService.deleteCustomer(this.customerDetail).subscribe(data => {
-      console.log('sau delete: ' + this.customerDetail);
       this.deleteConfirmed.emit(this.customerDetail);
     });
   }

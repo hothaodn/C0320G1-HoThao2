@@ -2,17 +2,17 @@
   <div class="row">
     <div class="col-sm-3"></div>
     <div class="col-sm-6">
-      <h3 class="modal-title custom_align" id="Heading">EDIT SERVICE</h3>
+      <h3 class="modal-title custom_align" id="Heading">EDIT HOTEL SERVICE</h3>
 
       <form class="form" [formGroup]="createForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <label for="exampleInputEmail1">ID</label>
-          <input formControlName="idService" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="DV-XXXX">
-          <div *ngIf="createForm.get('idService').invalid && createForm.get('idService').touched">
-            <div *ngIf="createForm.get('idService').hasError('required')">
+          <input formControlName="codeService" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="DV-XXXX">
+          <div *ngIf="createForm.get('codeService').invalid && createForm.get('codeService').touched">
+            <div *ngIf="createForm.get('codeService').hasError('required')">
               <p class="error-notice">Must be filled</p>
             </div>
-            <div *ngIf="createForm.get('idService').hasError('pattern')">
+            <div *ngIf="createForm.get('codeService').hasError('pattern')">
               <p class="error-notice">Must be format DV-XXXX (X is a number from 0 to 9)</p>
             </div>
           </div>
@@ -116,18 +116,29 @@
           </div>
         </div>
 
-        <div class="form-group form-check">
-          <label class="form-check-label">Free Service &nbsp;&nbsp;&nbsp;</label><br/>
-          <input formControlName="freeService" type="checkbox" class="form-check-input" value="Laundry"> Laundry<br/>
-          <input formControlName="freeService" type="checkbox" class="form-check-input" value="Drinking juice"> Welcome Drinking<br/>
-          <input formControlName="freeService" type="checkbox" class="form-check-input" value="Public Swimming Pool"> Public Swimming Pool<br/>
-          <input formControlName="freeService" type="checkbox" class="form-check-input" value="Car Trip"> Car Trip<br/>
-          <input formControlName="freeService" type="checkbox" class="form-check-input" value="Buffet Voucher"> Buffet Voucher<br/>
+<!--        <div class="form-group form-check">-->
+<!--          <label class="form-check-label">Free Service &nbsp;&nbsp;&nbsp;</label><br/>-->
+<!--          <input formControlName="freeService" name="freeService" type="checkbox" class="form-check-input" [value]="'Laundry'"> Laundry<br/>-->
+<!--          <input formControlName="freeService" name="freeService" type="checkbox" class="form-check-input" [value]="'Drinking juice'"> Welcome Drinking<br/>-->
+<!--          <input formControlName="freeService" name="freeService" type="checkbox" class="form-check-input" [value]="'Public Swimming Pool'"> Public Swimming Pool<br/>-->
+<!--          <input formControlName="freeService" name="freeService" type="checkbox" class="form-check-input" [value]="'Car Trip'"> Car Trip<br/>-->
+<!--          <input formControlName="freeService" name="freeService" type="checkbox" class="form-check-input" [value]="'Buffet Voucher'"> Buffet Voucher<br/>-->
+<!--        </div>-->
+
+        <div class="form-group">
+          <label for="exampleInputEmail">Free Service &nbsp;&nbsp;&nbsp;</label>
+            <select formControlName="freeService" class="form-control">
+              <option selected value="Laundry">Laundry</option>
+              <option value="Welcome Drinking">Welcome Drinking</option>
+              <option value="Public Swimming Pool">Public Swimming Pool</option>
+              <option value="Car Trip">Car Trip</option>
+              <option value="Buffet Voucher">Buffet Voucher</option>
+            </select>
         </div>
 
         <div class="modal-footer ">
           <p class="error-notice">{{message}}</p>
-          <button type="submit" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Save</button>
+          <button [disabled]="createForm.invalid" type="submit" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Save</button>
           <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
         </div>
       </form>

@@ -41,23 +41,14 @@
         <div class="form-group">
           <label for="exampleInputBirthday">Date Of Birth &nbsp;&nbsp;&nbsp;</label>
           <mat-form-field>
-            <input [max]="maxDate" [min]="minDate" id="exampleInputBirthday" formControlName="dateOfBirth" matInput [matDatepicker]="picker" placeholder="Choose a date">
+            <input [max]="maxDate" [min]="minDate" id="exampleInputBirthday" formControlName="dateOfBirth" class="form-control" matInput [matDatepicker]="picker" placeholder="Choose a date">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker style="z-index: 1200" #picker></mat-datepicker>
           </mat-form-field>
-
-<!--          <mat-form-field>-->
-<!--            <input formControlName="dateOfBirth" matInput placeholder="Select Date" [matDatepicker]="datepickerRef" name="datepicker" ngModel #dateCtrl="ngModel" required readonly/>-->
-<!--            <mat-datepicker-toggle [for]="datepickerRef" matSuffix></mat-datepicker-togjson-server --watch db.json.gle>-->
-<!--            <mat-datepicker #datepickerRef></mat-datepicker>-->
-<!--&lt;!&ndash;            <mat-error *ngIf="dateCtrl.errors?.required && deptCtrl.touched">Choose a Date</mat-error>&ndash;&gt;-->
-<!--          </mat-form-field>-->
-
-          <div *ngIf="createForm.get('dateOfBirth').invalid && createForm.get('dateOfBirth').touched">
-            <div *ngIf="createForm.get('dateOfBirth').hasError('pattern')">
-              <p class="error-notice">Must be format DD/MM/YYYY</p>
-            </div>
-          </div>
+          <p
+            *ngIf="createForm.controls.dateOfBirth.errors?.required && createForm.controls.dateOfBirth.touched"
+            class="text-danger">Vui lòng nhập ngày sinh
+          </p>
         </div>
 
         <div class="form-group form-check">
@@ -99,22 +90,21 @@
         <div class="form-group">
           <label for="sel1">Type of Customer</label>
           <select formControlName="typeCustomer" class="form-control" id="sel1">
-            <option selected>Choose...</option>
             <option value="Member">Member</option>
             <option value="Silver">Silver</option>
             <option value="Gold">Gold</option>
             <option value="Platinum">Platinum</option>
             <option value="Diamond">Diamond</option>
           </select>
-          <div class="form-group">
-            <label for="exampleInputAddress">Address</label>
-            <input formControlName="address" type="text" class="form-control" id="exampleInputAddress">
-          </div>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputAddress">Address</label>
+          <input formControlName="address" type="text" class="form-control" id="exampleInputAddress">
         </div>
 
         <div class="modal-footer ">
           <p class="error-notice">{{message}}</p>
-          <button id="btnSave" [disabled]="createForm.invalid" type="submit" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Save</button>
+          <button [disabled]="createForm.invalid" type="submit" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Save</button>
           <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
         </div>
       </form>

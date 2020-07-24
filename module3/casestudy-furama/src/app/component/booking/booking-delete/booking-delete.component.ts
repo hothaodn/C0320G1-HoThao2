@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {BookingService} from '../../../services/booking/booking.service';
+import {IBooking} from '../../../model/booking.model';
 
 @Component({
   selector: 'app-booking-delete',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookingDeleteComponent implements OnInit {
 
-  constructor() { }
+  message = '';
+
+  @Input()
+  bookingDetail: IBooking;
+  @Output()
+  deleteConfirmed = new EventEmitter<IBooking>();
+
+  constructor(
+    public bookingService: BookingService
+  ) { }
 
   ngOnInit() {
+  }
+
+  deleteBooking(): void {
+    this.bookingService.deleteBooking(this.bookingDetail).subscribe(data => {
+    this.deleteConfirmed.emit(this.bookingDetail);
+    });
   }
 
 }

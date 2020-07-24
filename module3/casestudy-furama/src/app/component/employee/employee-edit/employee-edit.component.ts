@@ -31,7 +31,7 @@ export class EmployeeEditComponent implements OnInit {
 
   ngOnInit() {
     this.createForm = new FormGroup({
-      idEmployee: new FormControl('', [Validators.required, Validators.pattern('^(NV)-[0-9]{4}$')]),
+      codeEmployee: new FormControl('', [Validators.required, Validators.pattern('^(NV)-[0-9]{4}$')]),
       nameEmployee: new FormControl('', Validators.required),
       dateOfBirth: new FormControl(''),
       idCard: new FormControl('', Validators.pattern('^[0-9]{9}|[0-9]{12}$')),

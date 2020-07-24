@@ -22,6 +22,9 @@ export class HotelServiceService {
     return this.http.get(this.API + `/${id}`);
   }
 
+  getHotelServiceByCode(codeService: string): Observable<any> {
+    return this.http.get(this.API + `?codeService=` + codeService);
+  }
   addNewHotelService(service): Observable<any> {
     return this.http.post(this.API, service);
   }
@@ -42,7 +45,6 @@ export class HotelServiceService {
   getAccompaniedServicesById(id): Observable<any> {
     return this.http.get(this.API + `/${id}`);
   }
-
   addNewAccompaniedServices(service): Observable<any> {
     return this.http.post(this.API, service);
   }

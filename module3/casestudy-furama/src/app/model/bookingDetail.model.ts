@@ -1,6 +1,6 @@
 export class BookingDetailModel {
-  idBookingDetail: string;
-  idBooking: string;
-  idAccompaniedService: string;
+  id: number;
+  codeBooking: string;
+  codeAccompaniedService: string;
   amount: number;
 }

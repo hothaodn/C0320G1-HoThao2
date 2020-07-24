@@ -10,7 +10,7 @@ import {ICustomer} from "../../../model/customer.model";
 })
 export class EmployeeListComponent implements OnInit {
 
-  public employees;
+  public employees: IEmployee[];
 
   @Input()
   employeeDetail: IEmployee;

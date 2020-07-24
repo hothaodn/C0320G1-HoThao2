@@ -10,5 +10,5 @@ export interface IHotelService {
   facilities: string;
   numberOfFloor: number;
   areaSwimmingPool: number;
-  freeService: string;
+  freeService: string[];
 }

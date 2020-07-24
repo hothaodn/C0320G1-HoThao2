@@ -1,8 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {DatePipe} from "@angular/common";
-import {CustomerService} from "../../../services/customer/customer.service";
-import {Router} from "@angular/router";
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
+import {BookingService} from '../../../services/booking/booking.service';
+import {CustomerService} from '../../../services/customer/customer.service';
+import {ICustomer} from '../../../model/customer.model';
+import {HotelServiceService} from '../../../services/hotel-service/hotel-service.service';
+import {IHotelService} from '../../../model/hotelService.model';
+import {MatDatepickerInputEvent} from '@angular/material/datepicker';
 
 @Component({
   selector: 'app-booking-create',
@@ -10,44 +14,66 @@ import {Router} from "@angular/router";
   styleUrls: ['./booking-create.component.css']
 })
 export class BookingCreateComponent implements OnInit {
-
+  // @Output()
+  // dateInput: EventEmitter<MatDatepickerInputEvent<D>>;
   public createForm: FormGroup;
   public message = '';
-  public maxDate = new Date();
-  public minDate = new Date();
-  private datepipe: DatePipe;
+  public checkInDate = new Date();
+  public checkOutDate = new Date();
+
+  public customerList: ICustomer[];
+  public serviceList: IHotelService[];
 
   constructor(
+    public bookingService: BookingService,
     public customerService: CustomerService,
+    public hotelServiceService: HotelServiceService,
     public router: Router
-    // public createForm: FormGroup
-  ) { }
+  ) {
+  }
 
   onSubmit() {
-    if ( this.createForm.valid ) {
-      // this.datepipe.transform(this.createForm.value.dateOfBirth, 'dd/mm/yyyy');
+    if (this.createForm.valid) {
       console.log(this.createForm.value);
-      this.customerService.addNewCustomer(this.createForm.value).subscribe(data => {
+      this.bookingService.addNewBooking(this.createForm.value).subscribe(data => {
         console.log(data);
       });
-      this.router.navigateByUrl('/admin/customer/view-all');
+      this.router.navigateByUrl('/admin/booking/view-all');
       this.message = 'Saved successfully!';
     }
   }
 
   ngOnInit() {
     this.createForm = new FormGroup({
-      codeBooking: new FormControl('', [Validators.required, Validators.pattern('^(KH)-[0-9]{4}$')]),
+      codeBooking: new FormControl('', [Validators.required, Validators.pattern('^(BK)-[0-9]{4}$')]),
       codeCustomer: new FormControl('', Validators.required),
-      // dateOfBirth: new FormControl('', Validators.pattern('^(0[1-9]|[12][0-9]|3[01])\\/(0[1-9]|1[12])\\/[1-9]{4}$')),
-      codeService: new FormControl(''),
-      codeEmployee: new FormControl(''),
-      checkInDate: new FormControl('', Validators.pattern('^[0-9]{9}|[0-9]{12}$')),
-      checkOutDate: new FormControl('', Validators.pattern('^(090|091|([\(]84[\)][\+]90)|([\(]84[\)][\+]91))[0-9]{7}$')),
-      idBookingDetail: new FormControl('', Validators.email),
-      deposit: new FormControl(''),
-      totalAmount: new FormControl('')
+      codeService: new FormControl('', [Validators.required, Validators.pattern('^(DV)-[0-9]{4}$')]),
+      codeEmployee: new FormControl('', [Validators.required, Validators.pattern('^(NV)-[0-9]{4}$')]),
+      checkInDate: new FormControl(''),
+      checkOutDate: new FormControl(''),
+      codeBookingDetail: new FormControl(''),
+      deposit: new FormControl('', Validators.min(0)),
+      totalAmount: new FormControl('', Validators.min(0))
+    });
+
+    this.customerService.getAllCustomers().subscribe(data => {
+      this.customerList = data;
+    });
+
+    this.hotelServiceService.getAllHotelServices().subscribe(data => {
+      this.serviceList = data;
     });
   }
 
+
+  getTotalPayment() {
+    const startDate = Number(new Date(this.createForm.value.checkInDate))  ;
+    const endDate = Number(new Date(this.createForm.value.checkOutDate));
+    const stayDate = (endDate - startDate) / 86400000;
+    this.hotelServiceService.getHotelServiceByCode(this.createForm.value.codeService).subscribe(data => {
+      this.createForm.patchValue({
+        totalAmount: stayDate * data[0].rentalFee
+      });
+    });
+  }
 }

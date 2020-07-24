@@ -36,7 +36,7 @@ export class ServiceCreateComponent implements OnInit {
     this.createForm = new FormGroup({
       codeService: new FormControl('', [Validators.required, Validators.pattern('^(DV)-[0-9]{4}$')]),
       nameService: new FormControl('', Validators.required),
-      areaUsing: new FormControl('', [Validators.min(0), Validators.pattern('[0-9]{1,}')]),
+      areaUsing: new FormControl('', [Validators.min(20), Validators.pattern('[0-9]{1,}')]),
       rentalFee: new FormControl('', [Validators.min(0), Validators.pattern('[0-9]{1,}')]),
       maxOccupancies: new FormControl('', [Validators.min(0), Validators.pattern('[0-9]{1,}')]),
       rentalType: new FormControl('', Validators.required),

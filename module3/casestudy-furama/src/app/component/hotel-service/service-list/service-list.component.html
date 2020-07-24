@@ -32,19 +32,23 @@
           <!--            <th><input type="checkbox" id="checkall" /></th>-->
           <th>ID</th>
           <th>Name</th>
+          <th>Max Occ</th>
+          <th>Rental Type</th>
+          <th>Room Standard</th>
           <th>Rental Fee</th>
-          <th>Max Occupancies</th>
           <th>Details</th>
           <th>Edit</th>
           <th>Delete</th>
           </thead>
           <tbody>
-          <tr *ngFor="let service of serviceList | filter:term | paginate: { itemsPerPage: 3, currentPage: p }">
+          <tr *ngFor="let service of serviceList | filter:term | paginate: { itemsPerPage: 5, currentPage: p }">
             <!--              <td><input type="checkbox" class="checkthis" /></td>-->
             <td>{{service.codeService}}</td>
             <td>{{service.nameService}}</td>
-            <td>{{service.rentalFee}}</td>
             <td>{{service.maxOccupancies}}</td>
+            <td>{{service.rentalType}}</td>
+            <td>{{service.roomStandard}}</td>
+            <td>{{service.rentalFee}}</td>
             <td><p (click)="showServiceDetails(service)" data-placement="top" data-toggle="tooltip" title="See more details"><button class="btn btn-success btn-xs" data-title="See more details" data-toggle="modal" data-target="#view-details" ><span class="glyphicon glyphicon-eye-open"></span></button></p></td>
 <!--            <td><p [routerLink]="['../edit/',service.id]" data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>-->
             <td><a [routerLink]="['../edit/',service.id]" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil"></span></a></td>

@@ -9,7 +9,7 @@ import {CustomerService} from '../../../services/customer/customer.service';
 })
 export class CustomerListComponent implements OnInit {
 
-  public customers;
+  public customers: ICustomer[];
 
   customerDetail: ICustomer;
   term: any;

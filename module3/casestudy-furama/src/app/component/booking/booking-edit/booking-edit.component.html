@@ -1,0 +1,106 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <h3 class="modal-title custom_align" id="Heading">EDIT BOOKING</h3>
+
+      <form class="form" [formGroup]="createForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="exampleInputEmail1">ID Booking</label>
+          <input formControlName="codeBooking" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="BK-XXXX">
+          <div *ngIf="createForm.get('codeBooking').invalid && createForm.get('codeBooking').touched">
+            <div *ngIf="createForm.get('codeBooking').hasError('required')">
+              <p class="error-notice">Must be filled</p>
+            </div>
+            <div *ngIf="createForm.get('codeBooking').hasError('pattern')">
+              <p class="error-notice">Must be format BK-XXXX (X is a number from 0 to 9)</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="sel1">Customer</label>
+          <select  formControlName="codeCustomer" class="form-control" id="sel1">
+            <option  *ngFor="let customer of customerList" [value]="customer.codeCustomer">{{customer.codeCustomer}} | {{customer.nameCustomer}} | {{customer.typeCustomer}}</option>
+          </select>
+          <div *ngIf="createForm.get('codeCustomer').invalid && createForm.get('codeCustomer').touched">
+            <div *ngIf="createForm.get('codeCustomer').hasError('required')">
+              <p class="error-notice">Must be filled</p>
+            </div>
+            <div *ngIf="createForm.get('codeCustomer').hasError('pattern')">
+              <p class="error-notice">Must be format KH-XXXX (X is a number from 0 to 9)</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">Service</label>
+          <select (change)="getTotalPayment()" formControlName="codeService" class="form-control" id="sel1">
+            <option  *ngFor="let service of serviceList" [value]="service.codeService">{{service.codeService}} | {{service.nameService}} | {{service.rentalType}} | {{service.maxOccupancies}}p</option>
+          </select>
+          <div *ngIf="createForm.get('codeService').invalid && createForm.get('codeService').touched">
+            <div *ngIf="createForm.get('codeService').hasError('required')">
+              <p class="error-notice">Must be filled</p>
+            </div>
+            <div *ngIf="createForm.get('codeService').hasError('pattern')">
+              <p class="error-notice">Must be format DV-XXXX (X is a number from 0 to 9)</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Check in Date &nbsp;&nbsp;&nbsp;</label>
+          <mat-form-field>
+            <input (dateChange)="getTotalPayment()"  [min]="checkInDate" formControlName="checkInDate" class="form-control" matInput [matDatepicker]="picker1" placeholder="Choose a date">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker style="z-index: 1200" #picker1></mat-datepicker>
+          </mat-form-field>
+
+          <div *ngIf="createForm.get('checkInDate').invalid && createForm.get('checkInDate').touched">
+            <div *ngIf="createForm.get('checkInDate').hasError('pattern')">
+              <p class="error-notice">Must be format DD/MM/YYYY</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Check out Date &nbsp;&nbsp;&nbsp;</label>
+          <mat-form-field>
+            <input (dateChange)="getTotalPayment()" [min]="checkOutDate" formControlName="checkOutDate" class="form-control" matInput [matDatepicker]="picker2" placeholder="Choose a date">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker style="z-index: 1200" #picker2></mat-datepicker>
+          </mat-form-field>
+
+          <div *ngIf="createForm.get('checkOutDate').invalid && createForm.get('checkOutDate').touched">
+            <div *ngIf="createForm.get('checkOutDate').hasError('pattern')">
+              <p class="error-notice">Must be format DD/MM/YYYY</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputAddress">ID Booking Detail</label>
+          <input formControlName="codeBookingDetail" type="text" class="form-control" id="exampleInputAddress">
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputAddress">Deposit</label>
+          <input formControlName="deposit" type="number" class="form-control" id="exampleInputAddress">
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputAddress">Total Amount</label>
+          <input formControlName="totalAmount" type="number" class="form-control" id="exampleInputAddress">
+        </div>
+
+        <div class="modal-footer ">
+          <p class="error-notice">{{message}}</p>
+          <button type="submit" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Save</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
+        </div>
+      </form>
+
+    </div>
+
+  </div>
+</div>
